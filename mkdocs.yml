@@ -1,0 +1,18 @@
+site_name: Python Algorithm Notes
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Patterns:
+      - Hash: patterns/hash.md
+      - Sort: patterns/sort.md
+      - Prefix Sum: patterns/prefix-sum.md
+      - Two Pointer: patterns/two-pointer.md
+      - BFS/DFS: patterns/bfs-dfs.md
+      - Greedy: patterns/greedy.md
+      - Binary Search: patterns/binary-search.md
+      - Dynamic Programming: patterns/dp.md
+  - Wrong Notes:
+      - Order Settlement: wrong-notes/0001-order-settlement.md
+  - Reviews:
+      - Week 01: reviews/week-01.md
