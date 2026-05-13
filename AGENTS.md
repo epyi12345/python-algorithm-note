@@ -12,9 +12,19 @@ This repository is a Python algorithm study note site.
 - Do not include private information, API keys, tokens, or full copyrighted
   problem statements.
 
-## Commit Message Convention
+## Commit and PR messages
 
-Use the following commit message format:
+When finishing a task, always suggest:
+
+- Commit title
+- Commit body, if useful
+- Pull request title
+- Pull request description
+
+Pull request titles and descriptions should follow the same convention
+where applicable.
+
+All commit messages must follow this format:
 
 ```text
 type(optional-scope): [#issueNumber - ]Subject
@@ -24,20 +34,26 @@ body
 footer
 ```
 
-### Commit Message Rules
+### Commit Title Rules
 
-- The subject must summarize the change briefly.
+- Keep the title within 50 characters.
 - Put exactly one space after the colon.
-- The subject must be within 50 characters.
-- Do not end the subject with punctuation.
+- Do not end the title with punctuation.
 - English subjects must start with an uppercase imperative verb.
 - Prefer "Add", "Fix", or "Change" for English subjects.
 - Korean subjects must start with "추가", "고침", or "변경".
+- Do not wrap the subject in quotes.
+
+### Body Rules
+
 - Body is optional.
-- Body lines should be within 72 characters.
-- Body should explain what changed and why, not how.
+- Keep each body line within 72 characters.
+- Explain what changed and why, not how.
+
+### Footer Rules
+
 - Footer is optional.
-- Footer should use one of:
+- Use one of these formats when referencing issues:
   - `Fixes: #issue`
   - `Resolves: #issue`
   - `Ref: #issue`
@@ -45,24 +61,29 @@ footer
 
 ### Allowed Types
 
-- `Feat`: new feature
-- `Fix`: bug fix
-- `Design`: UI or CSS design change
-- `!BREAKING CHANGE`: large API change
-- `!HOTFIX`: urgent critical bug fix
-- `Style`: formatting only, no code change
-- `Refactor`: production code refactoring
-- `Comment`: comments added or changed
-- `Docs`: documentation change
-- `Test`: tests added or refactored
-- `Chore`: build task, package manager, or config change
-- `Rename`: file or folder rename only
-- `Remove`: file removal only
+- `Feat`
+- `Fix`
+- `Design`
+- `!BREAKING CHANGE`
+- `!HOTFIX`
+- `Style`
+- `Refactor`
+- `Comment`
+- `Docs`
+- `Test`
+- `Chore`
+- `Rename`
+- `Remove`
 
 ### Examples
 
 ```text
-Docs: Add MkDocs setup guide
+Docs: Add repository agent guidelines
+
+Add AGENTS.md to define repository rules for future Codex tasks.
+
+Document the project structure, safety rules, and commit message
+convention so future changes follow the same workflow.
 
 Feat(navigation): Add sidebar navigation
 
