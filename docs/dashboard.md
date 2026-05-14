@@ -7,17 +7,19 @@ updated with real progress data.
 
 | Metric | Current Value | Target | Notes |
 | --- | ---: | ---: | --- |
-| Problems solved | 0 | 100 | Add accepted solutions over time |
-| Wrong-answer notes | 0 | 30 | Record causes, fixes, and takeaways |
+| Solved Problems | 1 | 100 | Add accepted solutions over time |
+| Reviewed Problems | 1 | 100 | Revisit solved problems after review |
+| Wrong Notes | 1 | 30 | Record causes, fixes, and takeaways |
 | Weekly reviews | 0 | 12 | Review progress at the end of each week |
 | Timed sessions | 0 | 50 | Track focused practice attempts |
+| Current Focus | Hash / Implementation / Control flow | Stable basics | Practice duplicate handling and loop control |
 
 ## Pattern Mastery
 
 | Pattern | Current Level | Target Level | Next Action |
 | --- | --- | --- | --- |
-| Hash | Not started | Comfortable | Solve counting and lookup problems |
-| Sort | Not started | Comfortable | Practice custom key sorting |
+| Hash | Started | Comfortable | Solve counting and lookup problems |
+| Sort | Started | Comfortable | Practice custom key sorting |
 | Prefix Sum | Not started | Comfortable | Solve range-sum problems |
 | Two Pointer | Not started | Comfortable | Practice sorted-array problems |
 | Stack / Queue | Not started | Comfortable | Solve simulation problems |
@@ -29,16 +31,18 @@ updated with real progress data.
 
 ## Recent Problem Log
 
-| Date | Source | Problem | Pattern | Result | Review Needed |
-| --- | --- | --- | --- | --- | --- |
-| TBD | TBD | TBD | TBD | TBD | TBD |
-| TBD | TBD | TBD | TBD | TBD | TBD |
-| TBD | TBD | TBD | TBD | TBD | TBD |
+| Date | Source | Problem | Type | Result | Score | Main Issue | Review Target |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-14 | Custom | 0001. Order Settlement | Hash / Implementation | Solved with review | 85/100 | pass vs continue | Re-solve later |
+| TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
 
 ## Weakness Tracker
 
 | Weakness | Current Status | Practice Plan | Evidence to Update |
 | --- | --- | --- | --- |
+| Control flow: pass vs continue | Needs review | Prefer early continue for filtered cases | Fewer duplicate-processing mistakes |
+| Duplicate handling with set | Improving | Design tuple keys before accumulation | Correctly ignored repeated logs |
 | Pattern recognition | Needs practice | Tag every solved problem by pattern | Faster first-idea selection |
 | Time-complexity judgment | Needs practice | Write complexity before coding | Fewer timeout risks |
 | Python syntax fluency | Needs practice | Rewrite accepted solutions | Shorter implementation time |

@@ -1,21 +1,33 @@
-"""Small custom example for aggregating order settlements.
+import sys
+from collections import defaultdict
 
-This is an original practice snippet and not a copied problem statement.
-"""
+def solve():
+    input = sys.stdin.readline
 
-from collections.abc import Iterable
+    n = int(input())
 
+    seen = set()
+    result = defaultdict(int)
 
-def settle_orders(transactions: Iterable[tuple[str, int]]) -> dict[str, int]:
-    """Return final balance deltas per account."""
-    balances: dict[str, int] = {}
+    for _ in range(n):
+        order_id, product, qty, status = input().split()
+        qty = int(qty)
 
-    for account, delta in transactions:
-        balances[account] = balances.get(account, 0) + delta
+        key = (order_id, product, qty, status)
 
-    return balances
+        if key in seen:
+            continue
 
+        seen.add(key)
+
+        if status == "PAY":
+            result[product] += qty
+        else:
+            result[product] -= qty
+
+    for product in sorted(result):
+        if result[product] > 0:
+            print(product, result[product])
 
 if __name__ == "__main__":
-    sample = [("alice", 100), ("bob", -40), ("alice", -25)]
-    print(settle_orders(sample))
+    solve()
