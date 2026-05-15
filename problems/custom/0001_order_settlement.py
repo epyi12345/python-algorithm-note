@@ -1,6 +1,7 @@
 import sys
 from collections import defaultdict
 
+
 def solve():
     input = sys.stdin.readline
 
@@ -28,6 +29,7 @@ def solve():
     for product in sorted(result):
         if result[product] > 0:
             print(product, result[product])
+
 
 if __name__ == "__main__":
     solve()
