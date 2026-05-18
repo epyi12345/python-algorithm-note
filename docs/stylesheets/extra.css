@@ -1,0 +1,21 @@
+.attempt-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin: 1rem 0;
+}
+
+.attempt-panel {
+  min-width: 0;
+}
+
+.attempt-panel > :first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .attempt-grid {
+    grid-template-columns: 1fr;
+  }
+}
