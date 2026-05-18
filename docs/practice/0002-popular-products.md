@@ -4,6 +4,10 @@
 
 Hash / Implementation / Duplicate handling / Sorting / Tie-break
 
+## Difficulty
+
+Lv.1+ Basic
+
 ## Status
 
 Solved with review

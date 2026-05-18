@@ -2,6 +2,10 @@
 
 ## Type
 
+## Difficulty
+
+Lv.X Name
+
 ## Status
 
 ## Prerequisites

@@ -4,6 +4,10 @@
 
 Prefix Sum / Range Query / Implementation
 
+## Difficulty
+
+Lv.2 Core
+
 ## Status
 
 Pending
