@@ -6,7 +6,7 @@ Hash / Implementation / Duplicate handling / Sorting / Tie-break
 
 ## Status
 
-Pending
+Solved with review
 
 ## Prerequisites
 

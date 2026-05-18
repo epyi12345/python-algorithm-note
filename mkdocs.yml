@@ -9,6 +9,7 @@ nav:
       - 0002 Popular Products: practice/0002-popular-products.md
   - Wrong Notes:
       - 0001. Order Settlement: wrong-notes/0001-order-settlement.md
+      - 0002. Popular Products: wrong-notes/0002-popular-products.md
 extra_css:
   - stylesheets/extra.css
 markdown_extensions:
