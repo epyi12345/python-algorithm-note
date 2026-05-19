@@ -1,9 +1,7 @@
-# Python Algorithm Notes
+# Python Algorithm Note
 
-Brief, original notes for practicing algorithmic problem solving with Python.
+Use the online Python editor when a local IDE is not available.
 
-## How to use this site
+[Open Python Editor ↗](https://onecompiler.com/python){ .md-button .md-button--primary target="_blank" rel="noopener" }
 
-- Review a pattern before solving related problems.
-- Record mistakes as wrong notes after each practice session.
-- Summarize weekly progress in review notes.
+This site contains practice problem statements, wrong-answer review notes, and progress tracking for custom algorithm training.

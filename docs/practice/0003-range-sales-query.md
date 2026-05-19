@@ -159,6 +159,13 @@ day 5 to day 6 = 20 + 5 = 25
 - Handling single-day queries where L equals R
 - Explaining time and space complexity
 
+## Online Editor
+
+Use OneCompiler Python editor to test your solution when a local Python
+environment is not available.
+
+[Open Python Editor ↗](https://onecompiler.com/python){ .md-button .md-button--primary target="_blank" rel="noopener" }
+
 ## Code Template
 
 ```python
