@@ -176,3 +176,16 @@ Mention important review notes if needed.
 
 - Before presenting final commit or PR suggestions, check them against
 the strict commit title rules and correct them if they do not match.
+
+
+## Multilingual documentation
+
+- English is the default language.
+- Korean translations use the `.ko.md` suffix.
+- When creating a new important documentation page, also create a
+  Korean translation when practical.
+- Practice problem pages may be added in English first, but Korean
+  translations should be added later for mobile review.
+- Keep code blocks and file paths unchanged across translations.
+- Do not machine-translate code, identifiers, commands, or URLs.
+- The language selector should remain available in the site header.

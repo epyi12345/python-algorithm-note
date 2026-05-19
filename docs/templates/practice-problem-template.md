@@ -1,5 +1,7 @@
 # Problem Number. Problem Title
 
+English is the default version. Korean translations should use the `.ko.md` suffix when added.
+
 ## Type
 
 ## Difficulty
