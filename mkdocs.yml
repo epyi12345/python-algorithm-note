@@ -11,6 +11,14 @@ nav:
   - Wrong Notes:
       - 0001. Order Settlement: wrong-notes/0001-order-settlement.md
       - 0002. Popular Products: wrong-notes/0002-popular-products.md
+  - Learning:
+      - Overview: learning/index.md
+      - Python Basics: learning/python-basics.md
+      - Complexity Guide: learning/complexity-guide.md
+      - Problem Patterns: learning/problem-patterns.md
+      - Common Mistakes: learning/common-mistakes.md
+      - Review Checklists: learning/review-checklists.md
+      - Mobile App Plan: learning/mobile-app-plan.md
   - Tools:
       - Python Editor: tools/python-editor.md
 extra_css:
