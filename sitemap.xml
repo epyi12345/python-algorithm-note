@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>None./</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/"/>
+    </url>
+    <url>
+        <loc>Nonedashboard/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonedashboard/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/dashboard/"/>
+    </url>
+    <url>
+        <loc>Nonediagnosis/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonediagnosis/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/diagnosis/"/>
+    </url>
+    <url>
+        <loc>Noneroadmap/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneroadmap/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/roadmap/"/>
+    </url>
+    <url>
+        <loc>Nonelearning/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/"/>
+    </url>
+    <url>
+        <loc>Nonelearning/common-mistakes/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/common-mistakes/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/common-mistakes/"/>
+    </url>
+    <url>
+        <loc>Nonelearning/complexity-guide/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/complexity-guide/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/complexity-guide/"/>
+    </url>
+    <url>
+        <loc>Nonelearning/mobile-app-plan/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/mobile-app-plan/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/mobile-app-plan/"/>
+    </url>
+    <url>
+        <loc>Nonelearning/problem-patterns/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/problem-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/problem-patterns/"/>
+    </url>
+    <url>
+        <loc>Nonelearning/python-basics/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/python-basics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/python-basics/"/>
+    </url>
+    <url>
+        <loc>Nonelearning/review-checklists/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/review-checklists/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/review-checklists/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/bfs-dfs/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/bfs-dfs/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/bfs-dfs/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/binary-search/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/binary-search/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/binary-search/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/dp/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/dp/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/dp/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/greedy/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/greedy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/greedy/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/hash/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/hash/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/hash/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/prefix-sum/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/prefix-sum/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/prefix-sum/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/sort/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/sort/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/sort/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/two-pointer/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/two-pointer/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/two-pointer/"/>
+    </url>
+    <url>
+        <loc>Nonepractice/0001-order-settlement/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepractice/0001-order-settlement/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/practice/0001-order-settlement/"/>
+    </url>
+    <url>
+        <loc>Nonepractice/0002-popular-products/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepractice/0002-popular-products/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/practice/0002-popular-products/"/>
+    </url>
+    <url>
+        <loc>Nonepractice/0003-range-sales-query/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepractice/0003-range-sales-query/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/practice/0003-range-sales-query/"/>
+    </url>
+    <url>
+        <loc>Nonereviews/week-01/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereviews/week-01/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/reviews/week-01/"/>
+    </url>
+    <url>
+        <loc>Nonetools/python-editor/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonetools/python-editor/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/tools/python-editor/"/>
+    </url>
+    <url>
+        <loc>Nonewrong-notes/0001-order-settlement/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonewrong-notes/0001-order-settlement/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/wrong-notes/0001-order-settlement/"/>
+    </url>
+    <url>
+        <loc>Nonewrong-notes/0002-popular-products/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonewrong-notes/0002-popular-products/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/wrong-notes/0002-popular-products/"/>
+    </url>
+    <url>
+        <loc>Noneko/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+    </url>
+    <url>
+        <loc>Noneko/dashboard/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/dashboard/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonedashboard/"/>
+    </url>
+    <url>
+        <loc>Noneko/diagnosis/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/diagnosis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonediagnosis/"/>
+    </url>
+    <url>
+        <loc>Noneko/roadmap/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneroadmap/"/>
+    </url>
+    <url>
+        <loc>Noneko/learning/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/"/>
+    </url>
+    <url>
+        <loc>Noneko/learning/common-mistakes/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/common-mistakes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/common-mistakes/"/>
+    </url>
+    <url>
+        <loc>Noneko/learning/complexity-guide/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/complexity-guide/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/complexity-guide/"/>
+    </url>
+    <url>
+        <loc>Noneko/learning/mobile-app-plan/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/mobile-app-plan/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/mobile-app-plan/"/>
+    </url>
+    <url>
+        <loc>Noneko/learning/problem-patterns/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/problem-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/problem-patterns/"/>
+    </url>
+    <url>
+        <loc>Noneko/learning/python-basics/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/python-basics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/python-basics/"/>
+    </url>
+    <url>
+        <loc>Noneko/learning/review-checklists/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/learning/review-checklists/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonelearning/review-checklists/"/>
+    </url>
+    <url>
+        <loc>Noneko/patterns/bfs-dfs/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/bfs-dfs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/bfs-dfs/"/>
+    </url>
+    <url>
+        <loc>Noneko/patterns/binary-search/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/binary-search/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/binary-search/"/>
+    </url>
+    <url>
+        <loc>Noneko/patterns/dp/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/dp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/dp/"/>
+    </url>
+    <url>
+        <loc>Noneko/patterns/greedy/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/greedy/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/greedy/"/>
+    </url>
+    <url>
+        <loc>Noneko/patterns/hash/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/hash/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/hash/"/>
+    </url>
+    <url>
+        <loc>Noneko/patterns/prefix-sum/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/prefix-sum/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/prefix-sum/"/>
+    </url>
+    <url>
+        <loc>Noneko/patterns/sort/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/sort/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/sort/"/>
+    </url>
+    <url>
+        <loc>Noneko/patterns/two-pointer/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/patterns/two-pointer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/two-pointer/"/>
+    </url>
+    <url>
+        <loc>Noneko/practice/0001-order-settlement/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/practice/0001-order-settlement/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepractice/0001-order-settlement/"/>
+    </url>
+    <url>
+        <loc>Noneko/practice/0002-popular-products/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/practice/0002-popular-products/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepractice/0002-popular-products/"/>
+    </url>
+    <url>
+        <loc>Noneko/practice/0003-range-sales-query/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/practice/0003-range-sales-query/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepractice/0003-range-sales-query/"/>
+    </url>
+    <url>
+        <loc>Noneko/reviews/week-01/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/reviews/week-01/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereviews/week-01/"/>
+    </url>
+    <url>
+        <loc>Noneko/tools/python-editor/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/tools/python-editor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonetools/python-editor/"/>
+    </url>
+    <url>
+        <loc>Noneko/wrong-notes/0001-order-settlement/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/wrong-notes/0001-order-settlement/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonewrong-notes/0001-order-settlement/"/>
+    </url>
+    <url>
+        <loc>Noneko/wrong-notes/0002-popular-products/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="Noneko/wrong-notes/0002-popular-products/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonewrong-notes/0002-popular-products/"/>
+    </url>
+</urlset>
