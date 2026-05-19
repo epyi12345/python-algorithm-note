@@ -57,3 +57,122 @@ Rules:
 - The dashboard should track difficulty for each recent problem.
 - Use the internal difficulty level, not external BOJ/Programmers tiers,
   unless explicitly added later as a separate field.
+
+## Commit and PR messages
+
+### Strict commit title rules
+
+- Do not use generic lowercase Conventional Commits such as:
+  - docs: add ...
+  - feat: add ...
+  - chore: update ...
+- The type is case-sensitive and must use one of the repository's
+  allowed tags exactly as written:
+  - Feat
+  - Fix
+  - Design
+  - !BREAKING CHANGE
+  - !HOTFIX
+  - Style
+  - Refactor
+  - Comment
+  - Docs
+  - Test
+  - Chore
+  - Rename
+  - Remove
+- The commit title must use this format exactly:
+
+  Type(optional-scope): Subject
+
+- There must be exactly one space after the colon.
+- Do not wrap the subject in quotes.
+- Do not end the title with punctuation.
+- English subjects must start with an uppercase imperative verb.
+- Prefer these English verbs:
+  - Add
+  - Fix
+  - Change
+- Korean subjects must start with:
+  - 추가
+  - 고침
+  - 변경
+
+### Valid and invalid examples
+
+Invalid:
+
+```text
+docs: add mobile learning materials
+```
+
+Valid:
+
+```text
+Docs: Add mobile learning materials
+```
+
+Invalid:
+
+```text
+chore: update mkdocs config.
+```
+
+Valid:
+
+```text
+Chore: Change MkDocs configuration
+```
+
+Invalid:
+
+```text
+Docs: "Add Python editor page"
+```
+
+Valid:
+
+```text
+Docs: Add Python editor page
+```
+
+Invalid:
+
+```text
+Add mobile learning materials
+```
+
+Valid:
+
+```text
+Docs: Add mobile learning materials
+```
+
+### Required final suggestion format
+
+At the end of every task, Codex must suggest messages in this exact
+format:
+
+```text
+Commit title:
+Docs: Add example title
+
+Commit body:
+Add a concise explanation of what changed and why.
+
+Pull request title:
+Docs: Add example title
+
+Pull request description:
+## Summary
+
+- Add the main change
+- Update related documentation
+
+## Notes
+
+Mention important review notes if needed.
+```
+
+- Before presenting final commit or PR suggestions, check them against
+the strict commit title rules and correct them if they do not match.
