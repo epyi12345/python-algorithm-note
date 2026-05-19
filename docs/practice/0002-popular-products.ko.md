@@ -4,7 +4,7 @@
 
 ## 유형
 
-Hash / Implementation / Duplicate handling / Sorting / Tie-break
+해시(hash) / 구현(implementation) / 중복 제거(duplicate handling) / 정렬(sorting) / Tie-break
 
 ## 난이도
 
@@ -29,21 +29,20 @@ Lv.1+ Basic
 
 ## 문제 요약
 
-A shopping mall provides purchase logs for one day.
+쇼핑몰에서 하루 동안의 구매 로그를 제공합니다.
 
-Each log has this format:
+각 로그의 형식은 다음과 같습니다:
 
 ```text
 customer_id product quantity status
 ```
 
-The status is one of:
+status 값은 다음 중 하나입니다:
 
 - BUY
 - CANCEL
 
-You need to calculate the final sales quantity for each product and
-print the product or products with the highest final sales quantity.
+각 상품의 최종 판매 수량을 계산하고, 최종 수량이 가장 큰 상품(들)만 출력해야 합니다.
 
 ## 규칙
 
@@ -51,11 +50,11 @@ print the product or products with the highest final sales quantity.
 2. CANCEL decreases the product quantity.
 3. If logs with the same customer_id, product, quantity, and status
    appear multiple times, process that log only once.
-4. Products with final quantity less than or equal to 0 are excluded.
+4. 최종 수량이 0 이하인 상품은 제외합니다.
 5. Print only the product or products with the highest final quantity.
 6. If multiple products have the same highest quantity, print all of
    them in ascending product-name order.
-7. If there are no products to print, print NONE.
+7. 출력할 상품이 없으면 NONE을 출력합니다.
 
 ## 입력 형식
 
@@ -68,8 +67,7 @@ customer_id product quantity status
 
 ## 출력 형식
 
-Print the product name and final quantity for the product or products
-with the highest final quantity.
+최종 수량이 가장 큰 상품(들)의 이름과 수량을 출력합니다.
 
 ```text
 product quantity
@@ -77,7 +75,7 @@ product quantity
 ...
 ```
 
-If there are no valid products, print:
+유효한 상품이 없으면 다음을 출력합니다:
 
 ```text
 NONE
@@ -121,15 +119,15 @@ carrot 5
 
 ### Explanation 1
 
-The duplicated log:
+중복된 로그:
 
 ```text
 U001 apple 3 BUY
 ```
 
-appears twice but must be processed only once.
+두 번 등장하지만 한 번만 처리해야 합니다.
 
-Final quantities:
+최종 수량:
 
 ```text
 apple = 3 + 2 - 1 = 4
@@ -164,15 +162,15 @@ NONE
 
 ### Explanation 2
 
-The duplicated log:
+중복된 로그:
 
 ```text
 U001 book 2 BUY
 ```
 
-appears twice but must be processed only once.
+두 번 등장하지만 한 번만 처리해야 합니다.
 
-Final quantities:
+최종 수량:
 
 ```text
 book = 2 - 2 = 0
@@ -180,21 +178,20 @@ pen = -1
 bag = -3
 ```
 
-There are no products with final quantity greater than 0, so NONE is
-printed.
+최종 수량이 0보다 큰 상품이 없으므로 NONE을 출력합니다.
 
 ## 평가 포인트
 
-- Correct duplicate log handling
-- Correct BUY and CANCEL processing
-- Correct use of set for processed logs
-- Correct use of dict or defaultdict for product accumulation
-- Excluding products with final quantity less than or equal to 0
-- Finding the maximum final quantity
-- Printing all products tied for maximum quantity
-- Sorting tied products by product name
-- Printing NONE when there are no valid products
-- Explaining time and space complexity
+- 중복 로그 처리 정확성
+- BUY/CANCEL 처리 정확성
+- 처리된 로그 추적을 위한 set 사용 정확성
+- 상품 집계를 위한 dict/defaultdict 사용 정확성
+- 최종 수량이 0 이하인 상품 제외 여부
+- 최대 최종 수량 계산 정확성
+- 최대 수량 동률 상품 출력 여부
+- 동률 상품명 정렬 여부
+- 유효한 상품이 없을 때 NONE 출력 여부
+- 시간복잡도(time complexity)와 공간복잡도(space complexity) 설명 여부
 
 ## 온라인 에디터
 

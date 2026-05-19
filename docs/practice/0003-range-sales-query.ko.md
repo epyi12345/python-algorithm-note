@@ -4,7 +4,7 @@
 
 ## 유형
 
-Prefix Sum / Range Query / Implementation
+누적합(prefix sum) / 구간 질의(range query) / 구현(implementation)
 
 ## 난이도
 
@@ -159,7 +159,7 @@ day 5 to day 6 = 20 + 5 = 25
 - Correct range sum formula
 - Avoiding O(NQ) repeated summation
 - Handling single-day queries where L equals R
-- Explaining time and space complexity
+- 시간복잡도(time complexity)와 공간복잡도(space complexity) 설명 여부
 
 ## 온라인 에디터
 

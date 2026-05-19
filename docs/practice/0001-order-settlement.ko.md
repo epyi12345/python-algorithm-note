@@ -4,7 +4,7 @@
 
 ## 유형
 
-Hash / Implementation / Duplicate handling / Sorting
+해시(hash) / 구현(implementation) / 중복 제거(duplicate handling) / 정렬(sorting)
 
 ## 난이도
 
@@ -28,20 +28,20 @@ Lv.1 Basic
 
 ## 문제 요약
 
-A shopping mall provides order logs for one day.
+쇼핑몰에서 하루 동안의 주문 로그를 제공합니다.
 
-Each log has this format:
+각 로그의 형식은 다음과 같습니다:
 
 ```text
 order_id product quantity status
 ```
 
-The status is one of:
+status 값은 다음 중 하나입니다:
 
 - PAY
 - REFUND
 
-You need to calculate the final sales quantity for each product.
+각 상품의 최종 판매 수량을 계산해야 합니다.
 
 ## 규칙
 
@@ -49,9 +49,9 @@ You need to calculate the final sales quantity for each product.
 2. REFUND decreases the product quantity.
 3. If logs with the same order_id, product, quantity, and status appear
    multiple times, process that log only once.
-4. Products with final quantity less than or equal to 0 are not printed.
+4. 최종 수량이 0 이하인 상품은 출력하지 않습니다.
 5. Print products in ascending product-name order.
-6. If there are no products to print, print nothing.
+6. 출력할 상품이 없으면 아무것도 출력하지 않습니다.
 
 ## 입력 형식
 
@@ -70,7 +70,7 @@ product quantity
 ...
 ```
 
-If there are no valid products, print nothing.
+유효한 상품이 없으면 아무것도 출력하지 않습니다.
 
 ## 제한 조건
 
@@ -110,15 +110,15 @@ water20 4
 
 ### Explanation 1
 
-The duplicated log:
+중복된 로그:
 
 ```text
 A001 water10 2 PAY
 ```
 
-appears twice but must be processed only once.
+두 번 등장하지만 한 번만 처리해야 합니다.
 
-Final quantities:
+최종 수량:
 
 ```text
 blanket = 1 - 1 = 0
@@ -151,9 +151,9 @@ apple 2
 
 ### Explanation 2
 
-The duplicated PAY log for apple is processed only once.
+apple의 중복 PAY 로그는 한 번만 처리됩니다.
 
-Final quantities:
+최종 수량:
 
 ```text
 apple = 3 - 1 = 2
@@ -161,18 +161,18 @@ banana = 2 - 2 = 0
 carrot = -5
 ```
 
-Only apple is printed.
+apple만 출력됩니다.
 
 ## 평가 포인트
 
-- Correct duplicate log handling
-- Correct PAY and REFUND processing
-- Correct use of set for processed logs
-- Correct use of dict or defaultdict for product accumulation
-- Excluding products with final quantity less than or equal to 0
-- Sorting output by product name
-- Removing debug output before submission
-- Explaining time and space complexity
+- 중복 로그 처리 정확성
+- PAY/REFUND 처리 정확성
+- 처리된 로그 추적을 위한 set 사용 정확성
+- 상품 집계를 위한 dict/defaultdict 사용 정확성
+- 최종 수량이 0 이하인 상품 제외 여부
+- 상품명 기준 정렬 출력 여부
+- 제출 전 debug output 제거 여부
+- 시간복잡도(time complexity)와 공간복잡도(space complexity) 설명 여부
 
 ## 온라인 에디터
 

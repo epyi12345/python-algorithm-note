@@ -4,19 +4,18 @@
 
 ## 문제 요약
 
-- Given purchase logs with customer id, product, quantity, and status.
-- BUY increases product quantity.
-- CANCEL decreases product quantity.
-- Identical logs must be processed only once.
-- Products with final quantity less than or equal to 0 are excluded.
-- Only products with the highest final quantity are printed.
-- If multiple products share the highest quantity, print them by
-  product name in ascending order.
-- If there are no valid products, print NONE.
+- customer id, product, quantity, status로 구성된 구매 로그가 주어집니다.
+- BUY는 상품 수량을 증가시킵니다.
+- CANCEL은 상품 수량을 감소시킵니다.
+- 완전히 동일한 로그는 한 번만 처리해야 합니다.
+- 최종 수량이 0 이하인 상품은 제외합니다.
+- 최종 수량이 가장 큰 상품만 출력합니다.
+- 최대 수량이 같은 상품이 여러 개면 상품명 오름차순으로 출력합니다.
+- 유효한 상품이 없으면 NONE을 출력합니다.
 
 ## 유형
 
-Hash / Implementation / Duplicate handling / Sorting / Tie-break
+해시(hash) / 구현(implementation) / 중복 제거(duplicate handling) / 정렬(sorting) / Tie-break
 
 ## 난이도
 
@@ -24,7 +23,7 @@ Lv.1+ Basic
 
 ## 상태
 
-Solved with review
+리뷰와 함께 해결
 
 ## 점수
 
@@ -92,8 +91,8 @@ if __name__ == "__main__":
 
 문제점:
 
-- The code printed all positive products.
-- The problem asks for only products with the maximum quantity.
+- 코드가 양수인 상품을 모두 출력했습니다.
+- 문제는 최대 수량을 가진 상품만 출력하라고 요구합니다.
 - Tie-break sorting by product name was not handled.
 - NONE checking happened after printing positive products.
 
@@ -165,7 +164,7 @@ if __name__ == "__main__":
 잘한 점:
 
 - NONE handling was moved before result printing.
-- The code tried to print only maximum-quantity products.
+- 코드가 최대 수량 상품만 출력하려고 시도했습니다.
 - Duplicate filtering with continue was still correct.
 
 문제점:
@@ -247,7 +246,7 @@ if __name__ == "__main__":
 잘한 점:
 
 - Quantity was converted to int early.
-- The code handled maximum ties.
+- 코드가 최대값 동률 처리를 수행했습니다.
 - The tied products were sorted by product name.
 - The solution produced the expected result.
 
@@ -338,7 +337,7 @@ if __name__ == "__main__":
 
 - sorted_dict was still unnecessary.
 - NONE can be checked by testing whether valid is empty.
-- The code performed an avoidable O(M log M) sort.
+- 코드가 불필요한 O(M log M) 정렬을 수행했습니다.
 
 개선 방향:
 
@@ -419,8 +418,8 @@ if __name__ == "__main__":
 
 문제점:
 
-- No major correctness issue remains.
-- Minor style improvement: max_num could be named max_qty.
+- 주요 정답성 문제는 더 이상 없습니다.
+- 사소한 스타일 개선: max_num을 max_qty로 바꿀 수 있습니다.
 
 개선 방향:
 
@@ -494,13 +493,13 @@ if __name__ == "__main__":
 
 ## 복잡도
 
-For the final solution:
+최종 해법 기준:
 
 - Time complexity: O(N + M + K log K)
 - Worst-case time complexity: O(N + M log M)
 - Space complexity: O(N + M)
 
-Where:
+기호 설명:
 
 - N is the number of logs.
 - M is the number of product types.

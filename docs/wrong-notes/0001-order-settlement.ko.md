@@ -4,16 +4,16 @@
 
 ## 문제 요약
 
-- Given order logs with order id, product, quantity, and status.
-- PAY increases product quantity.
-- REFUND decreases product quantity.
-- Identical logs must be processed only once.
-- Products with final quantity less than or equal to 0 are not printed.
-- Output must be sorted by product name.
+- order id, product, quantity, status로 구성된 주문 로그가 주어집니다.
+- PAY는 상품 수량을 증가시킵니다.
+- REFUND는 상품 수량을 감소시킵니다.
+- 완전히 동일한 로그는 한 번만 처리해야 합니다.
+- 최종 수량이 0 이하인 상품은 출력하지 않습니다.
+- 출력은 상품명 오름차순이어야 합니다.
 
 ## 유형
 
-Hash / Implementation / Duplicate handling / Sorting
+해시(hash) / 구현(implementation) / 중복 제거(duplicate handling) / 정렬(sorting)
 
 ## 난이도
 
@@ -21,7 +21,7 @@ Lv.1 Basic
 
 ## 상태
 
-Solved with review
+리뷰와 함께 해결
 
 ## 점수
 
@@ -154,7 +154,7 @@ if __name__ == "__main__":
 
 문제점:
 
-- The code still uses pass.
+- 코드에서 여전히 pass를 사용하고 있습니다.
 - Normal calculation logic is nested inside else.
 - Extra indentation makes future mistakes more likely.
 
@@ -169,7 +169,7 @@ if __name__ == "__main__":
 
 ## 최종 권장 해법
 
-Use this code:
+다음 코드를 사용합니다:
 
 ```python
 import sys
