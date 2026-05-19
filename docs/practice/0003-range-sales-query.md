@@ -164,7 +164,9 @@ day 5 to day 6 = 20 + 5 = 25
 Use OneCompiler Python editor to test your solution when a local Python
 environment is not available.
 
-[Open Python Editor ↗](https://onecompiler.com/python){ .md-button .md-button--primary target="_blank" rel="noopener" }
+[Open Python Editor](../tools/python-editor.md){ .md-button .md-button--primary }
+
+[Open OneCompiler in a new tab ↗](https://onecompiler.com/python){ target="_blank" rel="noopener" }
 
 ## Code Template
 
