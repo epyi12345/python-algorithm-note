@@ -326,21 +326,16 @@ body.editor-workspace-page .python-editor-frame {
 
 
 body.wrong-note-wide-page .md-sidebar--secondary {
-  display: block;
-  position: sticky;
-  top: 3.2rem;
-  width: 14rem;
-  min-width: 14rem;
-  max-width: 16rem;
-  max-height: calc(100vh - 4rem);
-  overflow-y: auto;
-  padding-right: 0.75rem;
-  flex-shrink: 0;
+  display: none;
 }
 
 body.wrong-note-wide-page .md-main__inner {
   max-width: none;
   margin: 0;
+}
+
+body.wrong-note-wide-page .md-grid {
+  max-width: none;
 }
 
 body.wrong-note-wide-page .md-content {
@@ -350,11 +345,7 @@ body.wrong-note-wide-page .md-content {
 
 body.wrong-note-wide-page .md-content__inner {
   margin: 0;
-  padding: 1rem 1.25rem 2rem;
-}
-
-body.wrong-note-wide-page .md-grid {
-  max-width: none;
+  padding: 1rem 18rem 2rem 1.25rem;
 }
 
 body.wrong-note-wide-page .md-header__button[for="__drawer"] {
@@ -381,6 +372,55 @@ body.wrong-note-wide-page .md-header__button[for="__drawer"] {
   }
 }
 
+.wrong-note-toc {
+  position: fixed;
+  top: 4rem;
+  right: 1rem;
+  z-index: 4;
+  width: 14rem;
+  max-height: calc(100vh - 5rem);
+  padding: 0.75rem 0.85rem;
+  overflow-y: auto;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.6rem;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+}
+
+.wrong-note-toc__title {
+  margin-bottom: 0.5rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.wrong-note-toc__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.wrong-note-toc__link {
+  display: block;
+  padding: 0.18rem 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.72rem;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.wrong-note-toc__link:hover {
+  color: var(--md-typeset-a-color);
+  text-decoration: none;
+}
+
+.wrong-note-toc__link--sub {
+  padding-left: 0.75rem;
+  font-size: 0.68rem;
+}
+
 body.wrong-note-wide-page .code-review {
   grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.75fr);
   gap: 1rem;
@@ -398,11 +438,17 @@ body.wrong-note-wide-page .code-review__note {
   align-self: start;
 }
 
-@media (max-width: 1100px) {
-  body.wrong-note-wide-page .md-sidebar--secondary {
-    display: none;
+@media (max-width: 1200px) {
+  body.wrong-note-wide-page .md-content__inner {
+    padding-right: 1.25rem;
   }
 
+  .wrong-note-toc {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
   body.wrong-note-wide-page .code-review {
     grid-template-columns: 1fr;
   }
