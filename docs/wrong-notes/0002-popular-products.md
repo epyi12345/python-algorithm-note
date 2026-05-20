@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 0002. Popular Products
 
 ## Problem Summary

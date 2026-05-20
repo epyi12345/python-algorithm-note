@@ -2,6 +2,8 @@
 
 English is the default version. Korean translations should use the `.ko.md` suffix when added.
 
+오답노트는 넓은 레이아웃을 사용합니다. `hide: toc` 프론트매터를 추가하고, 시도와 피드백은 좌우 배치 `.code-review` 레이아웃으로 작성하세요.
+
 ## 문제 요약
 
 ## 유형

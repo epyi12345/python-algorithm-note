@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 0001. Order Settlement
 
 ## Problem Summary

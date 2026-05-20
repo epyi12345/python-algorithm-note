@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 0002. Popular Products
 
 한국어 제목: 인기 상품

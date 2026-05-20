@@ -263,3 +263,11 @@ the strict commit title rules and correct them if they do not match.
 - Binary Search -> 이분 탐색(binary search)
 - Greedy -> 그리디(greedy)
 - DP -> DP
+
+
+## Problem review notes
+
+- Wrong-answer notes should use a wide review layout because they often contain side-by-side code and feedback.
+- Hide the right table of contents on wrong-note pages.
+- Keep navigation accessible through the hamburger menu.
+- Preserve normal documentation layout for learning, dashboard, roadmap, and practice pages.

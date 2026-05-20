@@ -323,3 +323,69 @@ body.editor-workspace-page .python-editor-frame {
   height: calc(100vh - 150px);
   min-height: 760px;
 }
+
+
+body.wrong-note-wide-page .md-sidebar--secondary {
+  display: none;
+}
+
+body.wrong-note-wide-page .md-main__inner {
+  max-width: none;
+  margin: 0;
+}
+
+body.wrong-note-wide-page .md-content {
+  max-width: none;
+}
+
+body.wrong-note-wide-page .md-content__inner {
+  margin: 0;
+  padding: 1rem 1.25rem 2rem;
+}
+
+body.wrong-note-wide-page .md-grid {
+  max-width: none;
+}
+
+body.wrong-note-wide-page .md-header__button[for="__drawer"] {
+  display: inline-flex;
+}
+
+@media screen and (min-width: 76.25em) {
+  body.wrong-note-wide-page .md-sidebar--primary {
+    position: fixed;
+    top: 2.4rem;
+    left: 0;
+    z-index: 15;
+    width: 15rem;
+    height: calc(100vh - 2.4rem);
+    background: var(--md-default-bg-color);
+    border-right: 1px solid var(--md-default-fg-color--lightest);
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+    overflow-y: auto;
+  }
+
+  body.wrong-note-wide-page #__drawer:checked ~ .md-container .md-sidebar--primary {
+    transform: translateX(0);
+  }
+}
+
+body.wrong-note-wide-page .code-review {
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: 1rem;
+}
+
+body.wrong-note-wide-page .code-review__code pre {
+  max-height: none;
+}
+
+body.wrong-note-wide-page .code-review__note {
+  align-self: start;
+}
+
+@media (max-width: 900px) {
+  body.wrong-note-wide-page .code-review {
+    grid-template-columns: 1fr;
+  }
+}

@@ -11,6 +11,9 @@
     });
 
     document.body.classList.toggle('editor-workspace-page', isEditorWorkspacePage);
+
+    var isWrongNotePage = window.location.pathname.indexOf('/wrong-notes/') !== -1;
+    document.body.classList.toggle('wrong-note-wide-page', isWrongNotePage);
   }
 
   document.addEventListener('DOMContentLoaded', applyEditorWorkspaceClass);
