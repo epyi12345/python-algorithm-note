@@ -27,25 +27,25 @@ Lv.2 Core
 
 ## 문제 요약
 
-A shopping mall records the number of products sold each day.
+쇼핑몰에서 매일 판매된 상품 수를 기록합니다.
 
-There are N days of sales data.
+총 N일치 판매 데이터가 있습니다.
 
-You are given Q range queries.  
-Each query asks for the total number of products sold from day L to day R,
-inclusive.
+Q개의 구간 질의(range query)가 주어집니다.
+각 질의는 day L부터 day R까지(양 끝 포함) 판매된 상품 수의 합을
+요청합니다.
 
-For each query, print the total sales in that range.
+각 질의마다 해당 구간의 총 판매량을 출력합니다.
 
 ## 규칙
 
-1. The sales data contains N integers.
-2. The i-th integer represents the number of products sold on day i.
-3. Each query contains two integers L and R.
-4. For each query, print the sum of sales from day L to day R.
-5. Days are numbered from 1 to N.
-6. L and R are inclusive.
-7. The solution should be efficient for large N and Q.
+1. 판매 데이터는 N개의 정수로 구성됩니다.
+2. i번째 정수는 i일차 판매 수량을 의미합니다.
+3. 각 질의는 두 정수 L, R로 구성됩니다.
+4. 각 질의에 대해 day L부터 day R까지의 판매 합을 출력합니다.
+5. day 번호는 1부터 N까지입니다.
+6. L과 R은 구간에 포함됩니다.
+7. N과 Q가 클 때도 효율적으로 동작해야 합니다.
 
 ## 입력 형식
 
@@ -59,7 +59,7 @@ L R
 
 ## 출력 형식
 
-Print one integer for each query.
+각 질의마다 정수 하나를 출력합니다.
 
 ```text
 range_sum
@@ -98,21 +98,21 @@ range_sum
 40
 ```
 
-### Explanation 1
+### 예시 설명 1
 
-For the first query:
+첫 번째 질의:
 
 ```text
 day 1 to day 3 = 10 + 20 + 30 = 60
 ```
 
-For the second query:
+두 번째 질의:
 
 ```text
 day 2 to day 5 = 20 + 30 + 40 + 50 = 140
 ```
 
-For the third query:
+세 번째 질의:
 
 ```text
 day 4 to day 4 = 40
@@ -140,9 +140,9 @@ day 4 to day 4 = 40
 25
 ```
 
-### Explanation 2
+### 예시 설명 2
 
-Final query results:
+질의 결과:
 
 ```text
 day 1 to day 6 = 0 + 5 + 0 + 10 + 20 + 5 = 40
@@ -153,12 +153,12 @@ day 5 to day 6 = 20 + 5 = 25
 
 ## 평가 포인트
 
-- Correct input handling
-- Correct use of 1-based indexes
-- Correct prefix sum construction
-- Correct range sum formula
-- Avoiding O(NQ) repeated summation
-- Handling single-day queries where L equals R
+- 입력 처리 정확성
+- 1-based 인덱스 사용 정확성
+- 누적합(prefix sum) 구성 정확성
+- 구간 합 공식 적용 정확성
+- O(NQ) 반복 합산 회피 여부
+- L과 R이 같은 단일 day 질의 처리
 - 시간복잡도(time complexity)와 공간복잡도(space complexity) 설명 여부
 
 ## 온라인 에디터
@@ -181,20 +181,20 @@ if __name__ == "__main__":
 
 ## 힌트
 
-A direct sum for every query can be too slow.
+질의마다 직접 합산하면 너무 느릴 수 있습니다.
 
-If every query uses:
+모든 질의에서 다음을 사용하면:
 
 ```python
 sum(sales[L-1:R])
 ```
 
-the worst-case time complexity can become O(NQ).
+최악의 시간복잡도는 O(NQ)까지 커질 수 있습니다.
 
-Try to create a prefix sum list where:
+다음 형태의 누적합(prefix sum) 리스트를 만들어 보세요:
 
 ```text
 prefix[i] = total sales from day 1 to day i
 ```
 
-Then the range sum from L to R can be calculated quickly.
+그러면 L부터 R까지의 구간 합을 빠르게 계산할 수 있습니다.

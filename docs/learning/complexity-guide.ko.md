@@ -7,11 +7,11 @@
 
 ## N 크기 판단 표
 
-| Input size (N) | Preferred complexity |
+| 입력 크기 (N) | 권장 복잡도 |
 |---|---|
-| up to 1,000 | O(N^2) can be acceptable |
-| up to 100,000 | Usually O(N log N) or O(N) |
-| up to 1,000,000 | Usually O(N) or better |
+| 최대 1,000 | O(N^2) 허용 가능 |
+| 최대 100,000 | 보통 O(N log N) 또는 O(N) 필요 |
+| 최대 1,000,000 | 보통 O(N) 또는 그 이상 효율 필요 |
 
 ## 자주 쓰는 복잡도
 

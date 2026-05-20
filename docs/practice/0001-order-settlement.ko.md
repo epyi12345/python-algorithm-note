@@ -45,12 +45,12 @@ status 값은 다음 중 하나입니다:
 
 ## 규칙
 
-1. PAY increases the product quantity.
-2. REFUND decreases the product quantity.
-3. If logs with the same order_id, product, quantity, and status appear
-   multiple times, process that log only once.
+1. PAY는 해당 상품의 수량을 증가시킵니다.
+2. REFUND는 해당 상품의 수량을 감소시킵니다.
+3. order_id, product, quantity, status가 모두 같은 로그가 여러 번
+   등장하면 한 번만 처리합니다.
 4. 최종 수량이 0 이하인 상품은 출력하지 않습니다.
-5. Print products in ascending product-name order.
+5. 상품명 오름차순으로 출력합니다.
 6. 출력할 상품이 없으면 아무것도 출력하지 않습니다.
 
 ## 입력 형식
@@ -127,7 +127,7 @@ water10 = 2 + 1 - 1 = 2
 water20 = 1 + 3 = 4
 ```
 
-blanket is excluded because its final quantity is 0.
+blanket은 최종 수량이 0이므로 제외됩니다.
 
 ### Example 2
 

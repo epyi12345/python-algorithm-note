@@ -46,14 +46,14 @@ status 값은 다음 중 하나입니다:
 
 ## 규칙
 
-1. BUY increases the product quantity.
-2. CANCEL decreases the product quantity.
-3. If logs with the same customer_id, product, quantity, and status
-   appear multiple times, process that log only once.
+1. BUY는 해당 상품의 수량을 증가시킵니다.
+2. CANCEL은 해당 상품의 수량을 감소시킵니다.
+3. customer_id, product, quantity, status가 모두 같은 로그가 여러 번
+   등장하면 한 번만 처리합니다.
 4. 최종 수량이 0 이하인 상품은 제외합니다.
-5. Print only the product or products with the highest final quantity.
-6. If multiple products have the same highest quantity, print all of
-   them in ascending product-name order.
+5. 최종 수량이 가장 큰 상품만 출력합니다.
+6. 최종 수량이 가장 큰 상품이 여러 개라면 상품명 오름차순으로 모두
+   출력합니다.
 7. 출력할 상품이 없으면 NONE을 출력합니다.
 
 ## 입력 형식
@@ -136,10 +136,10 @@ carrot = 4 + 1 = 5
 melon = -2
 ```
 
-melon is excluded because its final quantity is less than or equal to 0.
+melon은 최종 수량이 0 이하이므로 제외됩니다.
 
-The highest final quantity is 5, so banana and carrot are printed in
-ascending product-name order.
+최대 최종 수량은 5이므로 banana와 carrot을 상품명 오름차순으로
+출력합니다.
 
 ### Example 2
 

@@ -9,7 +9,7 @@
 - CANCEL은 상품 수량을 감소시킵니다.
 - 완전히 동일한 로그는 한 번만 처리해야 합니다.
 - 최종 수량이 0 이하인 상품은 제외합니다.
-- 최종 수량이 가장 큰 상품만 출력합니다.
+- 최종 수량이 가장 큰 상품만 출력해야 합니다.
 - 최대 수량이 같은 상품이 여러 개면 상품명 오름차순으로 출력합니다.
 - 유효한 상품이 없으면 NONE을 출력합니다.
 
@@ -93,15 +93,15 @@ if __name__ == "__main__":
 
 - 코드가 양수인 상품을 모두 출력했습니다.
 - 문제는 최대 수량을 가진 상품만 출력하라고 요구합니다.
-- Tie-break sorting by product name was not handled.
-- NONE checking happened after printing positive products.
+- 상품명 기준 동률 처리(tie-break sorting)를 반영하지 못했습니다.
+- 양수 상품을 출력한 뒤에 NONE 여부를 확인했습니다.
 
 개선 방향:
 
-- Filter positive products first.
-- If no valid products exist, print NONE and return.
-- Find the maximum quantity.
-- Print only products whose quantity equals the maximum.
+- 먼저 양수 상품만 필터링(filtering)하세요.
+- 유효한 상품이 없으면 NONE을 출력하고 종료하세요.
+- 최대 수량을 계산하세요.
+- 수량이 최대값과 같은 상품만 출력합니다.
 
 </div>
 </div>
@@ -163,21 +163,21 @@ if __name__ == "__main__":
 
 잘한 점:
 
-- NONE handling was moved before result printing.
+- NONE 처리를 결과 출력보다 먼저 배치했습니다.
 - 코드가 최대 수량 상품만 출력하려고 시도했습니다.
-- Duplicate filtering with continue was still correct.
+- continue를 이용한 중복 필터링은 여전히 올바릅니다.
 
 문제점:
 
-- Products tied by quantity were not sorted by product name.
-- sorted_dict was sorted only by quantity, not by product name.
-- max_num = int() works as 0, but the intent is unclear.
+- 수량 동률 상품이 상품명 기준으로 정렬되지 않았습니다.
+- sorted_dict가 수량 기준으로만 정렬되고 상품명 기준이 반영되지 않았습니다.
+- max_num = int()는 0으로 동작하지만 의도가 불명확합니다.
 
 개선 방향:
 
-- Convert quantity to int immediately after input.
-- Use meaningful variable names.
-- Separate maximum detection from output sorting.
+- 입력 직후 quantity를 int로 변환하세요.
+- 의미 있는 변수명을 사용하세요.
+- 최대값 계산과 출력 정렬을 분리하세요.
 
 </div>
 </div>
@@ -245,22 +245,22 @@ if __name__ == "__main__":
 
 잘한 점:
 
-- Quantity was converted to int early.
+- quantity를 초기에 int로 변환했습니다.
 - 코드가 최대값 동률 처리를 수행했습니다.
-- The tied products were sorted by product name.
-- The solution produced the expected result.
+- 동률 상품을 상품명 기준으로 정렬했습니다.
+- 기대한 결과를 생성합니다.
 
 문제점:
 
-- Variable names such as a, b, c, d were hard to understand.
-- The full quantity sort was unnecessary.
-- The max_num loop was more indirect than needed.
+- a, b, c, d 같은 변수명은 의미 파악이 어렵습니다.
+- 전체 수량 정렬은 불필요했습니다.
+- max_num 계산 루프가 필요 이상으로 우회적입니다.
 
 개선 방향:
 
-- Use customer_id, product, qty, and status as variable names.
-- Filter valid positive products first.
-- Use max(valid.values()) to get the maximum quantity clearly.
+- customer_id, product, qty, status 같은 변수명을 사용하세요.
+- 먼저 유효한 양수 상품을 필터링하세요.
+- max(valid.values())로 최대 수량을 명확히 계산하세요.
 
 </div>
 </div>
@@ -328,22 +328,22 @@ if __name__ == "__main__":
 
 잘한 점:
 
-- Variable names became much clearer.
-- valid was introduced to store only positive products.
-- max(valid.values()) made the maximum calculation clear.
-- Product-name sorting was handled correctly.
+- 변수명이 훨씬 명확해졌습니다.
+- 양수 상품만 담는 valid를 도입했습니다.
+- max(valid.values())로 최대값 계산이 명확해졌습니다.
+- 상품명 정렬을 올바르게 처리했습니다.
 
 문제점:
 
-- sorted_dict was still unnecessary.
-- NONE can be checked by testing whether valid is empty.
+- sorted_dict는 여전히 불필요합니다.
+- valid가 비었는지 확인해 NONE을 처리할 수 있습니다.
 - 코드가 불필요한 O(M log M) 정렬을 수행했습니다.
 
 개선 방향:
 
-- Remove sorted_dict entirely.
-- Build valid first.
-- Use if not valid to handle NONE.
+- sorted_dict를 완전히 제거하세요.
+- valid를 먼저 구성하세요.
+- if not valid로 NONE을 처리하세요.
 
 </div>
 </div>
