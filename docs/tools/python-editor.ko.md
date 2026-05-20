@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Python Editor
+# 파이썬 에디터
 
 로컬 IDE 또는 Python 실행 환경이 없을 때 이 임베디드 에디터를
 사용하세요.
@@ -21,7 +21,7 @@ hide:
 
 <iframe
   class="python-editor-frame"
-  title="OneCompiler Python Editor"
+  title="OneCompiler 파이썬 에디터"
   src="https://onecompiler.com/embed/python"
   width="100%"
   height="780"

@@ -19,4 +19,4 @@
 
 ## 빠른 도구
 
-- Python Editor: [Open internal editor page](../tools/python-editor.md)
+- 파이썬 에디터: [내부 에디터 페이지 열기](../tools/python-editor.md)

@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# 문제 풀이 작업실
+# 워크벤치
 
 이 페이지에서 문제를 읽으면서 Python 코드를 나란히 작성해보세요.
 
@@ -24,7 +24,7 @@ hide:
 
     <article class="practice-content" id="practice-content">
       <noscript>
-        이 작업실에서 문제 전환 기능을 사용하려면 JavaScript가 필요합니다.
+        이 워크벤치에서 문제 전환 기능을 사용하려면 JavaScript가 필요합니다.
         사이트 네비게이션의 Practice 페이지를 이용하세요.
       </noscript>
     </article>
@@ -42,7 +42,7 @@ hide:
 
     <iframe
       class="workbench-frame"
-      title="OneCompiler Python Editor"
+      title="OneCompiler 파이썬 에디터"
       src="https://onecompiler.com/embed/python?theme=dark&hideNew=true"
       width="100%"
       height="780"

@@ -199,3 +199,67 @@ the strict commit title rules and correct them if they do not match.
 - Keep code blocks and file paths unchanged across translations.
 - Do not machine-translate code, identifiers, commands, or URLs.
 - The language selector should remain available in the site header.
+
+
+## Korean technical writing style
+
+- Korean translations should use natural developer-facing terminology, not literal machine translation.
+- Keep common technical loanwords when they are more natural in Korean developer contexts.
+- Use Korean with English terms in parentheses when it improves clarity.
+- Do not translate code, commands, file paths, package names, URLs, Python keywords, variable names inside code, or commit message examples.
+- Prefer concise technical documentation style over overly formal or verbose prose.
+- Avoid awkward literal translations such as "작업실" for "Workbench" in this site context.
+
+### Korean terminology glossary
+
+- Practice Workbench -> 워크벤치
+- Workbench -> 워크벤치
+- Python Editor -> 파이썬 에디터
+- Editor -> 에디터
+- Dashboard -> 대시보드
+- Roadmap -> 로드맵
+- Learning Materials -> 학습 자료
+- Practice -> 문제 연습
+- Wrong Notes -> 오답노트
+- Problem Summary -> 문제 요약
+- Type -> 유형
+- Difficulty -> 난이도
+- Status -> 상태
+- Prerequisites -> 사전 지식
+- Rules -> 규칙
+- Input Format -> 입력 형식
+- Output Format -> 출력 형식
+- Constraints -> 제약 조건
+- Examples -> 예시
+- Explanation -> 예시 설명
+- Evaluation Points -> 평가 포인트
+- Code Template -> 코드 템플릿
+- Hint -> 힌트
+- Related learning materials -> 관련 학습자료
+- Online Editor -> 온라인 에디터
+- Final Recommended Solution -> 최종 권장 풀이
+- Key Lessons -> 핵심 교훈
+- Complexity -> 복잡도
+- Time complexity -> 시간복잡도
+- Space complexity -> 공간복잡도
+- Review Checklist -> 복습 체크리스트
+- My Attempts -> 내 시도
+- Feedback -> 피드백
+- Correct parts -> 잘한 점
+- Issues -> 문제점
+- Improvement -> 개선 방향
+- Duplicate handling -> 중복 처리
+- Tie-break -> 동률 처리
+- Prefix Sum -> 누적합(prefix sum)
+- Range Query -> 구간 쿼리
+- Filtering -> 필터링
+- Hash -> 해시(hash)
+- Sorting -> 정렬
+- Two Pointer -> 투 포인터(two pointer)
+- Stack -> 스택(stack)
+- Queue -> 큐(queue)
+- BFS -> BFS
+- DFS -> DFS
+- Binary Search -> 이분 탐색(binary search)
+- Greedy -> 그리디(greedy)
+- DP -> DP

@@ -199,12 +199,12 @@ bag = -3
 
 ## 코드 작성
 
-이 문제를 Practice Workbench에서 열어 문제 설명과 파이썬 에디터를
+이 문제를 워크벤치에서 열어 문제 설명과 파이썬 에디터를
 나란히 보며 풀이할 수 있습니다.
 
 [워크벤치에서 풀기](../../tools/practice-workbench/?problem=0002){ .md-button .md-button--primary }
 
-[Open Python Editor](../tools/python-editor.md){ .md-button .md-button--primary }
+[파이썬 에디터 열기](../tools/python-editor.md){ .md-button .md-button--primary }
 
 [Open OneCompiler in a new tab ↗](https://onecompiler.com/python){ target="_blank" rel="noopener" }
 
