@@ -202,27 +202,27 @@ if __name__ == "__main__":
 
 <div class="learning-links" markdown="1">
 
-<a class="learning-link-card" href="../learning/python-input/">
+<a class="learning-link-card" href="../../learning/python-input/">
   <span class="learning-link-card__title">파이썬 입력</span>
   <span class="learning-link-card__desc">sys.stdin.readline, split, map, 반복 입력</span>
 </a>
 
-<a class="learning-link-card" href="../learning/python-set/">
+<a class="learning-link-card" href="../../learning/python-set/">
   <span class="learning-link-card__title">set</span>
   <span class="learning-link-card__desc">중복 제거, 포함 여부 확인, tuple key</span>
 </a>
 
-<a class="learning-link-card" href="../learning/python-dict-defaultdict/">
+<a class="learning-link-card" href="../../learning/python-dict-defaultdict/">
   <span class="learning-link-card__title">dict / defaultdict</span>
   <span class="learning-link-card__desc">상품별 수량 누적, 기본값 처리</span>
 </a>
 
-<a class="learning-link-card" href="../learning/pass-vs-continue/">
+<a class="learning-link-card" href="../../learning/pass-vs-continue/">
   <span class="learning-link-card__title">pass와 continue</span>
   <span class="learning-link-card__desc">반복문에서 건너뛰기와 아무것도 하지 않기의 차이</span>
 </a>
 
-<a class="learning-link-card" href="../learning/python-sorting/">
+<a class="learning-link-card" href="../../learning/python-sorting/">
   <span class="learning-link-card__title">정렬</span>
   <span class="learning-link-card__desc">sorted, key, lambda, 오름차순과 내림차순</span>
 </a>

@@ -201,27 +201,27 @@ quantities with `defaultdict(int)`.
 
 <div class="learning-links" markdown="1">
 
-<a class="learning-link-card" href="../learning/python-input/">
+<a class="learning-link-card" href="../../learning/python-input/">
   <span class="learning-link-card__title">Python input</span>
   <span class="learning-link-card__desc">sys.stdin.readline, split, map, repeated input</span>
 </a>
 
-<a class="learning-link-card" href="../learning/python-set/">
+<a class="learning-link-card" href="../../learning/python-set/">
   <span class="learning-link-card__title">set</span>
   <span class="learning-link-card__desc">Duplicate handling, membership checks, tuple keys</span>
 </a>
 
-<a class="learning-link-card" href="../learning/python-dict-defaultdict/">
+<a class="learning-link-card" href="../../learning/python-dict-defaultdict/">
   <span class="learning-link-card__title">dict / defaultdict</span>
   <span class="learning-link-card__desc">Counting, accumulation, and default integer values</span>
 </a>
 
-<a class="learning-link-card" href="../learning/pass-vs-continue/">
+<a class="learning-link-card" href="../../learning/pass-vs-continue/">
   <span class="learning-link-card__title">pass vs continue</span>
   <span class="learning-link-card__desc">Loop control flow and safe duplicate skipping</span>
 </a>
 
-<a class="learning-link-card" href="../learning/python-sorting/">
+<a class="learning-link-card" href="../../learning/python-sorting/">
   <span class="learning-link-card__title">Sorting</span>
   <span class="learning-link-card__desc">sorted, key, lambda, ascending and descending order</span>
 </a>

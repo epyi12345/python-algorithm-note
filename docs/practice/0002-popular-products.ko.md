@@ -221,27 +221,27 @@ if __name__ == "__main__":
 
 <div class="learning-links" markdown="1">
 
-<a class="learning-link-card" href="../learning/python-set/">
+<a class="learning-link-card" href="../../learning/python-set/">
   <span class="learning-link-card__title">set</span>
   <span class="learning-link-card__desc">중복 제거, 포함 여부 확인, tuple key</span>
 </a>
 
-<a class="learning-link-card" href="../learning/python-dict-defaultdict/">
+<a class="learning-link-card" href="../../learning/python-dict-defaultdict/">
   <span class="learning-link-card__title">dict / defaultdict</span>
   <span class="learning-link-card__desc">상품별 수량 누적, 기본값 처리</span>
 </a>
 
-<a class="learning-link-card" href="../learning/filtering-and-max/">
+<a class="learning-link-card" href="../../learning/filtering-and-max/">
   <span class="learning-link-card__title">필터링과 최댓값</span>
   <span class="learning-link-card__desc">양수 필터링, empty case 확인, 안전한 max 사용</span>
 </a>
 
-<a class="learning-link-card" href="../learning/tie-break-sorting/">
+<a class="learning-link-card" href="../../learning/tie-break-sorting/">
   <span class="learning-link-card__title">동률 정렬</span>
   <span class="learning-link-card__desc">최댓값 선택 후 동률 상품을 이름 기준으로 정렬</span>
 </a>
 
-<a class="learning-link-card" href="../learning/python-sorting/">
+<a class="learning-link-card" href="../../learning/python-sorting/">
   <span class="learning-link-card__title">정렬</span>
   <span class="learning-link-card__desc">sorted, key, lambda, 오름차순과 내림차순</span>
 </a>
