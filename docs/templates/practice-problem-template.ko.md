@@ -10,7 +10,7 @@ Lv.X Name
 
 ## 상태
 
-## Prerequisites
+## 사전 지식
 
 ## 문제 요약
 
@@ -24,19 +24,19 @@ Lv.X Name
 
 ## 예시
 
-### Example 1
+### 예시 1
 
-Input:
-
-```text
-```
-
-Output:
+입력:
 
 ```text
 ```
 
-### Explanation 1
+출력:
+
+```text
+```
+
+### 해설 1
 
 ## 평가 포인트
 

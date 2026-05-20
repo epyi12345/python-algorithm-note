@@ -2,36 +2,36 @@
 
 ## 요약
 
-- Solved Problems: 2
-- Reviewed Problems: 2
-- Wrong Notes: 2
-- Current Focus: Hash / Implementation / Filtering / Tie-break
+- 해결한 문제 수: 2
+- 리뷰 완료 문제 수: 2
+- 오답노트 수: 2
+- 현재 집중 항목: 해시(hash) / 구현(implementation) / 필터링(filtering) / 동률 처리(tie-break)
 
 ## 최근 문제 로그
 
-| Date | Problem | Type | Difficulty | Result | Score | Main issue | Review target |
+| 날짜 | 문제 | 유형 | 난이도 | 결과 | 점수 | 주요 이슈 | 리뷰 목표 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-05-14 | 0002. Popular Products | Hash / Implementation / Tie-break | Lv.1+ Basic | Solved with review | 97/100 | maximum-only output and tie-break handling | Re-solve later |
-| 2026-05-14 | 0001. Order Settlement | Hash / Implementation | Lv.1 Basic | Solved with review | 85/100 | pass vs continue | Re-solve later |
+| 2026-05-14 | 0002. Popular Products | 해시 / 구현 / 동률 처리 | Lv.1+ Basic | 리뷰와 함께 해결 | 97/100 | 최대값만 출력 + 동률 처리 규칙 | 나중에 다시 풀기 |
+| 2026-05-14 | 0001. Order Settlement | 해시 / 구현 | Lv.1 Basic | 리뷰와 함께 해결 | 85/100 | pass vs continue | 나중에 다시 풀기 |
 
 ## 난이도 진행 현황
 
-| Difficulty | Solved | Reviewed | Pending | Notes |
+| 난이도 | 해결 | 리뷰 | 대기 | 비고 |
 |---|---:|---:|---:|---|
-| Lv.0 Warm-up | 0 | 0 | 0 | Not needed yet |
+| Lv.0 Warm-up | 0 | 0 | 0 | 아직 필요 없음 |
 | Lv.1 Basic | 1 | 1 | 0 | Order Settlement |
 | Lv.1+ Basic | 1 | 1 | 0 | Popular Products |
 | Lv.2 Core | 0 | 0 | 1 | Range Sales Query |
-| Lv.3 Intermediate | 0 | 0 | 0 | Not started |
-| Lv.4 Advanced | 0 | 0 | 0 | Not started |
-| Lv.5 Challenge | 0 | 0 | 0 | Not started |
+| Lv.3 Intermediate | 0 | 0 | 0 | 시작 전 |
+| Lv.4 Advanced | 0 | 0 | 0 | 시작 전 |
+| Lv.5 Challenge | 0 | 0 | 0 | 시작 전 |
 
 ## 약점 트래커
 
-- Control flow: pass vs continue
-- Duplicate handling with set
-- Debug output removal
-- Distinguishing all-positive output from maximum-only output
-- Tie-break sorting by product name
-- Avoiding unnecessary full sorting
-- Empty-case handling before max()
+- 제어 흐름(control flow): pass vs continue
+- set을 이용한 중복 처리
+- debug output 제거
+- 양수 전체 출력과 최대값 전용 출력 구분
+- 상품명 기준 동률 정렬
+- 불필요한 전체 정렬 피하기
+- max() 호출 전 empty case 처리

@@ -44,3 +44,17 @@ plugins:
           name: 한국어
           build: true
           site_name: epyi 알고리즘 노트
+          nav_translations:
+            Dashboard: 대시보드
+            Practice: 문제 연습
+            Wrong Notes: 오답노트
+            Learning: 학습 자료
+            Overview: 개요
+            Python Basics: 파이썬 기초
+            Complexity Guide: 복잡도 가이드
+            Problem Patterns: 문제 패턴
+            Common Mistakes: 자주 하는 실수
+            Review Checklists: 리뷰 체크리스트
+            Mobile App Plan: 모바일 앱 계획
+            Tools: 도구
+            Python Editor: 파이썬 에디터

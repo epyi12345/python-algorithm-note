@@ -12,16 +12,16 @@ Lv.X Name
 
 ## 상태
 
-## Score
+## 점수
 
 ## 내 시도
 
-### Attempt 1
+### 시도 1
 
 <div class="attempt-grid" markdown="1">
 <div class="attempt-panel" markdown="1">
 
-**Submitted code**
+**제출 코드**
 
 ```python
 ```
@@ -29,17 +29,17 @@ Lv.X Name
 </div>
 <div class="attempt-panel" markdown="1">
 
-**Reviewer feedback**
+**리뷰어 피드백**
 
-Correct parts:
-
-- 
-
-Issues:
+잘한 점:
 
 - 
 
-Improvement:
+문제점:
+
+- 
+
+개선 방향:
 
 - 
 
@@ -57,8 +57,8 @@ Improvement:
 
 ## 복잡도
 
-- Time complexity:
-- Space complexity:
+- 시간복잡도(time complexity):
+- 공간복잡도(space complexity):
 
 ## 리뷰 체크리스트
 
