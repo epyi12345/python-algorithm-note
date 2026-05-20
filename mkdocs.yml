@@ -1,0 +1,78 @@
+site_name: Python Algorithm Note
+site_description: Python algorithm problem-solving notes and wrong-answer reviews.
+theme:
+  name: material
+  language: en
+nav:
+  - Home: index.md
+  - Dashboard: dashboard.md
+  - Practice:
+      - 0001 Order Settlement: practice/0001-order-settlement.md
+      - 0002 Popular Products: practice/0002-popular-products.md
+      - 0003 Range Sales Query: practice/0003-range-sales-query.md
+  - Wrong Notes:
+      - 0001. Order Settlement: wrong-notes/0001-order-settlement.md
+      - 0002. Popular Products: wrong-notes/0002-popular-products.md
+  - Learning:
+      - Overview: learning/index.md
+      - Python Basics: learning/python-basics.md
+      - Python Input: learning/python-input.md
+      - Set: learning/python-set.md
+      - Dict and Defaultdict: learning/python-dict-defaultdict.md
+      - Sorting: learning/python-sorting.md
+      - Pass vs Continue: learning/pass-vs-continue.md
+      - Filtering and Max: learning/filtering-and-max.md
+      - Tie-break Sorting: learning/tie-break-sorting.md
+      - Prefix Sum: learning/prefix-sum.md
+      - Complexity Guide: learning/complexity-guide.md
+      - Problem Patterns: learning/problem-patterns.md
+      - Common Mistakes: learning/common-mistakes.md
+      - Review Checklists: learning/review-checklists.md
+      - Mobile App Plan: learning/mobile-app-plan.md
+  - Tools:
+      - Python Editor: tools/python-editor.md
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: ko
+          name: 한국어
+          build: true
+          site_name: epyi 알고리즘 노트
+          nav_translations:
+            Home: 홈
+            Dashboard: 대시보드
+            Practice: 문제 연습
+            Wrong Notes: 오답노트
+            Learning: 학습 자료
+            Overview: 개요
+            Python Basics: 파이썬 기초
+            Prefix Sum: 누적합
+            Tie-break Sorting: 동률 정렬
+            Filtering and Max: 필터링과 최댓값
+            Pass vs Continue: pass와 continue
+            Sorting: 정렬
+            Dict and Defaultdict: dict와 defaultdict
+            Set: set
+            Python Input: 파이썬 입력
+            Complexity Guide: 복잡도 가이드
+            Problem Patterns: 문제 패턴
+            Common Mistakes: 자주 하는 실수
+            Review Checklists: 리뷰 체크리스트
+            Mobile App Plan: 모바일 앱 계획
+            Tools: 도구
+            Python Editor: 파이썬 에디터

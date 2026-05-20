@@ -1,0 +1,226 @@
+# 0002. Popular Products
+
+한국어 제목: 인기 상품
+
+## 유형
+
+해시(hash) / 구현(implementation) / 중복 제거(duplicate handling) / 정렬(sorting) / Tie-break
+
+## 난이도
+
+Lv.1+ Basic
+
+## 상태
+
+리뷰와 함께 해결
+
+## 사전 지식
+
+문제를 풀기 전에 다음을 이해해야 합니다:
+
+- sys.stdin.readline으로 입력 받기
+- 한 줄 입력을 여러 값으로 분리하기
+- 숫자 문자열을 정수로 변환하기
+- 중복 감지를 위해 set 사용하기
+- 누적 계산을 위해 dict 또는 defaultdict 사용하기
+- 값 기준으로 딕셔너리 항목 필터링하기
+- 최댓값 찾기
+- 동률 결과를 상품명 기준으로 정렬하기
+
+## 문제 요약
+
+쇼핑몰에서 하루 동안의 구매 로그를 제공합니다.
+
+각 로그의 형식은 다음과 같습니다:
+
+```text
+customer_id product quantity status
+```
+
+status 값은 다음 중 하나입니다:
+
+- BUY
+- CANCEL
+
+각 상품의 최종 판매 수량을 계산하고, 최종 수량이 가장 큰 상품(들)만 출력해야 합니다.
+
+## 규칙
+
+1. BUY는 해당 상품의 수량을 증가시킵니다.
+2. CANCEL은 해당 상품의 수량을 감소시킵니다.
+3. customer_id, product, quantity, status가 모두 같은 로그가 여러 번
+   등장하면 한 번만 처리합니다.
+4. 최종 수량이 0 이하인 상품은 제외합니다.
+5. 최종 수량이 가장 큰 상품만 출력합니다.
+6. 최종 수량이 가장 큰 상품이 여러 개라면 상품명 오름차순으로 모두
+   출력합니다.
+7. 출력할 상품이 없으면 NONE을 출력합니다.
+
+## 입력 형식
+
+```text
+N
+customer_id product quantity status
+customer_id product quantity status
+...
+```
+
+## 출력 형식
+
+최종 수량이 가장 큰 상품(들)의 이름과 수량을 출력합니다.
+
+```text
+product quantity
+product quantity
+...
+```
+
+유효한 상품이 없으면 다음을 출력합니다:
+
+```text
+NONE
+```
+
+## 제한 조건
+
+```text
+1 <= N <= 100000
+1 <= quantity <= 1000
+customer_id and product are strings without spaces
+status is BUY or CANCEL
+```
+
+## 예시
+
+### Example 1
+
+입력:
+
+```text
+10
+U001 apple 3 BUY
+U002 banana 5 BUY
+U003 apple 2 BUY
+U004 banana 1 CANCEL
+U001 apple 3 BUY
+U005 carrot 4 BUY
+U006 carrot 1 BUY
+U007 banana 1 BUY
+U008 apple 1 CANCEL
+U009 melon 2 CANCEL
+```
+
+출력:
+
+```text
+banana 5
+carrot 5
+```
+
+### Explanation 1
+
+중복된 로그:
+
+```text
+U001 apple 3 BUY
+```
+
+두 번 등장하지만 한 번만 처리해야 합니다.
+
+최종 수량:
+
+```text
+apple = 3 + 2 - 1 = 4
+banana = 5 - 1 + 1 = 5
+carrot = 4 + 1 = 5
+melon = -2
+```
+
+melon은 최종 수량이 0 이하이므로 제외됩니다.
+
+최대 최종 수량은 5이므로 banana와 carrot을 상품명 오름차순으로
+출력합니다.
+
+### Example 2
+
+입력:
+
+```text
+5
+U001 book 2 BUY
+U002 book 2 CANCEL
+U003 pen 1 CANCEL
+U004 bag 3 CANCEL
+U001 book 2 BUY
+```
+
+출력:
+
+```text
+NONE
+```
+
+### Explanation 2
+
+중복된 로그:
+
+```text
+U001 book 2 BUY
+```
+
+두 번 등장하지만 한 번만 처리해야 합니다.
+
+최종 수량:
+
+```text
+book = 2 - 2 = 0
+pen = -1
+bag = -3
+```
+
+최종 수량이 0보다 큰 상품이 없으므로 NONE을 출력합니다.
+
+## 평가 포인트
+
+- 중복 로그 처리 정확성
+- BUY/CANCEL 처리 정확성
+- 처리된 로그 추적을 위한 set 사용 정확성
+- 상품 집계를 위한 dict/defaultdict 사용 정확성
+- 최종 수량이 0 이하인 상품 제외 여부
+- 최대 최종 수량 계산 정확성
+- 최대 수량 동률 상품 출력 여부
+- 동률 상품명 정렬 여부
+- 유효한 상품이 없을 때 NONE 출력 여부
+- 시간복잡도(time complexity)와 공간복잡도(space complexity) 설명 여부
+
+## 온라인 에디터
+
+로컬 Python 환경이 없을 때 OneCompiler Python editor로 해법을 테스트하세요.
+
+[Open Python Editor](../tools/python-editor.md){ .md-button .md-button--primary }
+
+[Open OneCompiler in a new tab ↗](https://onecompiler.com/python){ target="_blank" rel="noopener" }
+
+## 코드 템플릿
+
+```python
+def solve():
+    pass
+
+if __name__ == "__main__":
+    solve()
+```
+
+
+## 힌트
+
+양수 값만 먼저 필터링하고, empty case를 확인한 다음, 최댓값과
+일치하는 항목만 출력해보세요.
+
+### 관련 학습자료
+
+[set 학습하기](../learning/python-set.md){ .md-button }
+[dict/defaultdict 학습하기](../learning/python-dict-defaultdict.md){ .md-button }
+[필터링과 최댓값](../learning/filtering-and-max.md){ .md-button }
+[동률 정렬 학습하기](../learning/tie-break-sorting.md){ .md-button }
+[정렬 학습하기](../learning/python-sorting.md){ .md-button }
