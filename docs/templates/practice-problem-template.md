@@ -40,6 +40,10 @@ Output:
 
 ## Evaluation Points
 
+## Hint
+
+- Add links to related learning materials, patterns, or syntax references that help solve this problem.
+
 ## Code Template
 
 ```python

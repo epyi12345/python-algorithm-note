@@ -1,6 +1,6 @@
 # Problem Number. Problem Title
 
-English is the default version. Korean translations should use the `.ko.md` suffix when added.
+기본 언어는 영어이며, 한국어 번역은 `.ko.md` 접미사를 사용합니다.
 
 ## 유형
 
@@ -39,6 +39,10 @@ Lv.X Name
 ### 해설 1
 
 ## 평가 포인트
+
+## 힌트
+
+- 이 문제 해결에 도움이 되는 관련 학습 자료, 패턴, 문법 참고 링크를 추가하세요.
 
 ## 코드 템플릿
 
