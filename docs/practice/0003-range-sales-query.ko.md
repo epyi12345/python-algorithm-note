@@ -198,14 +198,3 @@ prefix[i] = total sales from day 1 to day i
 ```
 
 그러면 L부터 R까지의 구간 합을 빠르게 계산할 수 있습니다.
-
-
-## 힌트
-
-질의마다 `sum(...)`를 반복하지 말고 누적합(prefix sum)을 사용해보세요.
-
-### 관련 학습자료
-
-[파이썬 입력 학습하기](../learning/python-input.md){ .md-button }
-[누적합 학습하기](../learning/prefix-sum.md){ .md-button }
-[복잡도 가이드 보기](../learning/complexity-guide.md){ .md-button }

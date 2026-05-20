@@ -221,8 +221,31 @@ entries that match the maximum value.
 
 ### Related learning materials
 
-[Learn set](../learning/python-set.md){ .md-button }
-[Learn dict/defaultdict](../learning/python-dict-defaultdict.md){ .md-button }
-[Learn filtering and max](../learning/filtering-and-max.md){ .md-button }
-[Learn tie-break sorting](../learning/tie-break-sorting.md){ .md-button }
-[Learn sorting](../learning/python-sorting.md){ .md-button }
+<div class="learning-links" markdown="1">
+
+<a class="learning-link-card" href="../learning/python-set/">
+  <span class="learning-link-card__title">set</span>
+  <span class="learning-link-card__desc">Duplicate handling, membership checks, tuple keys</span>
+</a>
+
+<a class="learning-link-card" href="../learning/python-dict-defaultdict/">
+  <span class="learning-link-card__title">dict / defaultdict</span>
+  <span class="learning-link-card__desc">Counting, accumulation, and default integer values</span>
+</a>
+
+<a class="learning-link-card" href="../learning/filtering-and-max/">
+  <span class="learning-link-card__title">Filtering and Max</span>
+  <span class="learning-link-card__desc">Filter valid values, check empty case, then use max safely</span>
+</a>
+
+<a class="learning-link-card" href="../learning/tie-break-sorting/">
+  <span class="learning-link-card__title">Tie-break Sorting</span>
+  <span class="learning-link-card__desc">Sort tied products by name after selecting max value</span>
+</a>
+
+<a class="learning-link-card" href="../learning/python-sorting/">
+  <span class="learning-link-card__title">Sorting</span>
+  <span class="learning-link-card__desc">sorted, key, lambda, ascending and descending order</span>
+</a>
+
+</div>

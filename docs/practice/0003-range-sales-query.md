@@ -184,6 +184,21 @@ Use prefix sums to avoid repeated `sum(...)` calls per query.
 
 ### Related learning materials
 
-[Learn Python input](../learning/python-input.md){ .md-button }
-[Learn prefix sum](../learning/prefix-sum.md){ .md-button }
-[Learn complexity guide](../learning/complexity-guide.md){ .md-button }
+<div class="learning-links" markdown="1">
+
+<a class="learning-link-card" href="../learning/python-input/">
+  <span class="learning-link-card__title">Python input</span>
+  <span class="learning-link-card__desc">sys.stdin.readline, split, map, repeated input</span>
+</a>
+
+<a class="learning-link-card" href="../learning/prefix-sum/">
+  <span class="learning-link-card__title">Prefix Sum</span>
+  <span class="learning-link-card__desc">Build prefix once, answer range sums in O(1)</span>
+</a>
+
+<a class="learning-link-card" href="../learning/complexity-guide/">
+  <span class="learning-link-card__title">Complexity Guide</span>
+  <span class="learning-link-card__desc">Estimate worst-case operations before implementation</span>
+</a>
+
+</div>
