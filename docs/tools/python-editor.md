@@ -12,15 +12,20 @@ is not available.
 
 ## Embedded Editor
 
+<div class="editor-wide-layout" markdown="1">
+
 <iframe
+  class="python-editor-frame"
   title="OneCompiler Python Editor"
   src="https://onecompiler.com/embed/python"
   width="100%"
-  height="720"
+  height="780"
   loading="lazy"
   referrerpolicy="no-referrer-when-downgrade"
   frameborder="0">
 </iframe>
+
+</div>
 
 ## Usage Notes
 

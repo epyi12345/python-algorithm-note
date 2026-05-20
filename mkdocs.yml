@@ -31,8 +31,11 @@ nav:
       - Mobile App Plan: learning/mobile-app-plan.md
   - Tools:
       - Python Editor: tools/python-editor.md
+      - Practice Workbench: tools/practice-workbench.md
 extra_css:
   - stylesheets/extra.css
+extra_javascript:
+  - javascripts/practice-workbench.js
 markdown_extensions:
   - attr_list
   - md_in_html

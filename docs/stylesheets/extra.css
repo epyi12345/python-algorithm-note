@@ -61,3 +61,108 @@
   font-size: 0.8rem;
   line-height: 1.45;
 }
+
+.editor-wide-layout {
+  width: min(1400px, calc(100vw - 2rem));
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.python-editor-frame {
+  display: block;
+  width: 100%;
+  min-height: 760px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  background: var(--md-default-bg-color);
+}
+
+.practice-workbench {
+  --split-ratio: 0.42;
+  width: min(1440px, calc(100vw - 2rem));
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(280px, calc(var(--split-ratio) * 100%)) 0.5rem minmax(420px, 1fr);
+  gap: 0;
+}
+
+.practice-pane,
+.editor-pane {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  background: var(--md-default-bg-color);
+  min-width: 0;
+}
+
+.practice-pane__header,
+.editor-pane__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.practice-selector {
+  min-width: 220px;
+  max-width: 100%;
+}
+
+.practice-content {
+  max-height: 780px;
+  overflow: auto;
+  padding: 0.9rem 1rem;
+}
+
+.workbench-divider {
+  cursor: col-resize;
+  background: var(--md-default-fg-color--lightest);
+  border-radius: 0.25rem;
+}
+
+.practice-workbench.is-dragging {
+  user-select: none;
+}
+
+.workbench-frame {
+  display: block;
+  width: 100%;
+  min-height: 780px;
+  border: 0;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background: var(--md-default-bg-color);
+}
+
+@media (max-width: 1024px) {
+  .practice-workbench {
+    width: calc(100vw - 1rem);
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .workbench-divider {
+    display: none;
+  }
+
+  .practice-content,
+  .workbench-frame {
+    max-height: none;
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  .editor-wide-layout {
+    width: calc(100vw - 1rem);
+  }
+
+  .python-editor-frame {
+    min-height: 680px;
+  }
+}
