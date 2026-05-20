@@ -326,7 +326,13 @@ body.editor-workspace-page .python-editor-frame {
 
 
 body.wrong-note-wide-page .md-sidebar--secondary {
-  display: none;
+  display: block;
+  position: sticky;
+  top: 3.2rem;
+  width: 14rem;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  padding-right: 0.75rem;
 }
 
 body.wrong-note-wide-page .md-main__inner {
@@ -372,7 +378,7 @@ body.wrong-note-wide-page .md-header__button[for="__drawer"] {
 }
 
 body.wrong-note-wide-page .code-review {
-  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.75fr);
   gap: 1rem;
 }
 
@@ -380,11 +386,19 @@ body.wrong-note-wide-page .code-review__code pre {
   max-height: none;
 }
 
+body.wrong-note-wide-page .code-review__code {
+  min-width: 0;
+}
+
 body.wrong-note-wide-page .code-review__note {
   align-self: start;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+  body.wrong-note-wide-page .md-sidebar--secondary {
+    display: none;
+  }
+
   body.wrong-note-wide-page .code-review {
     grid-template-columns: 1fr;
   }

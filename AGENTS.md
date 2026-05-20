@@ -268,6 +268,15 @@ the strict commit title rules and correct them if they do not match.
 ## Problem review notes
 
 - Wrong-answer notes should use a wide review layout because they often contain side-by-side code and feedback.
-- Hide the right table of contents on wrong-note pages.
+- Keep the right table of contents visible on wrong-note pages for long-document navigation.
 - Keep navigation accessible through the hamburger menu.
 - Preserve normal documentation layout for learning, dashboard, roadmap, and practice pages.
+
+
+## Practice problem writing style
+
+- Custom practice problems should be written as full learning problems, not only as short rule summaries.
+- Each practice problem should include: Problem background, Goal, Input meaning, Output meaning, Detailed rules, Constraints, Why efficiency matters, Step-by-step example explanation, Common misunderstanding, Hint, Related learning materials, and Code template.
+- For beginner and core-level problems, include a "How to read this problem" section.
+- For new concepts, include a "Concept bridge" section that connects the problem to related learning materials.
+- External copyrighted problem statements must not be copied in full. Store only a link, short summary, personal notes, and review content for external problems.

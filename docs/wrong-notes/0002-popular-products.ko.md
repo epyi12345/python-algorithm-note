@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # 0002. Popular Products
 
 한국어 제목: 인기 상품
@@ -20,7 +15,7 @@ hide:
 
 ## 유형
 
-해시(hash) / 구현(implementation) / 중복 제거(duplicate handling) / 정렬(sorting) / Tie-break
+해시(hash) / 구현(implementation) / 중복 제거(duplicate handling) / 정렬(sorting) / 동률 처리
 
 ## 난이도
 
@@ -413,13 +408,13 @@ if __name__ == "__main__":
 
 잘한 점:
 
-- Duplicate logs are skipped correctly with continue.
-- BUY and CANCEL are handled correctly.
-- Positive products are filtered into valid.
-- NONE is handled before max() is called.
-- Maximum quantity is calculated clearly.
-- Tied products are printed in product-name order.
-- Unnecessary full sorting was removed.
+- continue로 중복 로그를 올바르게 건너뛰었습니다.
+- BUY와 CANCEL 처리 로직이 올바릅니다.
+- 양수 상품만 valid로 올바르게 필터링했습니다.
+- max() 호출 전에 NONE 처리를 먼저 수행했습니다.
+- 최대 수량 계산 흐름이 명확합니다.
+- 동률 상품을 상품명 순으로 정확히 출력했습니다.
+- 불필요한 전체 정렬을 제거했습니다.
 
 문제점:
 
@@ -428,15 +423,15 @@ if __name__ == "__main__":
 
 개선 방향:
 
-- Keep this structure for future problems:
-  filtering, empty-case check, maximum calculation, sorted output.
+- 다음 문제에서도 이 구조를 유지하세요:
+  필터링, empty-case 확인, 최댓값 계산, 정렬 출력.
 
 </div>
 </div>
 
-## 최종 권장 해법
+## 최종 권장 풀이
 
-Use the same final solution as Attempt 5, with only minor naming cleanup:
+시도 5의 최종 풀이를 기준으로, 변수명만 소폭 정리해 사용할 수 있습니다:
 
 ```python
 import sys
@@ -487,35 +482,35 @@ if __name__ == "__main__":
 
 ## 핵심 교훈
 
-- Printing all positive products is different from printing only maximum
-  products.
-- For maximum-result problems, first filter valid candidates.
-- Check the empty case before calling max().
-- Then calculate the maximum value.
-- Finally, print only entries matching the maximum.
-- Tie-break conditions should be handled explicitly.
-- Avoid unnecessary full sorting when only max() is needed.
+- 양수 상품 전체 출력과 최댓값 상품만 출력은 서로 다릅니다.
+
+- 최댓값 문제는 먼저 유효 후보를 필터링하세요.
+- max() 호출 전에 empty case를 확인하세요.
+- 그다음 최댓값을 계산하세요.
+- 마지막으로 최댓값과 일치하는 항목만 출력하세요.
+- 동률 처리 조건은 명시적으로 분기해 처리하세요.
+- max()만 필요하면 불필요한 전체 정렬을 피하세요.
 
 ## 복잡도
 
 최종 해법 기준:
 
-- Time complexity: O(N + M + K log K)
-- Worst-case time complexity: O(N + M log M)
-- Space complexity: O(N + M)
+- 시간복잡도(time complexity): O(N + M + K log K)
+- 최악 시간복잡도(time complexity): O(N + M log M)
+- 공간복잡도(space complexity): O(N + M)
 
 기호 설명:
 
-- N is the number of logs.
-- M is the number of product types.
-- K is the number of valid positive products.
+- N은 로그 개수입니다.
+- M은 상품 종류 수입니다.
+- K는 양수 유효 상품 개수입니다.
 
 ## 리뷰 체크리스트
 
-- Did I remove duplicated logs with set?
-- Did I convert quantity to int before calculation?
-- Did I filter out products with quantity less than or equal to 0?
-- Did I handle the empty valid case before max()?
-- Did I print only products with the maximum quantity?
-- Did I sort tied products by product name?
-- Did I avoid unnecessary sorting?
+- set으로 중복 로그를 제거했는가?
+- 계산 전에 quantity를 int로 변환했는가?
+- 수량이 0 이하인 상품을 필터링했는가?
+- max() 전에 valid가 비었는지 확인했는가?
+- 최댓값 수량 상품만 출력했는가?
+- 동률 상품을 상품명 순으로 정렬했는가?
+- 불필요한 정렬을 피했는가?

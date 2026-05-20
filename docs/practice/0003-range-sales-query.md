@@ -12,6 +12,33 @@ Lv.2 Core
 
 Pending
 
+## Problem Background
+
+A shopping mall tracks daily sales counts for N days, then receives many
+queries asking for total sales over specific date ranges.
+
+For example, if daily sales are:
+
+```text
+10 20 30 40 50
+```
+
+then total sales from day 1 to day 3 are `10 + 20 + 30 = 60`.
+
+## Goal
+
+For each of Q queries, print the total sales from day L to day R quickly
+and correctly.
+
+## How to Read This Problem
+
+- `N` is the number of days in the sales array.
+- `Q` is the number of range queries.
+- The second input line contains `N` sales values.
+- Each of the next `Q` lines contains `L R`.
+- `L` and `R` are 1-based day indexes.
+- The range `[L, R]` is inclusive.
+
 ## Prerequisites
 
 Before solving this problem, the learner should understand:
@@ -35,7 +62,7 @@ inclusive.
 
 For each query, print the total sales in that range.
 
-## Rules
+## Detailed Rules
 
 1. The sales data contains N integers.
 2. The i-th integer represents the number of products sold on day i.
@@ -44,6 +71,10 @@ For each query, print the total sales in that range.
 5. Days are numbered from 1 to N.
 6. L and R are inclusive.
 7. The solution should be efficient for large N and Q.
+
+## Input Meaning
+
+Input provides one sales array and many independent range-sum queries over that array.
 
 ## Input Format
 
@@ -54,6 +85,10 @@ L R
 L R
 ...
 ```
+
+## Output Meaning
+
+For each query, output one number: the inclusive sum from day L to day R.
 
 ## Output Format
 
@@ -72,6 +107,26 @@ range_sum
 1 <= Q <= 100000
 0 <= sales_i <= 1000
 1 <= L <= R <= N
+```
+
+## Why Efficiency Matters
+
+With `N` and `Q` up to `100000`, summing each query range directly can lead to `O(NQ)` worst-case time, which is too slow.
+
+Use prefix sums so each query can be answered in `O(1)` after `O(N)` preprocessing.
+
+## Concept Bridge
+
+This problem is a direct practice case for prefix sum.
+
+```text
+prefix[i] = sum of sales from day 1 to day i
+```
+
+Then:
+
+```text
+range(L, R) = prefix[R] - prefix[L - 1]
 ```
 
 ## Examples
@@ -184,6 +239,13 @@ def solve():
 if __name__ == "__main__":
     solve()
 ```
+
+## Common Misunderstandings
+
+- `L` and `R` are 1-based day numbers, not 0-based array indexes.
+- `R` is included in the range.
+- Using `sum(sales[L-1:R])` per query may pass small cases but can time out on large inputs.
+- Setting `prefix[0] = 0` makes `L = 1` cases use the same formula safely.
 
 ## Hint
 

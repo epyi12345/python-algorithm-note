@@ -12,6 +12,17 @@ Lv.1+ Basic
 
 Solved with review
 
+## Goal
+
+Compute the final product-level sales totals correctly under duplicate-log constraints and required output conditions.
+
+## How to Read This Problem
+
+- Read each log as one transaction event for a product.
+- Treat logs with identical fields as one event only.
+- First decide which logs are valid to count, then apply quantity updates.
+- Finally apply output conditions (positive-only or max-only depending on problem).
+
 ## Prerequisites
 
 Before solving this problem, the learner should understand:
@@ -220,6 +231,12 @@ if __name__ == "__main__":
     solve()
 ```
 
+
+## Common Misunderstandings
+
+- Using `pass` for duplicates does not skip accumulation; `continue` is needed when you want to skip the current loop iteration.
+- Printing intermediate dictionaries can break judged output format.
+- In ranking problems, printing all positive items is different from printing only max-valued items.
 
 ## Hint
 

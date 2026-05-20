@@ -1,6 +1,6 @@
 # Problem Number. Problem Title
 
-English is the default version. Korean translations should use the `.ko.md` suffix when added.
+## Korean Title
 
 ## Type
 
@@ -10,17 +10,31 @@ Lv.X Name
 
 ## Status
 
+## Problem Background
+
+## Goal
+
+## How to Read This Problem
+
 ## Prerequisites
 
 ## Problem Summary
 
-## Rules
+## Detailed Rules
+
+## Input Meaning
+
+## Output Meaning
 
 ## Input Format
 
 ## Output Format
 
 ## Constraints
+
+## Why Efficiency Matters
+
+## Concept Bridge
 
 ## Examples
 
@@ -36,13 +50,13 @@ Output:
 ```text
 ```
 
-### Explanation 1
+### Step-by-step Explanation
 
-## Evaluation Points
+## Common Misunderstandings
 
 ## Hint
 
-- Add links to related learning materials, patterns, or syntax references that help solve this problem.
+## Related Learning Materials
 
 ## Code Template
 
