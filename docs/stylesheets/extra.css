@@ -190,13 +190,29 @@ body.editor-workspace-page .md-grid {
   max-width: none;
 }
 
-@media (min-width: 76.25em) {
+body.editor-workspace-page .md-header__button[for="__drawer"] {
+  display: inline-flex;
+}
+
+@media screen and (min-width: 76.25em) {
   body.editor-workspace-page .md-sidebar--primary {
-    display: none;
+    position: fixed;
+    top: 2.4rem;
+    left: 0;
+    z-index: 15;
+    width: 15rem;
+    height: calc(100vh - 2.4rem);
+    margin: 0;
+    padding-top: 0.5rem;
+    background: var(--md-default-bg-color);
+    border-right: 1px solid var(--md-default-fg-color--lightest);
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+    overflow-y: auto;
   }
 
-  body.editor-workspace-page .md-header__button[for="__drawer"] {
-    display: inline-flex;
+  body.editor-workspace-page #__drawer:checked ~ .md-container .md-sidebar--primary {
+    transform: translateX(0);
   }
 }
 

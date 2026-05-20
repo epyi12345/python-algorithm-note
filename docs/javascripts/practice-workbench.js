@@ -111,6 +111,19 @@
 
   const storageKey = 'practice-workbench-state-v1';
 
+  function getProblemFromQuery() {
+    const params = new URLSearchParams(window.location.search);
+    const problem = params.get('problem');
+    if (!problem) return null;
+    return Object.prototype.hasOwnProperty.call(data[locale], problem) ? problem : null;
+  }
+
+  function updateProblemQuery(problemId) {
+    const url = new URL(window.location.href);
+    url.searchParams.set('problem', problemId);
+    history.replaceState(null, '', url.toString());
+  }
+
   function render(problemId) {
     const item = data[locale][problemId] || data[locale]['0003'];
     content.innerHTML = `
@@ -150,13 +163,19 @@
 
   const defaultProblem = root.dataset.defaultProblem || '0003';
   const state = loadState(defaultProblem);
-  selector.value = state.problem;
+  const queryProblem = getProblemFromQuery();
+  const firstAvailableProblem = selector.options.length ? selector.options[0].value : defaultProblem;
+  const nextProblem = queryProblem || state.problem || defaultProblem || firstAvailableProblem;
+  selector.value = Object.prototype.hasOwnProperty.call(data[locale], nextProblem) ? nextProblem : firstAvailableProblem;
   render(selector.value);
   root.style.setProperty('--split-ratio', String(state.ratio));
+  saveState();
+  updateProblemQuery(selector.value);
 
   selector.addEventListener('change', () => {
     render(selector.value);
     saveState();
+    updateProblemQuery(selector.value);
   });
 
   let dragging = false;

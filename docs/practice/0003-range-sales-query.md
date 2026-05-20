@@ -164,6 +164,13 @@ day 5 to day 6 = 20 + 5 = 25
 Use OneCompiler Python editor to test your solution when a local Python
 environment is not available.
 
+## Coding Workspace
+
+Open this problem in Practice Workbench to view the statement and Python
+editor side by side.
+
+[Open in Practice Workbench](../../tools/practice-workbench/?problem=0003){ .md-button .md-button--primary }
+
 [Open Python Editor](../tools/python-editor.md){ .md-button .md-button--primary }
 
 [Open OneCompiler in a new tab ↗](https://onecompiler.com/python){ target="_blank" rel="noopener" }
