@@ -280,3 +280,5 @@ the strict commit title rules and correct them if they do not match.
 - For beginner and core-level problems, include a "How to read this problem" section.
 - For new concepts, include a "Concept bridge" section that connects the problem to related learning materials.
 - External copyrighted problem statements must not be copied in full. Store only a link, short summary, personal notes, and review content for external problems.
+
+- Learning pages should include basic explanation, safe pattern, common mistakes, and advanced applications when a concept commonly expands into harder problems.
