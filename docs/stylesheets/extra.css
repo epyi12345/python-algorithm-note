@@ -1,3 +1,20 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  scroll-margin-top: 4rem;
+}
+
 .attempt-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -109,11 +126,65 @@
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
 }
 
-.practice-selector {
-  min-width: 220px;
-  max-width: 100%;
+.practice-pane__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-code-bg-color);
 }
 
+.practice-pane__header label {
+  flex: 0 0 auto;
+  color: var(--md-default-fg-color--light);
+  font-weight: 700;
+}
+
+.practice-pane__header .practice-selector {
+  flex: 1 1 auto;
+}
+
+.practice-selector {
+  width: 100%;
+  max-width: 22rem;
+  padding: 0.45rem 2.25rem 0.45rem 0.75rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.45rem;
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--md-default-fg-color--light) 50%),
+    linear-gradient(135deg, var(--md-default-fg-color--light) 50%, transparent 50%);
+  background-position:
+    calc(100% - 1rem) 50%,
+    calc(100% - 0.65rem) 50%;
+  background-size:
+    0.35rem 0.35rem,
+    0.35rem 0.35rem;
+  background-repeat: no-repeat;
+}
+
+
+.practice-selector:hover {
+  border-color: var(--md-primary-fg-color);
+}
+
+.practice-selector:focus {
+  outline: 2px solid var(--md-primary-fg-color);
+  outline-offset: 2px;
+  border-color: var(--md-primary-fg-color);
+}
+
+.practice-selector option {
+  color: var(--md-default-fg-color);
+  background-color: var(--md-default-bg-color);
+}
 .practice-content {
   max-height: 780px;
   overflow: auto;
@@ -158,6 +229,16 @@
 }
 
 @media (max-width: 768px) {
+  .practice-pane__header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .practice-selector {
+    max-width: none;
+  }
+
+
   .editor-wide-layout {
     width: calc(100vw - 1rem);
   }
