@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Python Editor
 
 Use this embedded Python editor when a local IDE or Python environment

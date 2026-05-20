@@ -54,6 +54,7 @@ nav:
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
+  - javascripts/editor-layout.js
   - javascripts/practice-workbench.js
 markdown_extensions:
   - attr_list

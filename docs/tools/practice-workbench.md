@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Practice Workbench
 
 Use this page to read a problem and write Python code side by side.

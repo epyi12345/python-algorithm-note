@@ -166,3 +166,63 @@
     min-height: 680px;
   }
 }
+
+
+body.editor-workspace-page .md-sidebar--secondary {
+  display: none;
+}
+
+body.editor-workspace-page .md-main__inner {
+  max-width: none;
+  margin: 0;
+}
+
+body.editor-workspace-page .md-content {
+  max-width: none;
+}
+
+body.editor-workspace-page .md-content__inner {
+  margin: 0;
+  padding: 0.75rem 1rem 1rem;
+}
+
+body.editor-workspace-page .md-grid {
+  max-width: none;
+}
+
+@media (min-width: 76.25em) {
+  body.editor-workspace-page .md-sidebar--primary {
+    display: none;
+  }
+
+  body.editor-workspace-page .md-header__button[for="__drawer"] {
+    display: inline-flex;
+  }
+}
+
+body.editor-workspace-page .practice-workbench {
+  width: 100%;
+  max-width: none;
+  min-height: calc(100vh - 150px);
+  margin: 0;
+  transform: none;
+}
+
+body.editor-workspace-page .workbench-frame {
+  height: calc(100vh - 220px);
+  min-height: 700px;
+}
+
+body.editor-workspace-page .editor-fullscreen-layout,
+body.editor-workspace-page .editor-wide-layout {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  transform: none;
+}
+
+body.editor-workspace-page .python-editor-frame {
+  width: 100%;
+  height: calc(100vh - 150px);
+  min-height: 760px;
+}

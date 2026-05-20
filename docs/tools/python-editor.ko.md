@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Python Editor
 
 로컬 IDE 또는 Python 실행 환경이 없을 때 이 임베디드 에디터를
