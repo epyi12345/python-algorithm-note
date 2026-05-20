@@ -18,14 +18,14 @@ Lv.1+ Basic
 
 문제를 풀기 전에 다음을 이해해야 합니다:
 
-- Reading input with sys.stdin.readline
-- Splitting one input line into multiple values
-- Converting numeric strings to integers
-- Using set for duplicate detection
-- Using dict or defaultdict for accumulation
-- Filtering dictionary items by value
-- Finding a maximum value
-- Sorting tied results by product name
+- sys.stdin.readline으로 입력 받기
+- 한 줄 입력을 여러 값으로 분리하기
+- 숫자 문자열을 정수로 변환하기
+- 중복 감지를 위해 set 사용하기
+- 누적 계산을 위해 dict 또는 defaultdict 사용하기
+- 값 기준으로 딕셔너리 항목 필터링하기
+- 최댓값 찾기
+- 동률 결과를 상품명 기준으로 정렬하기
 
 ## 문제 요약
 
@@ -210,3 +210,17 @@ def solve():
 if __name__ == "__main__":
     solve()
 ```
+
+
+## 힌트
+
+양수 값만 먼저 필터링하고, empty case를 확인한 다음, 최댓값과
+일치하는 항목만 출력해보세요.
+
+### 관련 학습자료
+
+[set 학습하기](../learning/python-set.md){ .md-button }
+[dict/defaultdict 학습하기](../learning/python-dict-defaultdict.md){ .md-button }
+[필터링과 최댓값](../learning/filtering-and-max.md){ .md-button }
+[동률 정렬 학습하기](../learning/tie-break-sorting.md){ .md-button }
+[정렬 학습하기](../learning/python-sorting.md){ .md-button }

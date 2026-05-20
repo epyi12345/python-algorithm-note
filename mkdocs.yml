@@ -4,6 +4,7 @@ theme:
   name: material
   language: en
 nav:
+  - Home: index.md
   - Dashboard: dashboard.md
   - Practice:
       - 0001 Order Settlement: practice/0001-order-settlement.md
@@ -15,6 +16,14 @@ nav:
   - Learning:
       - Overview: learning/index.md
       - Python Basics: learning/python-basics.md
+      - Python Input: learning/python-input.md
+      - Set: learning/python-set.md
+      - Dict and Defaultdict: learning/python-dict-defaultdict.md
+      - Sorting: learning/python-sorting.md
+      - Pass vs Continue: learning/pass-vs-continue.md
+      - Filtering and Max: learning/filtering-and-max.md
+      - Tie-break Sorting: learning/tie-break-sorting.md
+      - Prefix Sum: learning/prefix-sum.md
       - Complexity Guide: learning/complexity-guide.md
       - Problem Patterns: learning/problem-patterns.md
       - Common Mistakes: learning/common-mistakes.md
@@ -45,12 +54,21 @@ plugins:
           build: true
           site_name: epyi 알고리즘 노트
           nav_translations:
+            Home: 홈
             Dashboard: 대시보드
             Practice: 문제 연습
             Wrong Notes: 오답노트
             Learning: 학습 자료
             Overview: 개요
             Python Basics: 파이썬 기초
+            Prefix Sum: 누적합
+            Tie-break Sorting: 동률 정렬
+            Filtering and Max: 필터링과 최댓값
+            Pass vs Continue: pass와 continue
+            Sorting: 정렬
+            Dict and Defaultdict: dict와 defaultdict
+            Set: set
+            Python Input: 파이썬 입력
             Complexity Guide: 복잡도 가이드
             Problem Patterns: 문제 패턴
             Common Mistakes: 자주 하는 실수

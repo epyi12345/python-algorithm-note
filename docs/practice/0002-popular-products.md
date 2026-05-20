@@ -212,3 +212,17 @@ def solve():
 if __name__ == "__main__":
     solve()
 ```
+
+
+## Hint
+
+Filter positive totals first, check the empty case, then print only
+entries that match the maximum value.
+
+### Related learning materials
+
+[Learn set](../learning/python-set.md){ .md-button }
+[Learn dict/defaultdict](../learning/python-dict-defaultdict.md){ .md-button }
+[Learn filtering and max](../learning/filtering-and-max.md){ .md-button }
+[Learn tie-break sorting](../learning/tie-break-sorting.md){ .md-button }
+[Learn sorting](../learning/python-sorting.md){ .md-button }

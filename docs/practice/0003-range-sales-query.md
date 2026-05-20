@@ -180,20 +180,10 @@ if __name__ == "__main__":
 
 ## Hint
 
-A direct sum for every query can be too slow.
+Use prefix sums to avoid repeated `sum(...)` calls per query.
 
-If every query uses:
+### Related learning materials
 
-```python
-sum(sales[L-1:R])
-```
-
-the worst-case time complexity can become O(NQ).
-
-Try to create a prefix sum list where:
-
-```text
-prefix[i] = total sales from day 1 to day i
-```
-
-Then the range sum from L to R can be calculated quickly.
+[Learn Python input](../learning/python-input.md){ .md-button }
+[Learn prefix sum](../learning/prefix-sum.md){ .md-button }
+[Learn complexity guide](../learning/complexity-guide.md){ .md-button }

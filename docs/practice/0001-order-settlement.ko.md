@@ -18,13 +18,13 @@ Lv.1 Basic
 
 문제를 풀기 전에 다음을 이해해야 합니다:
 
-- Reading input with sys.stdin.readline
-- Splitting one input line into multiple values
-- Converting numeric strings to integers
-- Using set for duplicate detection
-- Using dict or defaultdict for accumulation
-- Sorting dictionary keys
-- The difference between pass and continue
+- sys.stdin.readline으로 입력 받기
+- 한 줄 입력을 여러 값으로 분리하기
+- 숫자 문자열을 정수로 변환하기
+- 중복 감지를 위해 set 사용하기
+- 누적 계산을 위해 dict 또는 defaultdict 사용하기
+- 딕셔너리 키를 기준으로 정렬하기
+- pass와 continue의 차이 이해하기
 
 ## 문제 요약
 
@@ -191,3 +191,17 @@ def solve():
 if __name__ == "__main__":
     solve()
 ```
+
+
+## 힌트
+
+먼저 `set`으로 중복 로그를 제거한 뒤, `defaultdict(int)`로 상품별
+수량을 누적해보세요.
+
+### 관련 학습자료
+
+[파이썬 입력 학습하기](../learning/python-input.md){ .md-button }
+[set 학습하기](../learning/python-set.md){ .md-button }
+[dict/defaultdict 학습하기](../learning/python-dict-defaultdict.md){ .md-button }
+[pass와 continue](../learning/pass-vs-continue.md){ .md-button }
+[정렬 학습하기](../learning/python-sorting.md){ .md-button }

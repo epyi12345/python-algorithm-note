@@ -190,3 +190,17 @@ def solve():
 if __name__ == "__main__":
     solve()
 ```
+
+
+## Hint
+
+Start by removing duplicated logs with a `set`, then accumulate product
+quantities with `defaultdict(int)`.
+
+### Related learning materials
+
+[Learn Python input](../learning/python-input.md){ .md-button }
+[Learn set](../learning/python-set.md){ .md-button }
+[Learn dict/defaultdict](../learning/python-dict-defaultdict.md){ .md-button }
+[Learn pass vs continue](../learning/pass-vs-continue.md){ .md-button }
+[Learn sorting](../learning/python-sorting.md){ .md-button }

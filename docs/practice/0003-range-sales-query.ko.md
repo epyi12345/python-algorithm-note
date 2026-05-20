@@ -18,12 +18,12 @@ Lv.2 Core
 
 문제를 풀기 전에 다음을 이해해야 합니다:
 
-- Reading input with sys.stdin.readline
-- Reading a list of integers with map and split
-- Using a list to store numbers
-- Using 1-based query indexes
-- Understanding why repeated range summation can be too slow
-- Basic idea of prefix sums
+- sys.stdin.readline으로 입력 받기
+- map과 split으로 정수 리스트 입력 받기
+- 숫자를 리스트에 저장하기
+- 1-based 질의 인덱스 사용하기
+- 반복 구간 합산이 왜 느린지 이해하기
+- 누적합(prefix sum)의 기본 개념 이해하기
 
 ## 문제 요약
 
@@ -198,3 +198,14 @@ prefix[i] = total sales from day 1 to day i
 ```
 
 그러면 L부터 R까지의 구간 합을 빠르게 계산할 수 있습니다.
+
+
+## 힌트
+
+질의마다 `sum(...)`를 반복하지 말고 누적합(prefix sum)을 사용해보세요.
+
+### 관련 학습자료
+
+[파이썬 입력 학습하기](../learning/python-input.md){ .md-button }
+[누적합 학습하기](../learning/prefix-sum.md){ .md-button }
+[복잡도 가이드 보기](../learning/complexity-guide.md){ .md-button }

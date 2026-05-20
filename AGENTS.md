@@ -180,6 +180,16 @@ the strict commit title rules and correct them if they do not match.
 
 ## Multilingual documentation
 
+
+- Korean `.ko.md` pages should not contain untranslated user-facing
+  English prose, except for technical tokens, code, commands, paths,
+  URLs, and examples.
+- Practice problem pages should include a helpful Hint section.
+- Hint sections should link to related learning materials.
+- Learning pages should explain syntax, use cases, examples, common
+  mistakes, and safe patterns.
+- When adding a new practice problem, add or link related learning
+  materials when practical.
 - English is the default language.
 - Korean translations use the `.ko.md` suffix.
 - When creating a new important documentation page, also create a

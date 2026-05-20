@@ -85,9 +85,9 @@ if __name__ == "__main__":
 
 잘한 점:
 
-- Duplicate detection with set was used correctly.
-- BUY and CANCEL accumulation logic was mostly correct.
-- continue was used correctly for duplicated logs.
+- set을 사용한 중복 감지는 올바르게 처리했습니다.
+- BUY와 CANCEL에 따른 누적 로직은 대부분 올바르게 작성했습니다.
+- 중복 로그를 건너뛰기 위해 continue를 올바르게 사용했습니다.
 
 문제점:
 
