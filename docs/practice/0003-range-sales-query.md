@@ -10,7 +10,7 @@ Lv.2 Core
 
 ## Status
 
-Pending
+Solved with review
 
 ## Problem Background
 

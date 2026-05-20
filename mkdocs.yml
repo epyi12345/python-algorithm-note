@@ -32,6 +32,7 @@ nav:
   - Wrong Notes:
       - 0001. Order Settlement: wrong-notes/0001-order-settlement.md
       - 0002. Popular Products: wrong-notes/0002-popular-products.md
+      - 0003. Range Sales Query: wrong-notes/0003-range-sales-query.md
   - Learning:
       - Overview: learning/index.md
       - Python Basics: learning/python-basics.md
