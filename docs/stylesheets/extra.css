@@ -330,9 +330,12 @@ body.wrong-note-wide-page .md-sidebar--secondary {
   position: sticky;
   top: 3.2rem;
   width: 14rem;
+  min-width: 14rem;
+  max-width: 16rem;
   max-height: calc(100vh - 4rem);
   overflow-y: auto;
   padding-right: 0.75rem;
+  flex-shrink: 0;
 }
 
 body.wrong-note-wide-page .md-main__inner {
@@ -342,6 +345,7 @@ body.wrong-note-wide-page .md-main__inner {
 
 body.wrong-note-wide-page .md-content {
   max-width: none;
+  min-width: 0;
 }
 
 body.wrong-note-wide-page .md-content__inner {
