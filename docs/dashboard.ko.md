@@ -22,8 +22,8 @@
 | Lv.0 Warm-up | 0 | 0 | 0 | 아직 필요 없음 |
 | Lv.1 Basic | 1 | 1 | 0 | Order Settlement |
 | Lv.1+ Basic | 1 | 1 | 0 | Popular Products |
-| Lv.2 Core | 1 | 1 | 0 | Range Sales Query |
-| Lv.3 Intermediate | 0 | 0 | 0 | 시작 전 |
+| Lv.2 Core | 1 | 1 | 2 | Range Sales Query, Target Sales Window, Next Growth Day |
+| Lv.3 Intermediate | 0 | 0 | 2 | Minimum Shipping Capacity, Store Map Shortest Path |
 | Lv.4 Advanced | 0 | 0 | 0 | 시작 전 |
 | Lv.5 Challenge | 0 | 0 | 0 | 시작 전 |
 
@@ -41,3 +41,10 @@
 - prefix[0] = 0 이해하기
 - 1-based 질의 인덱스 처리
 - prefix[R] - prefix[L - 1] 적용
+
+## 대기 중 문제 큐
+
+- 0004. Target Sales Window / Lv.2 Core / Pending
+- 0005. Next Growth Day / Lv.2 Core / Pending
+- 0006. Minimum Shipping Capacity / Lv.3 Intermediate / Pending
+- 0007. Store Map Shortest Path / Lv.3 Intermediate / Pending

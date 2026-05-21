@@ -19,6 +19,10 @@ hide:
         <option value="0001">0001. Order Settlement</option>
         <option value="0002">0002. Popular Products</option>
         <option value="0003">0003. Range Sales Query</option>
+        <option value="0004">0004. Target Sales Window</option>
+        <option value="0005">0005. Next Growth Day</option>
+        <option value="0006">0006. Minimum Shipping Capacity</option>
+        <option value="0007">0007. Store Map Shortest Path</option>
       </select>
     </div>
 

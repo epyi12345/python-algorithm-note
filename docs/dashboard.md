@@ -22,8 +22,8 @@
 | Lv.0 Warm-up | 0 | 0 | 0 | Not needed yet |
 | Lv.1 Basic | 1 | 1 | 0 | Order Settlement |
 | Lv.1+ Basic | 1 | 1 | 0 | Popular Products |
-| Lv.2 Core | 1 | 1 | 0 | Range Sales Query |
-| Lv.3 Intermediate | 0 | 0 | 0 | Not started |
+| Lv.2 Core | 1 | 1 | 2 | Range Sales Query, Target Sales Window, Next Growth Day |
+| Lv.3 Intermediate | 0 | 0 | 2 | Minimum Shipping Capacity, Store Map Shortest Path |
 | Lv.4 Advanced | 0 | 0 | 0 | Not started |
 | Lv.5 Challenge | 0 | 0 | 0 | Not started |
 
@@ -41,3 +41,10 @@
 - Understanding prefix[0] = 0
 - Handling 1-based query indexes
 - Applying prefix[R] - prefix[L - 1]
+
+## Pending Practice Queue
+
+- 0004. Target Sales Window / Lv.2 Core / Pending
+- 0005. Next Growth Day / Lv.2 Core / Pending
+- 0006. Minimum Shipping Capacity / Lv.3 Intermediate / Pending
+- 0007. Store Map Shortest Path / Lv.3 Intermediate / Pending

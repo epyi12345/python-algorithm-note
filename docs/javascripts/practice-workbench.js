@@ -57,6 +57,66 @@
         sampleOutput: '60\n140\n40',
         hint: 'Build prefix sum once and answer each query in O(1).',
         link: '../../practice/0003-range-sales-query/'
+      },
+      '0004': {
+        title: '0004. Target Sales Window',
+        type: 'Two Pointers / Continuous Range / Implementation',
+        difficulty: 'Lv.2 Core',
+        status: 'Pending',
+        rules: [
+          'Find the shortest contiguous range whose sum is at least S.',
+          'All sales values are positive.',
+          'Print 0 if no valid range exists.'
+        ],
+        sampleInput: '6 7\n2 3 1 2 4 3',
+        sampleOutput: '2',
+        hint: 'Use two pointers: expand right, then shrink left once sum >= S.',
+        link: '../../practice/0004-target-sales-window/'
+      },
+      '0005': {
+        title: '0005. Next Growth Day',
+        type: 'Stack / Monotonic Stack / Implementation',
+        difficulty: 'Lv.2 Core',
+        status: 'Pending',
+        rules: [
+          'For each day, find distance to next strictly higher visitor count.',
+          'If no later higher day exists, output 0.',
+          'Output one wait value per day.'
+        ],
+        sampleInput: '6\n5 3 8 4 6 10',
+        sampleOutput: '2 1 3 1 1 0',
+        hint: 'Store unresolved indexes in a monotonic stack.',
+        link: '../../practice/0005-next-growth-day/'
+      },
+      '0006': {
+        title: '0006. Minimum Shipping Capacity',
+        type: 'Binary Search / Parametric Search / Greedy Check',
+        difficulty: 'Lv.3 Intermediate',
+        status: 'Pending',
+        rules: [
+          'Packages must stay in original order and cannot be split.',
+          'Find minimum capacity to finish within D days.',
+          'Capacity is searched over a value range.'
+        ],
+        sampleInput: '5 3\n1 2 3 4 5',
+        sampleOutput: '6',
+        hint: 'Binary search the capacity and simulate required days.',
+        link: '../../practice/0006-minimum-shipping-capacity/'
+      },
+      '0007': {
+        title: '0007. Store Map Shortest Path',
+        type: 'BFS / Grid / Shortest Path',
+        difficulty: 'Lv.3 Intermediate',
+        status: 'Pending',
+        rules: [
+          'Move in 4 directions only and avoid walls.',
+          'Find minimum moves from S to E.',
+          'Print -1 if unreachable.'
+        ],
+        sampleInput: '3 4\nS000\n1110\n000E',
+        sampleOutput: '5',
+        hint: 'Use BFS with queue and visited marking.',
+        link: '../../practice/0007-store-map-shortest-path/'
       }
     },
     ko: {
@@ -105,6 +165,66 @@
         sampleOutput: '60\n140\n40',
         hint: '누적합을 한 번 만들고 각 질의를 O(1)에 처리하세요.',
         link: '../../practice/0003-range-sales-query/'
+      },
+      '0004': {
+        title: '0004. Target Sales Window',
+        type: '투 포인터 / 연속 구간 / 구현',
+        difficulty: 'Lv.2 Core',
+        status: '대기 중',
+        rules: [
+          '합이 S 이상인 최소 연속 구간 길이를 찾습니다.',
+          '모든 sales 값은 양수입니다.',
+          '가능한 구간이 없으면 0을 출력합니다.'
+        ],
+        sampleInput: '6 7\n2 3 1 2 4 3',
+        sampleOutput: '2',
+        hint: 'sum < S면 오른쪽 확장, sum >= S면 왼쪽 축소를 시도하세요.',
+        link: '../../practice/0004-target-sales-window/'
+      },
+      '0005': {
+        title: '0005. Next Growth Day',
+        type: '스택 / 단조 스택 / 구현',
+        difficulty: 'Lv.2 Core',
+        status: '대기 중',
+        rules: [
+          '각 날짜에서 다음으로 더 큰 방문자 수까지의 대기 일수를 구합니다.',
+          '더 큰 값이 없으면 0을 출력합니다.',
+          '엄격히 큰 값(>)만 인정합니다.'
+        ],
+        sampleInput: '6\n5 3 8 4 6 10',
+        sampleOutput: '2 1 3 1 1 0',
+        hint: '미해결 인덱스를 단조 스택으로 관리하세요.',
+        link: '../../practice/0005-next-growth-day/'
+      },
+      '0006': {
+        title: '0006. Minimum Shipping Capacity',
+        type: '이분 탐색 / 매개변수 탐색 / 그리디 판별',
+        difficulty: 'Lv.3 Intermediate',
+        status: '대기 중',
+        rules: [
+          '패키지 순서를 유지한 채 D일 내 배송 가능한 최소 용량을 찾습니다.',
+          '패키지는 분할할 수 없습니다.',
+          '용량 값에 대해 가능 여부를 판별합니다.'
+        ],
+        sampleInput: '5 3\n1 2 3 4 5',
+        sampleOutput: '6',
+        hint: '용량 범위를 이분 탐색하고, 하루 수를 시뮬레이션하세요.',
+        link: '../../practice/0006-minimum-shipping-capacity/'
+      },
+      '0007': {
+        title: '0007. Store Map Shortest Path',
+        type: 'BFS / 격자 / 최단 경로',
+        difficulty: 'Lv.3 Intermediate',
+        status: '대기 중',
+        rules: [
+          '상하좌우 이동만 가능하고 벽은 통과할 수 없습니다.',
+          'S에서 E까지 최소 이동 횟수를 구합니다.',
+          '도달 불가능하면 -1을 출력합니다.'
+        ],
+        sampleInput: '3 4\nS000\n1110\n000E',
+        sampleOutput: '5',
+        hint: '큐(queue)를 사용한 BFS로 최단 거리를 구하세요.',
+        link: '../../practice/0007-store-map-shortest-path/'
       }
     }
   };

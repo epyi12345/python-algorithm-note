@@ -29,6 +29,10 @@ nav:
       - 0001 Order Settlement: practice/0001-order-settlement.md
       - 0002 Popular Products: practice/0002-popular-products.md
       - 0003 Range Sales Query: practice/0003-range-sales-query.md
+      - 0004 Target Sales Window: practice/0004-target-sales-window.md
+      - 0005 Next Growth Day: practice/0005-next-growth-day.md
+      - 0006 Minimum Shipping Capacity: practice/0006-minimum-shipping-capacity.md
+      - 0007 Store Map Shortest Path: practice/0007-store-map-shortest-path.md
   - Wrong Notes:
       - 0001. Order Settlement: wrong-notes/0001-order-settlement.md
       - 0002. Popular Products: wrong-notes/0002-popular-products.md
