@@ -12,7 +12,7 @@ html {
 .md-typeset h2,
 .md-typeset h3,
 .md-typeset h4 {
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 4.5rem;
 }
 
 .attempt-grid {
@@ -374,11 +374,11 @@ body.wrong-note-wide-page .md-header__button[for="__drawer"] {
 
 .wrong-note-toc {
   position: fixed;
-  top: 4rem;
+  top: 4.5rem;
   right: 1rem;
-  z-index: 4;
+  z-index: 1;
   width: 14rem;
-  max-height: calc(100vh - 5rem);
+  max-height: calc(100vh - 5.5rem);
   padding: 0.75rem 0.85rem;
   overflow-y: auto;
   border: 1px solid var(--md-default-fg-color--lightest);
@@ -452,4 +452,11 @@ body.wrong-note-wide-page .code-review__note {
   body.wrong-note-wide-page .code-review {
     grid-template-columns: 1fr;
   }
+}
+
+
+body.search-active .wrong-note-toc,
+body.wrong-note-wide-page #__search:checked ~ .md-container ~ .wrong-note-toc,
+body.wrong-note-wide-page #__drawer:checked ~ .md-container ~ .wrong-note-toc {
+  display: none;
 }

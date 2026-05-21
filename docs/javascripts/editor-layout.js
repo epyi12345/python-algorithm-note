@@ -96,6 +96,25 @@
     document.body.appendChild(aside);
   }
 
+  
+
+  function setupSearchActiveState() {
+    var search = document.querySelector('.md-search');
+    if (!search) return;
+
+    var update = function () {
+      var active = search.classList.contains('md-search--active') || !!search.querySelector(':focus-within');
+      document.body.classList.toggle('search-active', active);
+    };
+
+    var observer = new MutationObserver(update);
+    observer.observe(search, { attributes: true, attributeFilter: ['class'] });
+
+    search.addEventListener('focusin', update);
+    search.addEventListener('focusout', function () { setTimeout(update, 30); });
+    update();
+  }
+
   function applyLayoutClasses() {
     var selectors = ['.editor-fullscreen-layout', '.editor-wide-layout', '.practice-workbench'];
     var isEditorWorkspacePage = selectors.some(function (selector) {
@@ -108,6 +127,7 @@
     document.body.classList.toggle('wrong-note-wide-page', isWrongNotePage);
 
     buildWrongNoteToc();
+    setupSearchActiveState();
   }
 
   document.addEventListener('DOMContentLoaded', applyLayoutClasses);
