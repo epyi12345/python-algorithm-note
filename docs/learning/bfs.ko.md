@@ -1,20 +1,36 @@
 # BFS
 
-## 개념
-너비 우선 탐색은 거리(레벨) 순서로 노드를 탐색합니다.
+## What This Is
+Breadth-first search by distance layers.
 
-## 언제 쓰나
-- 무가중치 그래프/격자 최단 경로
+## When to Use It
+Unweighted shortest path on graph/grid.
 
-## 기본 패턴
-시작점을 큐(queue)에 넣고, pop 후 이웃을 확장하며 visited를 표시합니다.
+## Core Idea
+Queue + visited + distance increments by layers.
 
-## 작은 예시
-S에서 E까지 격자 최단거리 찾기.
+## Basic Syntax or Pattern
+```python
+from collections import deque
+q=deque([(sr,sc,0)])
+visited={(sr,sc)}
+```
 
-## 자주 하는 실수
-- visited 누락
-- 최단거리 보장을 DFS에 기대
+## Step-by-step Example
+Expand four neighbors and record first reach distance.
 
-## 관련 연습 문제
+## Common Mistakes
+- Missing visited
+- Using DFS for shortest path guarantee
+
+## Safe Pattern
+Mark visited when enqueueing to prevent duplicates.
+
+## Time Complexity
+O(V+E) / O(NM) on grid.
+
+## Related Practice Problems
 - [0007. Store Map Shortest Path](../practice/0007-store-map-shortest-path.md)
+
+## Review Checklist
+- Do I track distance with BFS layers?

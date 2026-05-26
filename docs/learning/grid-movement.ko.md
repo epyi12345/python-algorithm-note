@@ -1,21 +1,37 @@
-# 격자 이동
+# 격자 탐색(grid movement)
 
-## 개념
-행/열 좌표와 방향 벡터로 2차원 격자를 체계적으로 탐색하는 방법입니다.
+## What This Is
+Standard row/column traversal with direction vectors.
 
-## 언제 쓰나
-- 미로/격자 탐색
-- BFS/DFS 2차원 탐색
+## When to Use It
+Maze, map simulation, BFS/DFS on grid.
 
-## 기본 패턴
-방향 배열을 사용하고, 이동 전에 경계/벽 검사를 수행합니다.
+## Core Idea
+Use `dr/dc` arrays and boundary + wall checks.
 
-## 작은 예시
-`dirs = [(1,0),(-1,0),(0,1),(0,-1)]`
+## Basic Syntax or Pattern
+```python
+dr=[1,-1,0,0]; dc=[0,0,1,-1]
+for k in range(4):
+    nr, nc = r+dr[k], c+dc[k]
+```
 
-## 자주 하는 실수
-- 행/열 인덱스 혼동
-- 경계/벽 검사 누락
+## Step-by-step Example
+Check `0<=nr<N and 0<=nc<M` before access.
 
-## 관련 연습 문제
+## Common Mistakes
+- Swapping row/col
+- Missing bounds
+- Crossing walls
+
+## Safe Pattern
+Centralize `in_range` helper and visited checks.
+
+## Time Complexity
+O(NM) traversal for full scan.
+
+## Related Practice Problems
 - [0007. Store Map Shortest Path](../practice/0007-store-map-shortest-path.md)
+
+## Review Checklist
+- Are boundary and wall checks explicit?

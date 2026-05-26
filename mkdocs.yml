@@ -39,20 +39,31 @@ nav:
       - 0003. Range Sales Query: wrong-notes/0003-range-sales-query.md
   - Learning:
       - Overview: learning/index.md
-      - Python Basics: learning/python-basics.md
-      - Python Input: learning/python-input.md
-      - Set: learning/python-set.md
-      - Dict and Defaultdict: learning/python-dict-defaultdict.md
-      - Sorting: learning/python-sorting.md
-      - Pass vs Continue: learning/pass-vs-continue.md
-      - Filtering and Max: learning/filtering-and-max.md
-      - Tie-break Sorting: learning/tie-break-sorting.md
-      - Prefix Sum: learning/prefix-sum.md
-      - Complexity Guide: learning/complexity-guide.md
-      - Problem Patterns: learning/problem-patterns.md
-      - Common Mistakes: learning/common-mistakes.md
-      - Review Checklists: learning/review-checklists.md
-      - Mobile App Plan: learning/mobile-app-plan.md
+      - Python Basics:
+          - Python Input: learning/python-input.md
+          - Time Complexity: learning/time-complexity.md
+          - Implementation Thinking: learning/implementation-thinking.md
+      - Data Structures:
+          - dict, set, Counter: learning/dict-set-counter.md
+          - defaultdict: learning/defaultdict.md
+          - Stack: learning/stack.md
+          - Queue and deque: learning/queue-deque.md
+          - Heap and Priority Queue: learning/heap-priority-queue.md
+      - Core Patterns:
+          - Sorting and lambda: learning/sorting-and-lambda.md
+          - Prefix Sum: learning/prefix-sum.md
+          - Two Pointers: learning/two-pointers.md
+          - Sliding Window: learning/sliding-window.md
+          - Monotonic Stack: learning/monotonic-stack.md
+      - Search and Graph:
+          - Binary Search: learning/binary-search.md
+          - Parametric Search: learning/parametric-search.md
+          - BFS: learning/bfs.md
+          - DFS and Recursion: learning/dfs-recursion.md
+          - Grid Movement: learning/grid-movement.md
+      - Strategy:
+          - Greedy: learning/greedy.md
+          - DP Introduction: learning/dp-introduction.md
   - Tools:
       - Python Editor: tools/python-editor.md
       - Practice Workbench: tools/practice-workbench.md
@@ -89,6 +100,28 @@ plugins:
             Learning: 학습 자료
             Overview: 개요
             Python Basics: 파이썬 기초
+            Data Structures: 핵심 자료구조
+            Core Patterns: 구간과 윈도우 패턴
+            Search and Graph: 그래프와 격자
+            Strategy: 전략 패턴
+            Time Complexity: 시간복잡도
+            Implementation Thinking: 구현 사고
+            dict, set, Counter: dict, set, Counter
+            defaultdict: defaultdict
+            Stack: 스택
+            Queue and deque: 큐와 deque
+            Heap and Priority Queue: 힙과 우선순위 큐
+            Sorting and lambda: 정렬과 lambda
+            Two Pointers: 투 포인터
+            Sliding Window: 슬라이딩 윈도우
+            Monotonic Stack: 단조 스택
+            Binary Search: 이분 탐색
+            Parametric Search: 매개변수 탐색
+            BFS: BFS
+            DFS and Recursion: DFS와 재귀
+            Grid Movement: 격자 탐색
+            Greedy: 그리디
+            DP Introduction: DP 입문
             Prefix Sum: 누적합
             Tie-break Sorting: 동률 정렬
             Filtering and Max: 필터링과 최댓값

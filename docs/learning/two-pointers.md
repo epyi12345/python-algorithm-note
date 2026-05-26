@@ -1,21 +1,31 @@
 # Two Pointers
 
-## What it is
-Use two indexes to represent a window/range and move them under rules.
+## What This Is
+Core pattern page.
 
-## When to use it
-- Contiguous range problems
-- Positive-value window sum problems
+## When to Use It
+Range/query pattern tasks.
 
-## Basic pattern
-Expand right to include more, shrink left to optimize or restore condition.
+## Core Idea
+Precompute or move pointers incrementally.
 
-## Small example
-Find shortest subarray with sum >= S in positive array.
+## Basic Syntax or Pattern
+Use standard pattern for this topic.
 
-## Common mistakes
-- Non-contiguous selection
-- Missing left-shrink logic
+## Step-by-step Example
+See practice and examples below.
 
-## Related practice problems
-- [0004. Target Sales Window](../practice/0004-target-sales-window.md)
+## Common Mistakes
+Index and boundary mistakes.
+
+## Safe Pattern
+Define invariant first.
+
+## Time Complexity
+Depends on implementation; usually O(N).
+
+## Related Practice Problems
+- [0003. Range Sales Query](../practice/0003-range-sales-query.md)
+
+## Review Checklist
+- Can I explain invariant?

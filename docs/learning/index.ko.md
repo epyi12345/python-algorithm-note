@@ -1,24 +1,35 @@
 # 학습 자료
 
-이 섹션은 저장소를 단순 문제 보관소가 아닌, 짧은 복습 중심의
-알고리즘 학습 가이드로 활용하기 위해 구성되었습니다.
+문제 풀이 전에 핵심 이론을 먼저 학습하는 페이지입니다.
 
-## 모바일에서 사용하는 방법
+## 파이썬 기초
+- [Python Input](../learning/python-input.md)
+- [Time Complexity](../learning/time-complexity.md)
+- [Implementation Thinking](../learning/implementation-thinking.md)
 
-- 한 번에 한 페이지씩 짧게 읽기
-- 3~7분 단위로 집중 복습하기
-- 페이지마다 핵심 포인트 1개 기록하기
-- 익숙해질 때까지 반복해서 다시 보기
+## 핵심 자료구조
+- [dict, set, Counter](../learning/dict-set-counter.md)
+- [defaultdict](../learning/defaultdict.md)
+- [Stack](../learning/stack.md)
+- [Queue and deque](../learning/queue-deque.md)
+- [Heap and Priority Queue](../learning/heap-priority-queue.md)
 
-## 추천 출퇴근 학습 흐름
+## 구간과 윈도우 패턴
+- [Sorting and lambda](../learning/sorting-and-lambda.md)
+- [Prefix Sum](../learning/prefix-sum.md)
+- [Two Pointers](../learning/two-pointers.md)
+- [Sliding Window](../learning/sliding-window.md)
+- [Monotonic Stack](../learning/monotonic-stack.md)
 
-1. 패턴 1개 복습
-2. 자주 하는 실수 1개 읽기
-3. 이미 푼 문제 1개 다시 보기
-4. 리뷰 체크리스트 1개 점검
+## 그래프와 격자
+- [BFS](../learning/bfs.md)
+- [DFS and Recursion](../learning/dfs-recursion.md)
+- [Grid Movement](../learning/grid-movement.md)
 
-- 누적합(prefix sum) 페이지는 조건 누적합, 2차원 누적합, 해시맵 결합, 차분 배열까지 확장 학습을 포함합니다.
+## 탐색과 최적화
+- [Binary Search](../learning/binary-search.md)
+- [Parametric Search](../learning/parametric-search.md)
 
-## 빠른 도구
-
-- 파이썬 에디터: [내부 에디터 페이지 열기](../tools/python-editor.md)
+## 전략 패턴
+- [Greedy](../learning/greedy.md)
+- [DP Introduction](../learning/dp-introduction.md)

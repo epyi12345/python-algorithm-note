@@ -1,20 +1,32 @@
 # Parametric Search
 
-## What it is
-Binary search on answer values using feasibility check function.
+## What This Is
+Binary search on answer value using decision function.
 
-## When to use it
-- Need minimum/maximum value satisfying a condition
+## When to Use It
+When asked for min/max value that satisfies a condition.
 
-## Basic pattern
-Define `can(x)` and binary-search smallest/ largest feasible x.
+## Core Idea
+Need monotonic feasibility: if C works, larger/smaller side predictable.
 
-## Small example
-Can all packages be shipped in D days with capacity C?
+## Basic Syntax or Pattern
+Shipping concept: `can_ship(capacity)` returns days <= D.
 
-## Common mistakes
-- Non-monotonic check function
-- Using wrong search interval
+## Step-by-step Example
+Search between `max(weights)` and `sum(weights)`.
 
-## Related practice problems
+## Common Mistakes
+- Non-monotonic decision function
+- Wrong search bounds
+
+## Safe Pattern
+Separate decision check from binary search loop cleanly.
+
+## Time Complexity
+O(log range * check_cost).
+
+## Related Practice Problems
 - [0006. Minimum Shipping Capacity](../practice/0006-minimum-shipping-capacity.md)
+
+## Review Checklist
+- Is decision function monotonic?

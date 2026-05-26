@@ -1,21 +1,37 @@
 # 단조 스택(monotonic stack)
 
-## 개념
-스택의 정렬 성질(단조 증가/감소)을 유지하며 한 번의 순회로 문제를 푸는 기법입니다.
+## What This Is
+Stack that keeps monotonic order to solve next greater/smaller in O(N).
 
-## 언제 쓰나
-- 다음 더 큰 값
-- 이전 더 작은 값
+## When to Use It
+Next greater day/temperature/price span styles.
 
-## 기본 패턴
-현재 값이 단조 조건을 깨면 pop하며 해당 인덱스를 해결합니다.
+## Core Idea
+While current breaks monotonic condition, pop and resolve.
 
-## 작은 예시
-다음 성장일까지 대기 일수 계산 O(N).
+## Basic Syntax or Pattern
+```python
+for i,v in enumerate(arr):
+    while st and arr[st[-1]] < v:
+        j=st.pop(); ans[j]=i-j
+    st.append(i)
+```
 
-## 자주 하는 실수
-- 엄격/비엄격 비교 혼동
-- 미해결 기본값 처리 누락
+## Step-by-step Example
+Each index pushed once and popped once.
 
-## 관련 연습 문제
+## Common Mistakes
+- Using >= vs > incorrectly
+- Storing values only
+
+## Safe Pattern
+Store indexes; unresolved answers remain default 0.
+
+## Time Complexity
+O(N).
+
+## Related Practice Problems
 - [0005. Next Growth Day](../practice/0005-next-growth-day.md)
+
+## Review Checklist
+- Did each index push/pop at most once?

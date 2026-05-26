@@ -1,21 +1,39 @@
 # Binary Search
 
-## What it is
-Divide search space by midpoint checks on monotonic condition.
+## What This Is
+Halving search interval on monotonic condition.
 
-## When to use it
-- Sorted data search
-- Ordered answer space search
+## When to Use It
+Sorted data or ordered feasible space.
 
-## Basic pattern
-If mid is feasible, move right bound left; else move left bound right.
+## Core Idea
+Use `left`, `right`, `mid` with `while left <= right`.
 
-## Small example
-Minimum shipping capacity over [max(weights), sum(weights)].
+## Basic Syntax or Pattern
+```python
+while left <= right:
+    mid = (left + right)//2
+    if cond(mid):
+        right = mid - 1
+    else:
+        left = mid + 1
+```
 
-## Common mistakes
-- Wrong bounds
-- Infinite loop from bad updates
+## Step-by-step Example
+Maintain invariant of search interval and shrink correctly.
 
-## Related practice problems
+## Common Mistakes
+- Infinite loops from bad updates
+- Wrong boundary initialization
+
+## Safe Pattern
+Define target variant (exact/lower-bound) before coding.
+
+## Time Complexity
+O(log N) checks; total depends on check cost.
+
+## Related Practice Problems
 - [0006. Minimum Shipping Capacity](../practice/0006-minimum-shipping-capacity.md)
+
+## Review Checklist
+- Do left/right updates strictly move?

@@ -1,20 +1,32 @@
 # 매개변수 탐색(parametric search)
 
-## 개념
-정답 후보 값을 이분 탐색하고, 판별 함수로 가능 여부를 검사하는 기법입니다.
+## What This Is
+Binary search on answer value using decision function.
 
-## 언제 쓰나
-- 조건을 만족하는 최소/최대 값을 구할 때
+## When to Use It
+When asked for min/max value that satisfies a condition.
 
-## 기본 패턴
-`can(x)`를 정의하고 가능한 x의 최소/최대를 이분 탐색합니다.
+## Core Idea
+Need monotonic feasibility: if C works, larger/smaller side predictable.
 
-## 작은 예시
-용량 C로 D일 안에 배송 가능한가?
+## Basic Syntax or Pattern
+Shipping concept: `can_ship(capacity)` returns days <= D.
 
-## 자주 하는 실수
-- 단조성이 없는 판별 함수
-- 탐색 구간 설정 오류
+## Step-by-step Example
+Search between `max(weights)` and `sum(weights)`.
 
-## 관련 연습 문제
+## Common Mistakes
+- Non-monotonic decision function
+- Wrong search bounds
+
+## Safe Pattern
+Separate decision check from binary search loop cleanly.
+
+## Time Complexity
+O(log range * check_cost).
+
+## Related Practice Problems
 - [0006. Minimum Shipping Capacity](../practice/0006-minimum-shipping-capacity.md)
+
+## Review Checklist
+- Is decision function monotonic?

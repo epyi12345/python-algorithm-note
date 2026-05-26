@@ -1,21 +1,39 @@
 # 이분 탐색(binary search)
 
-## 개념
-단조 조건이 있는 탐색 공간을 절반씩 줄여 답을 찾는 기법입니다.
+## What This Is
+Halving search interval on monotonic condition.
 
-## 언제 쓰나
-- 정렬 데이터 탐색
-- 정답 공간 탐색
+## When to Use It
+Sorted data or ordered feasible space.
 
-## 기본 패턴
-mid가 가능하면 오른쪽 경계를 줄이고, 불가능하면 왼쪽 경계를 늘립니다.
+## Core Idea
+Use `left`, `right`, `mid` with `while left <= right`.
 
-## 작은 예시
-[최대 패키지, 전체 합] 범위에서 최소 배송 용량 찾기.
+## Basic Syntax or Pattern
+```python
+while left <= right:
+    mid = (left + right)//2
+    if cond(mid):
+        right = mid - 1
+    else:
+        left = mid + 1
+```
 
-## 자주 하는 실수
-- 경계값 설정 오류
-- 경계 갱신 실수로 무한 루프
+## Step-by-step Example
+Maintain invariant of search interval and shrink correctly.
 
-## 관련 연습 문제
+## Common Mistakes
+- Infinite loops from bad updates
+- Wrong boundary initialization
+
+## Safe Pattern
+Define target variant (exact/lower-bound) before coding.
+
+## Time Complexity
+O(log N) checks; total depends on check cost.
+
+## Related Practice Problems
 - [0006. Minimum Shipping Capacity](../practice/0006-minimum-shipping-capacity.md)
+
+## Review Checklist
+- Do left/right updates strictly move?

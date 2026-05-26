@@ -1,54 +1,47 @@
 # Python Input
 
-## What it is
+## What This Is
+Safe and fast input handling patterns for coding tests.
 
-Python input patterns for coding tests, especially when input is large.
+## When to Use It
+When input size is large or structured by lines/tokens.
 
-## When to use it
+## Core Idea
+Parse once into the right types; avoid repeated string conversion.
 
-- Many lines of input
-- Large `N`
-- Structured line-based parsing
-
-## Basic syntax
-
+## Basic Syntax or Pattern
 ```python
 import sys
 input = sys.stdin.readline
-
 n = int(input())
-a, b = map(int, input().split())
 arr = list(map(int, input().split()))
+result = []
 for _ in range(n):
-    line = input().split()
+    a, b = map(int, input().split())
+    result.append(a + b)
+print(*result, sep="\n")
 ```
 
-## Small example
+## Step-by-step Example
+1) Read N. 2) Read values with split/map. 3) Process N lines. 4) Print batched output.
 
-```python
-import sys
-input = sys.stdin.readline
+## Common Mistakes
+- Using plain `input()` in huge input
+- Forgetting `strip()` side effects
+- Storing numbers as strings
 
-n = int(input())
-for _ in range(n):
-    x, y = map(int, input().split())
-    print(x + y)
-```
+## Safe Pattern
+- Use `sys.stdin.readline`
+- Convert to int at read time
+- Print once with `print(*result, sep="\n")`
 
-## Common mistakes
+## Time Complexity
+Read/parse is O(total tokens).
 
-- Using `input()` for very large input without performance consideration
-- Forgetting `split()` before parsing multiple values
-- Calling `int()` on a whole line with spaces
-
-## Safe pattern
-
-- Use `sys.stdin.readline` for speed
-- Use `split()` for token parsing
-- Use `map(int, ...)` only where numeric conversion is needed
-
-## Related practice problems
-
+## Related Practice Problems
 - [0001. Order Settlement](../practice/0001-order-settlement.md)
-- [0002. Popular Products](../practice/0002-popular-products.md)
-- [0003. Range Sales Query](../practice/0003-range-sales-query.md)
+- [0007. Store Map Shortest Path](../practice/0007-store-map-shortest-path.md)
+
+## Review Checklist
+- Did I convert numeric tokens once?
+- Did I avoid per-line slow output?
