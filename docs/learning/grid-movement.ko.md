@@ -1,37 +1,54 @@
 # 격자 탐색(grid movement)
 
-## What This Is
-Standard row/column traversal with direction vectors.
+## 이 개념은 무엇인가
+격자(grid) 탐색은 행(row), 열(column) 좌표를 사용해 2차원 맵을 이동하는 기본 패턴입니다. BFS/DFS의 실제 문제 적용에서 가장 자주 등장합니다.
 
-## When to Use It
-Maze, map simulation, BFS/DFS on grid.
+## 언제 사용하는가
+- 미로, 맵, 보드 형태의 이동 문제를 풀 때
+- 시작점에서 도착점까지 경로/최단거리를 구할 때
+- 벽(wall)이나 장애물이 있는 공간을 탐색할 때
 
-## Core Idea
-Use `dr/dc` arrays and boundary + wall checks.
+## 핵심 아이디어
+- 좌표는 `(r, c)`로 관리하고, `r`은 행(row), `c`는 열(column)로 고정합니다.
+- 4방향 이동은 방향 배열 `dr`, `dc`를 사용하면 실수를 줄일 수 있습니다.
+- 이동할 때마다 경계 체크, 벽 체크, 방문 처리를 순서대로 수행합니다.
+- 최단거리가 필요하면 격자 BFS를 사용합니다.
 
-## Basic Syntax or Pattern
+## 기본 문법 또는 패턴
 ```python
 dr=[1,-1,0,0]; dc=[0,0,1,-1]
 for k in range(4):
     nr, nc = r+dr[k], c+dc[k]
 ```
 
-## Step-by-step Example
-Check `0<=nr<N and 0<=nc<M` before access.
+## 단계별 예시
+1. 시작점 `(sr, sc)`와 도착점 `(tr, tc)`를 정의합니다.
+2. 현재 칸에서 4방향 후보 `(nr, nc)`를 생성합니다.
+3. `0 <= nr < n`, `0 <= nc < m` 경계 체크를 먼저 통과시킵니다.
+4. 벽(wall)인지 확인하고, 이동 가능 칸만 남깁니다.
+5. 미방문 칸이면 방문 처리 후 BFS 큐(queue)에 넣습니다.
+6. 도착점을 처음 만난 거리 값이 최단거리입니다.
 
-## Common Mistakes
-- Swapping row/col
-- Missing bounds
-- Crossing walls
+## 흔한 실수
+- 행/열 순서를 바꿔 `grid[c][r]`처럼 접근하는 실수
+- 경계 체크 전에 배열 접근을 시도해 인덱스 오류가 나는 실수
+- 시작점 방문 처리를 빼먹어 중복 탐색이 발생하는 실수
+- 도착점 판정을 늦게 하거나 벽 체크보다 먼저 처리해 논리가 꼬이는 실수
 
-## Safe Pattern
-Centralize `in_range` helper and visited checks.
+## 안전한 패턴
+- `(r, c)` 표기를 코드 전체에서 고정합니다.
+- `in_range(nr, nc)` 같은 헬퍼로 경계 체크를 일관되게 수행합니다.
+- "경계 체크 -> 벽 체크 -> 방문 체크 -> enqueue" 순서를 템플릿화합니다.
+- 최단거리 문제는 DFS 대신 BFS를 기본 선택으로 둡니다.
 
-## Time Complexity
-O(NM) traversal for full scan.
+## 시간복잡도
+- 격자 전체를 한 번씩 방문하면 `O(NM)`입니다.
+- BFS 큐 연산은 칸 수 기준 선형에 가깝게 동작합니다.
 
-## Related Practice Problems
+## 관련 문제
 - [0007. Store Map Shortest Path](../practice/0007-store-map-shortest-path.md)
 
-## Review Checklist
-- Are boundary and wall checks explicit?
+## 복습 체크리스트
+- 행(row)/열(column) 좌표 체계를 일관되게 사용했는가?
+- 방향 배열과 경계 체크를 올바른 순서로 적용했는가?
+- 최단거리 요구에서 BFS를 적용했는가?
