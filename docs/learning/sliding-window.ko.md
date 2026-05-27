@@ -1,15 +1,20 @@
 # 슬라이딩 윈도우(sliding window)
 
-## What This Is
-Window-based incremental range processing.
+## 이 개념은 무엇인가
+슬라이딩 윈도우(sliding window)는 연속 구간의 상태(합, 개수, 빈도)를 재사용하며 창(window)을 이동시키는 최적화 기법입니다.
 
-## When to Use It
-Fixed-size or variable-size contiguous range problems.
+## 언제 사용하는가
+- 고정 길이 윈도우의 최대/최소/합을 구할 때
+- 가변 길이 윈도우에서 조건을 만족하는 구간을 찾을 때
+- 매 구간을 처음부터 다시 계산하면 비효율적인 문제
 
-## Core Idea
-Reuse previous window state instead of recomputing each range.
+## 핵심 아이디어
+- 윈도우를 한 칸 이동할 때, 들어오는 값은 더하고 나가는 값은 뺍니다.
+- 고정 길이 윈도우는 보통 "한 칸씩 이동"이 핵심입니다.
+- 가변 길이 윈도우는 조건에 따라 확장/축소를 반복합니다.
+- 투 포인터(two pointers)와 겹치지만, 슬라이딩 윈도우는 "윈도우 상태 유지" 관점이 강조됩니다.
 
-## Basic Syntax or Pattern
+## 기본 문법 또는 패턴
 ```python
 # fixed-size sum k
 window = sum(arr[:k])
@@ -17,21 +22,32 @@ for i in range(k, n):
     window += arr[i] - arr[i-k]
 ```
 
-## Step-by-step Example
-Update by add entering value and remove leaving value.
+## 단계별 예시
+1. 고정 길이 `k`의 초기 윈도우 합을 계산합니다.
+2. 오른쪽으로 한 칸 이동할 때 새 원소를 더합니다.
+3. 동시에 범위를 벗어난 왼쪽 원소를 뺍니다.
+4. 이렇게 하면 각 이동마다 `O(1)`로 새 윈도우 값을 얻습니다.
+5. `0004. Target Sales Window`처럼 구간 조건을 빠르게 갱신해야 하는 문제에 적용할 수 있습니다.
 
-## Common Mistakes
-- Recomputing full window each step
-- Wrong left/right updates
+## 흔한 실수
+- 윈도우를 옮길 때 빠져나간 값을 빼지 않아 stale 값이 남는 실수
+- 인덱스 경계를 잘못 잡아 첫 윈도우/마지막 윈도우를 누락하는 실수
+- 투 포인터와 슬라이딩 윈도우의 목적을 구분하지 못해 코드가 복잡해지는 실수
 
-## Safe Pattern
-Track window state (sum/count/frequency) incrementally.
+## 안전한 패턴
+- 윈도우 상태 변수(합/카운트/빈도)를 명시적으로 하나씩 관리합니다.
+- "들어오는 값 +, 나가는 값 -" 규칙을 코드 템플릿으로 고정합니다.
+- 고정 길이와 가변 길이 로직을 분리해 작성합니다.
+- 작은 배열로 수동 추적해 인덱스 오류를 먼저 제거합니다.
 
-## Time Complexity
-Often O(N).
+## 시간복잡도
+- 고정 길이 슬라이딩 윈도우는 보통 `O(N)`입니다.
+- 가변 길이도 포인터 총 이동 기준으로 대개 `O(N)`입니다.
 
-## Related Practice Problems
+## 관련 문제
 - [0004. Target Sales Window](../practice/0004-target-sales-window.md)
 
-## Review Checklist
-- Am I updating window in O(1) per step?
+## 복습 체크리스트
+- 고정 길이 윈도우/가변 길이 윈도우를 구분했는가?
+- 매 이동에서 상태를 `O(1)`로 갱신하고 있는가?
+- stale 값(빠져나간 값 누락) 문제가 없는가?
