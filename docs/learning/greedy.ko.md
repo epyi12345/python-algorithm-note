@@ -1,32 +1,58 @@
 # 그리디(greedy)
 
-## What This Is
-Choose locally optimal action each step.
+## 이 개념은 무엇인가
+그리디(greedy)는 매 단계에서 지금 당장 가장 좋아 보이는 선택(지역 최적 선택)을 하고, 이를 누적해 전체 해를 만드는 전략입니다.
 
-## When to Use It
-When local choice can be proven globally valid.
+## 언제 사용하는가
+- 선택이 여러 번 반복되고, 각 선택이 이후 결정에 영향을 줄 때
+- 정렬 기반으로 우선순위를 정한 뒤 한 번 순회하며 결정할 수 있을 때
+- "지금 최선"을 골라도 전체 최적해와 일치한다는 근거를 만들 수 있을 때
 
-## Core Idea
-Often paired with sorting and one-pass selection.
+## 핵심 아이디어
+- 그리디의 핵심은 "빨라서"가 아니라 "정당화 가능"입니다.
+- 지역 최적 선택이 전체 최적해로 이어진다는 조건(교환 논법, 불변식 등)이 필요합니다.
+- 정렬 기반 그리디, 스케줄링/구간 선택, 힙(heap) + 우선순위 큐(priority queue) 패턴이 자주 등장합니다.
 
-## Basic Syntax or Pattern
-Pattern: sort by criterion, iterate and commit decisions.
+## 기본 문법 또는 패턴
+```python
+items.sort(key=lambda x: x[1])
+selected = []
+last_end = -1
+for s, e in items:
+    if s >= last_end:
+        selected.append((s, e))
+        last_end = e
+```
 
-## Step-by-step Example
-Interval scheduling chooses earliest ending first.
+## 단계별 예시
+1. 스케줄링 문제에서 구간 `(start, end)` 목록을 준비합니다.
+2. 종료 시간이 빠른 순서로 정렬합니다(정렬 기반 그리디).
+3. 현재 선택과 겹치지 않는 다음 구간을 채택합니다.
+4. 이 과정을 반복하면 선택 가능한 작업 수를 극대화하는 해를 만들 수 있습니다.
+5. 우선순위가 바뀌는 문제는 힙(heap)/우선순위 큐(priority queue)와 함께 그리디를 구성하기도 합니다.
 
-## Common Mistakes
-- Assuming greedy always works
-- No proof/invariant
+## 흔한 실수
+- "일단 커 보이는 값"을 고르면 된다고 막연히 가정하는 실수
+- 지역 최적 선택의 정당화 없이 구현부터 하는 실수
+- 반례를 확인하지 않아 특정 입력에서 전체 최적해를 놓치는 실수
+- 정렬 기준을 잘못 잡아 선택 순서 자체가 틀어지는 실수
 
-## Safe Pattern
-State why local choice preserves optimality.
+## 안전한 패턴
+- 먼저 그리디 조건이 성립하는지 문장으로 설명합니다.
+- 작은 반례를 직접 만들어 가정을 깨보는 습관을 들입니다.
+  - 예: 큰 값 먼저 고르면 이후 조합이 막혀 전체 합이 줄어드는 경우
+- 정렬 기준/선택 조건을 코드 주석으로 명확히 남깁니다.
+- 검증이 어렵다면 DP나 완전 탐색과 비교해 결과를 교차 확인합니다.
 
-## Time Complexity
-Often O(N log N) with sorting.
+## 시간복잡도
+- 정렬이 들어가면 보통 `O(N log N)`입니다.
+- 정렬 후 한 번 순회 선택은 대개 `O(N)`입니다.
 
-## Related Practice Problems
+## 관련 문제
 - [0006. Minimum Shipping Capacity](../practice/0006-minimum-shipping-capacity.md)
 
-## Review Checklist
-- Did I justify local-choice validity?
+## 복습 체크리스트
+- 지역 최적 선택이 왜 전체 최적해로 이어지는지 설명할 수 있는가?
+- 정렬 기준과 선택 조건이 문제 요구와 일치하는가?
+- 반례 테스트로 가정의 취약점을 점검했는가?
+- 힙(heap)/우선순위 큐(priority queue) 결합이 필요한 문제인지 판단했는가?
