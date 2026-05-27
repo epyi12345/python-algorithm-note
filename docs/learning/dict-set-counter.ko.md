@@ -1,15 +1,21 @@
 # dict, set, Counter
 
-## What This Is
-Core hash-based tools in Python.
+## 이 개념은 무엇인가
+`dict`, `set`, `Counter`는 모두 해시(hash) 기반 자료구조입니다. 데이터의 존재 여부 확인, 누적, 빈도 계산을 빠르게 처리할 때 핵심 도구로 사용합니다.
 
-## When to Use It
-Counting, grouping, duplicate detection, frequency ranking.
+## 언제 사용하는가
+- 항목별 합계/개수 누적이 필요할 때: `dict`
+- 중복 제거 또는 중복 여부 검사만 필요할 때: `set`
+- 빈도 계산과 상위 빈도 조회가 필요할 때: `Counter`
+- 그룹 단위 처리(예: 카테고리별 묶기)가 필요할 때: `dict` + 리스트/카운트 패턴
 
-## Core Idea
-dict accumulates values, set tracks uniqueness, Counter gives frequency API.
+## 핵심 아이디어
+- `dict`는 키(key)와 값(value)을 매핑해 누적 로직을 만들기 쉽습니다.
+- `set`은 같은 값을 한 번만 보관하므로 중복 처리에 강합니다.
+- `Counter`는 내부적으로 빈도 계산에 최적화된 API를 제공합니다.
+- 여러 값을 함께 식별해야 하면 튜플 키(tuple key)를 사용합니다.
 
-## Basic Syntax or Pattern
+## 기본 문법 또는 패턴
 ```python
 from collections import Counter
 seen = set()
@@ -20,22 +26,32 @@ for x in ["a", "b", "a"]:
 freq = Counter(["a", "b", "a"])
 ```
 
-## Step-by-step Example
-Use tuple keys for multi-field identity like `(id, product, qty, status)`.
+## 단계별 예시
+1. 거래 로그를 한 줄씩 읽습니다.
+2. 상품별 총 수량은 `dict`로 누적합니다.
+3. 이미 본 주문인지 확인할 때는 `set`으로 중복 여부를 검사합니다.
+4. 가장 많이 등장한 항목을 빠르게 찾을 때는 `Counter`를 사용합니다.
+5. 주문자+상품처럼 복합 식별이 필요하면 `(user_id, product_id)` 형태의 튜플 키(tuple key)를 사용합니다.
 
-## Common Mistakes
-- Forgetting tuple key immutability needs
-- Assuming set keeps order
+## 흔한 실수
+- 튜플 키(tuple key) 자리에 리스트처럼 변경 가능한 객체를 넣으려는 실수
+- `set`이 입력 순서를 보장한다고 가정하는 실수
+- 단순 빈도 계산인데도 수동으로 정렬/누적 코드를 과하게 작성하는 실수
 
-## Safe Pattern
-Pick by intent: uniqueness(set), accumulation(dict), frequency(Counter).
+## 안전한 패턴
+- 의도를 먼저 결정합니다: 중복 제거(`set`) / 누적(`dict`) / 빈도 계산(`Counter`).
+- 누적 시에는 `acc.get(key, 0) + 1`처럼 기본값을 명시합니다.
+- 복합 조건 식별은 튜플 키(tuple key)로 일관되게 관리합니다.
 
-## Time Complexity
-Average O(1) per hash operation.
+## 시간복잡도
+- 해시 조회/삽입/갱신은 평균적으로 `O(1)`입니다.
+- 전체 `N`개 데이터를 한 번 순회하며 누적하면 보통 `O(N)`입니다.
 
-## Related Practice Problems
+## 관련 문제
 - [0001. Order Settlement](../practice/0001-order-settlement.md)
 - [0002. Popular Products](../practice/0002-popular-products.md)
 
-## Review Checklist
-- Did I choose the right hash container?
+## 복습 체크리스트
+- `dict`, `set`, `Counter` 중 목적에 맞는 도구를 선택했는가?
+- 중복 처리와 빈도 계산 로직을 분리해서 읽기 쉽게 구성했는가?
+- 복합 식별이 필요한 경우 튜플 키(tuple key)를 사용했는가?
