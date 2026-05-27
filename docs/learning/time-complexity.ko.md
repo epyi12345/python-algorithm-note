@@ -1,39 +1,200 @@
 # 시간복잡도(time complexity)
 
-## What This Is
-A way to estimate runtime growth as input increases.
+## 이 개념은 무엇인가
 
-## When to Use It
-When deciding whether an approach will pass constraints.
+시간복잡도는 입력 크기가 커질 때 알고리즘의 실행 시간이 얼마나 빠르게 증가하는지 표현하는 방법입니다.
 
-## Core Idea
-Use worst-case upper bound and operation count estimation.
+코딩테스트에서는 실제 실행 시간을 정확히 계산하기보다, **최악의 경우 연산 횟수가 어느 정도까지 커지는지**를 보고 풀이가 통과 가능한지 판단합니다.
 
-## Basic Syntax or Pattern
-| Class | Meaning |
-|---|---|
-| O(1) | constant |
-| O(log N) | halving search |
-| O(N) | linear scan |
-| O(N log N) | sort+scan |
-| O(N^2) | double loop |
-| O(NQ) | nested by N and Q |
+예를 들어 `N = 100000`일 때 모든 쌍을 확인하는 `O(N^2)` 풀이는 대략 다음 수준이 됩니다.
 
-## Step-by-step Example
-For N=100000, O(N^2) is too large; O(N log N) is usually acceptable.
+```text
+100000 * 100000 = 10000000000
+```
 
-## Common Mistakes
-- Ignoring worst-case input
-- Confusing average and worst case
+이 정도 연산은 대부분의 제한 시간에서 통과하기 어렵습니다.
 
-## Safe Pattern
-Estimate operations before coding; reject clearly too-large designs early.
+## 언제 사용하는가
 
-## Time Complexity
-Depends on algorithm; compare against constraints table.
+시간복잡도는 문제를 읽은 직후에 판단해야 합니다.
 
-## Related Practice Problems
+다음 상황에서 특히 중요합니다.
+
+- `N`, `Q` 같은 입력 크기가 크다.
+- 모든 경우를 다 확인하는 풀이가 떠오른다.
+- 중첩 반복문을 사용하려고 한다.
+- 정렬, 해시, 누적합, 투 포인터 같은 최적화 패턴이 필요한지 판단해야 한다.
+- 예제는 맞는데 큰 입력에서 시간 초과가 날 수 있는지 확인해야 한다.
+
+## 핵심 아이디어
+
+시간복잡도 판단의 핵심은 세 가지입니다.
+
+1. 최악의 입력을 기준으로 생각합니다.
+2. 반복문이 몇 번 도는지 대략 계산합니다.
+3. 제한 조건에 비해 너무 큰 풀이를 초기에 버립니다.
+
+문제에서 `N <= 100000`, `Q <= 100000`이라면 `O(NQ)`는 위험합니다.
+
+```text
+100000 * 100000 = 10000000000
+```
+
+반면 `O(N + Q)`라면 대략 `200000` 수준이므로 훨씬 안전합니다.
+
+## 기본 문법 또는 패턴
+
+자주 보는 복잡도는 다음과 같습니다.
+
+| 복잡도 | 의미 | 대표 패턴 |
+|---|---|---|
+| `O(1)` | 입력 크기와 무관한 상수 시간 | 배열 인덱스 접근, dict 조회 평균 |
+| `O(log N)` | 범위를 절반씩 줄임 | 이분 탐색(binary search) |
+| `O(N)` | 전체를 한 번 순회 | 단일 반복문, 투 포인터 |
+| `O(N log N)` | 정렬 또는 분할 기반 처리 | `sorted()`, 정렬 후 탐색 |
+| `O(N^2)` | 모든 쌍 확인 | 이중 반복문 |
+| `O(NQ)` | N 크기 작업을 Q번 반복 | 질의마다 전체/구간 재탐색 |
+
+## 단계별 예시
+
+### 예시 1: 질의마다 직접 더하기
+
+`N`일의 판매량과 `Q`개의 구간 질의가 있다고 가정합니다.
+
+매 질의마다 구간을 직접 더하면 최악의 경우 다음과 같습니다.
+
+```text
+N = 100000
+Q = 100000
+각 질의가 거의 전체 구간을 요청
+```
+
+이 경우 시간복잡도는 `O(NQ)`가 됩니다.
+
+```text
+100000 * 100000 = 10000000000
+```
+
+예제는 맞아도 큰 입력에서 시간 초과가 발생할 수 있습니다.
+
+### 예시 2: 누적합 사용
+
+같은 문제를 누적합(prefix sum)으로 처리하면 다음처럼 바뀝니다.
+
+```text
+prefix 생성: O(N)
+질의 처리: O(Q)
+전체: O(N + Q)
+```
+
+`N = 100000`, `Q = 100000`이어도 대략 `200000`번 수준의 핵심 연산으로 줄어듭니다.
+
+## 입력 크기별 대략적인 판단
+
+정확한 기준은 언어와 제한 시간에 따라 달라지지만, 초반 학습에서는 다음 정도로 판단하면 좋습니다.
+
+| 입력 크기 | 보통 가능한 복잡도 | 주의할 복잡도 |
+|---|---|---|
+| `N <= 100` | `O(N^3)`도 가능할 수 있음 | 구현 실수 |
+| `N <= 1000` | `O(N^2)` 가능 범위 | `O(N^3)` 위험 |
+| `N <= 100000` | `O(N)`, `O(N log N)` | `O(N^2)` 위험 |
+| `N <= 1000000` | `O(N)` 중심 | 정렬도 상황에 따라 부담 |
+| `N, Q <= 100000` | `O(N + Q)`, `O((N+Q)logN)` | `O(NQ)` 매우 위험 |
+
+## 흔한 실수
+
+### 예제만 보고 풀이를 확정하는 경우
+
+예제 입력은 보통 작습니다. 직접 반복해도 맞는 것처럼 보일 수 있습니다. 하지만 제한 조건이 크면 같은 방식이 실패합니다.
+
+### 중첩 반복문을 무조건 쓰는 경우
+
+```python
+for i in range(n):
+    for j in range(n):
+        ...
+```
+
+이 코드는 보통 `O(N^2)`입니다. `N`이 `100000`이면 거의 불가능합니다.
+
+### 질의마다 같은 계산을 반복하는 경우
+
+```python
+for _ in range(q):
+    l, r = map(int, input().split())
+    print(sum(arr[l-1:r]))
+```
+
+이 방식은 구간 길이에 따라 매번 다시 더하므로 최악의 경우 `O(NQ)`입니다.
+
+### 평균 상황만 생각하는 경우
+
+코딩테스트는 보통 최악의 경우를 기준으로 채점합니다. 운 좋게 평균 입력이 작을 것이라고 기대하면 안 됩니다.
+
+## 안전한 패턴
+
+문제를 읽을 때 다음 순서로 판단합니다.
+
+1. `N`, `Q`, 배열 크기, 격자 크기 같은 제한 조건을 확인합니다.
+2. 내가 떠올린 풀이의 반복문 구조를 봅니다.
+3. 최악의 경우 연산 횟수를 대략 계산합니다.
+4. 너무 크면 다른 패턴을 찾습니다.
+
+예를 들어:
+
+```text
+구간 합 질의가 많다 -> 누적합(prefix sum)
+연속 구간을 조절한다 -> 투 포인터(two pointers) / 슬라이딩 윈도우(sliding window)
+정렬된 후보에서 찾는다 -> 이분 탐색(binary search)
+격자 최단거리다 -> BFS
+다음 큰 값을 찾는다 -> 단조 스택(monotonic stack)
+```
+
+## 시간복잡도
+
+시간복잡도 자체를 계산할 때는 가장 큰 반복 구조를 봅니다.
+
+```python
+for i in range(n):
+    ...
+```
+
+위 코드는 보통 `O(N)`입니다.
+
+```python
+for i in range(n):
+    for j in range(n):
+        ...
+```
+
+위 코드는 보통 `O(N^2)`입니다.
+
+```python
+for _ in range(q):
+    for i in range(n):
+        ...
+```
+
+위 코드는 보통 `O(NQ)`입니다.
+
+정렬은 보통 `O(N log N)`으로 봅니다.
+
+```python
+arr.sort()
+```
+
+## 관련 문제
+
 - [0003. Range Sales Query](../practice/0003-range-sales-query.md)
+- [0004. Target Sales Window](../practice/0004-target-sales-window.md)
+- [0006. Minimum Shipping Capacity](../practice/0006-minimum-shipping-capacity.md)
+- [0007. Store Map Shortest Path](../practice/0007-store-map-shortest-path.md)
 
-## Review Checklist
-- Did I check worst-case N/Q?
+## 복습 체크리스트
+
+- 제한 조건에서 `N`, `Q`의 최댓값을 확인했는가?
+- 내 풀이가 최악의 경우 몇 번 정도 반복되는지 계산했는가?
+- 이중 반복문이 `O(N^2)`인지 확인했는가?
+- 질의마다 같은 계산을 반복해서 `O(NQ)`가 되지 않는가?
+- 예제 정답 여부와 큰 입력 통과 가능성을 구분했는가?
+- 시간 초과가 의심될 때 적용할 패턴을 떠올렸는가?

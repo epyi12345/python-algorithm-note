@@ -1,36 +1,243 @@
-# 구현 사고법
+# 구현 사고
 
-## What This Is
-How to translate requirements into reliable code steps.
+## 이 개념은 무엇인가
 
-## When to Use It
-Before coding any simulation/logic-heavy problem.
+구현 사고는 문제의 요구사항을 코드로 옮기기 전에, 무엇을 입력받고 무엇을 출력해야 하며 어떤 상태를 관리해야 하는지 정리하는 과정입니다.
 
-## Core Idea
-Separate input/output/constraints/rules/edge-cases first.
+많은 오답은 문법을 몰라서가 아니라, 문제를 충분히 구조화하지 않은 상태에서 바로 코드를 쓰기 때문에 발생합니다.
 
-## Basic Syntax or Pattern
-1) Parse requirements
-2) Choose data structures
-3) Define state updates
-4) Validate edge cases
+구현 문제에서는 특히 다음을 먼저 분리해야 합니다.
 
-## Step-by-step Example
-Read statement, list rules, test on tiny manual case before coding.
+```text
+입력
+출력
+규칙
+상태
+예외 케이스
+시간복잡도
+```
 
-## Common Mistakes
-- Coding too early
-- Missing edge cases
-- Mixing parsing and core logic
+## 언제 사용하는가
 
-## Safe Pattern
-Write pseudo-steps first, then implement in small verified blocks.
+거의 모든 문제에서 필요하지만, 특히 다음 유형에서 중요합니다.
 
-## Time Complexity
-Varies by chosen algorithm.
+- 조건이 여러 개 있는 구현 문제
+- 주문, 로그, 상태 변경 같은 시뮬레이션 문제
+- 중복 제거와 누적 계산이 함께 나오는 문제
+- 인덱스 변환이 필요한 문제
+- 예외 처리가 많은 문제
+- 문제 설명이 길고 입력 형식이 복잡한 문제
 
-## Related Practice Problems
+코드를 바로 작성하기 전에 1~2분만 구조를 잡아도 디버깅 시간이 크게 줄어듭니다.
+
+## 핵심 아이디어
+
+구현 사고의 핵심은 **문제를 코드로 번역하기 전에 작은 규칙으로 쪼개는 것**입니다.
+
+예를 들어 주문 로그 문제가 있다면 바로 `for`문부터 쓰기보다 다음처럼 정리합니다.
+
+```text
+한 줄에는 무엇이 들어오는가?
+중복 기준은 무엇인가?
+PAY일 때 무엇을 더하는가?
+REFUND일 때 무엇을 빼는가?
+출력 순서는 어떻게 정하는가?
+최종 수량이 0 이하인 상품은 어떻게 처리하는가?
+```
+
+이 질문에 답한 뒤 코드를 작성하면 실수가 줄어듭니다.
+
+## 기본 문법 또는 패턴
+
+문제를 읽을 때 다음 순서로 정리합니다.
+
+```text
+1. 입력 형식을 변수 단위로 분해한다.
+2. 출력해야 하는 값을 한 문장으로 정의한다.
+3. 핵심 규칙을 조건문으로 바꾼다.
+4. 필요한 자료구조를 고른다.
+5. 예외 케이스를 먼저 적어본다.
+6. 시간복잡도가 제한 조건에 맞는지 확인한다.
+7. 작은 예제로 손으로 실행해본다.
+```
+
+자료구조 선택도 이 단계에서 결정합니다.
+
+| 상황 | 자주 쓰는 도구 |
+|---|---|
+| 중복을 제거해야 함 | `set` |
+| 이름별 수량을 누적해야 함 | `dict`, `defaultdict(int)` |
+| 빈도를 세야 함 | `Counter` |
+| 정렬 기준이 필요함 | `sorted()`, `key=lambda` |
+| 구간 합 질의가 많음 | 누적합(prefix sum) |
+| 최단거리 탐색 | BFS, `deque` |
+
+## 단계별 예시
+
+문제 요약:
+
+```text
+N개의 주문 로그가 주어진다.
+각 로그는 order_id, product, qty, status로 구성된다.
+완전히 같은 로그는 한 번만 처리한다.
+PAY는 수량을 더하고, REFUND는 수량을 뺀다.
+최종 수량이 양수인 상품만 이름순으로 출력한다.
+```
+
+바로 코딩하지 말고 먼저 이렇게 나눕니다.
+
+### 1단계: 입력 구조
+
+```text
+N
+order_id product qty status
+order_id product qty status
+...
+```
+
+### 2단계: 필요한 상태
+
+```text
+seen: 이미 처리한 로그를 저장하는 set
+result: 상품별 최종 수량을 저장하는 dict/defaultdict
+```
+
+### 3단계: 규칙을 조건으로 변환
+
+```text
+이미 본 로그라면 건너뛴다.
+status == "PAY"면 더한다.
+status == "REFUND"면 뺀다.
+```
+
+### 4단계: 출력 조건
+
+```text
+상품명을 정렬한다.
+수량이 0보다 큰 상품만 출력한다.
+```
+
+이렇게 정리하면 코드 작성 방향이 명확해집니다.
+
+## 흔한 실수
+
+### 문제를 다 읽기 전에 코딩하는 경우
+
+처음 보이는 입력 예시만 보고 코드를 쓰면 뒤쪽 규칙을 놓치기 쉽습니다. 특히 “중복 처리”, “동률 처리”, “출력 순서”, “없는 경우 출력” 같은 조건은 문제 후반에 자주 나옵니다.
+
+### 입력과 핵심 로직을 섞어버리는 경우
+
+입력을 읽는 코드와 문제 해결 로직이 지나치게 섞이면 디버깅이 어려워집니다.
+
+```python
+for _ in range(n):
+    # 입력, 변환, 중복 체크, 계산, 출력 조건을 모두 한 번에 처리
+    ...
+```
+
+처음에는 괜찮아 보이지만 조건이 늘어나면 실수하기 쉽습니다.
+
+### 예외 케이스를 나중에 생각하는 경우
+
+다음 같은 케이스를 미리 생각해야 합니다.
+
+```text
+입력이 1개뿐인 경우
+조건을 만족하는 결과가 없는 경우
+모든 값이 같은 경우
+중복 데이터만 있는 경우
+구간이 처음이나 끝에서 시작하는 경우
+```
+
+### 변수 이름이 문제 의미를 드러내지 않는 경우
+
+`a`, `b`, `c`만 사용하면 빠르게 쓸 수는 있지만, 구현 문제가 길어질수록 의미를 잃기 쉽습니다.
+
+문제 배경이 명확하다면 다음처럼 쓰는 편이 좋습니다.
+
+```python
+order_id, product, qty, status = input().split()
+```
+
+## 안전한 패턴
+
+구현 문제를 풀 때는 다음 체크 순서를 사용합니다.
+
+```text
+1. 입력 형식을 주석이나 메모로 적는다.
+2. 출력 조건을 정확히 적는다.
+3. 핵심 자료구조를 먼저 정한다.
+4. 반복문 안에서 상태가 어떻게 바뀌는지 적는다.
+5. 예외 케이스를 2~3개 만든다.
+6. 시간복잡도를 계산한다.
+7. 코드를 작성한다.
+8. 예제로 손 실행한다.
+```
+
+코드 템플릿은 다음처럼 시작할 수 있습니다.
+
+```python
+import sys
+from collections import defaultdict
+
+def solve():
+    input = sys.stdin.readline
+
+    n = int(input())
+    result = defaultdict(int)
+    seen = set()
+
+    for _ in range(n):
+        # read and update state
+        pass
+
+    # output
+
+if __name__ == "__main__":
+    solve()
+```
+
+## 시간복잡도
+
+구현 문제의 시간복잡도는 선택한 자료구조와 반복문 구조에 따라 달라집니다.
+
+예를 들어 `N`개의 로그를 한 번씩 처리하고, 마지막에 상품명을 정렬한다면:
+
+```text
+로그 처리: O(N)
+정렬: O(M log M)
+전체: O(N + M log M)
+```
+
+여기서 `M`은 서로 다른 상품 수입니다.
+
+중복 확인을 리스트로 하면 매번 탐색해야 하므로 느려질 수 있습니다.
+
+```python
+if key in seen_list:
+    ...
+```
+
+리스트 대신 `set`을 사용하면 평균적으로 빠르게 확인할 수 있습니다.
+
+```python
+if key in seen:
+    ...
+```
+
+## 관련 문제
+
 - [0001. Order Settlement](../practice/0001-order-settlement.md)
+- [0002. Popular Products](../practice/0002-popular-products.md)
+- [0003. Range Sales Query](../practice/0003-range-sales-query.md)
 
-## Review Checklist
-- Did I list constraints and edge cases first?
+## 복습 체크리스트
+
+- 입력, 출력, 규칙을 코딩 전에 분리했는가?
+- 중복 처리 기준을 명확히 정했는가?
+- 상태를 저장할 자료구조를 먼저 선택했는가?
+- 출력 순서와 필터링 조건을 확인했는가?
+- 결과가 없는 경우의 출력을 확인했는가?
+- 인덱스가 0-based인지 1-based인지 확인했는가?
+- 예제 외의 작은 테스트를 직접 만들어봤는가?
+- 시간복잡도가 제한 조건에 맞는가?
