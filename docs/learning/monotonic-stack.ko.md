@@ -1,15 +1,19 @@
 # 단조 스택(monotonic stack)
 
-## What This Is
-Stack that keeps monotonic order to solve next greater/smaller in O(N).
+## 이 개념은 무엇인가
+단조 스택(monotonic stack)은 스택(stack) 내부가 증가 또는 감소 순서를 유지하도록 관리하는 기법입니다. "다음 큰 값" / "다음 작은 값"류 문제를 빠르게 풀 때 사용합니다.
 
-## When to Use It
-Next greater day/temperature/price span styles.
+## 언제 사용하는가
+- 각 위치에서 오른쪽의 다음 큰 값(next greater value)을 찾아야 할 때
+- 주가/온도/성장량처럼 "다음 조건 충족 시점"을 구할 때
+- 중첩 반복문 `O(N^2)`을 `O(N)`으로 줄이고 싶을 때
 
-## Core Idea
-While current breaks monotonic condition, pop and resolve.
+## 핵심 아이디어
+- 증가/감소 단조 조건을 깨는 값이 오면 스택 top을 pop하며 정답을 확정합니다.
+- 보통 값 자체보다 인덱스 저장이 더 유용합니다(거리/위치 계산 가능).
+- 각 원소는 스택에 최대 1번 push, 최대 1번 pop 되므로 총 연산이 선형에 가깝습니다.
 
-## Basic Syntax or Pattern
+## 기본 문법 또는 패턴
 ```python
 for i,v in enumerate(arr):
     while st and arr[st[-1]] < v:
@@ -17,21 +21,31 @@ for i,v in enumerate(arr):
     st.append(i)
 ```
 
-## Step-by-step Example
-Each index pushed once and popped once.
+## 단계별 예시
+1. 인덱스를 왼쪽에서 오른쪽으로 순회합니다.
+2. 현재 값이 스택 top 값보다 크면, top 인덱스의 "다음 큰 값"이 현재 값으로 확정됩니다.
+3. 조건이 깨질 때까지 pop을 반복합니다.
+4. 현재 인덱스를 push해 아직 해결되지 않은 후보로 남깁니다.
+5. 끝까지 남은 인덱스는 다음 큰 값이 없는 케이스입니다.
 
-## Common Mistakes
-- Using >= vs > incorrectly
-- Storing values only
+## 흔한 실수
+- `>`와 `>=` 조건을 문제 정의와 다르게 써서 동률 처리 결과가 달라지는 실수
+- 값만 저장해 거리 계산을 못 하는 실수
+- 단조 방향(증가/감소) 선택을 반대로 잡는 실수
 
-## Safe Pattern
-Store indexes; unresolved answers remain default 0.
+## 안전한 패턴
+- 문제 문장에서 "큰"/"크거나 같은" 기준을 먼저 분리합니다.
+- 정답이 거리라면 반드시 인덱스 저장을 사용합니다.
+- 초기 정답 배열을 기본값(예: 0, -1)으로 채워 미해결 케이스를 명시합니다.
+- 단조 조건을 주석으로 적어 `while` 비교 연산자를 고정합니다.
 
-## Time Complexity
-O(N).
+## 시간복잡도
+- 각 인덱스가 최대 한 번 push/pop 되므로 전체 `O(N)`입니다.
 
-## Related Practice Problems
+## 관련 문제
 - [0005. Next Growth Day](../practice/0005-next-growth-day.md)
 
-## Review Checklist
-- Did each index push/pop at most once?
+## 복습 체크리스트
+- 증가 스택/감소 스택 중 어떤 형태가 필요한지 판단했는가?
+- `>` vs `>=` 비교를 문제 의도와 맞췄는가?
+- 인덱스 저장으로 위치/거리 계산을 안전하게 처리했는가?
