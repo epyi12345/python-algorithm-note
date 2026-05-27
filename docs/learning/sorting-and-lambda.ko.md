@@ -1,36 +1,52 @@
 # 정렬(sorting)과 lambda
 
-## What This Is
-How to sort lists and records with custom keys.
+## 이 개념은 무엇인가
+정렬은 데이터를 원하는 순서로 재배치하는 기본 연산입니다. Python에서는 `sorted()` 함수와 리스트 메서드 `.sort()`를 중심으로 사용하고, `key=lambda`로 정렬 기준을 세밀하게 제어합니다.
 
-## When to Use It
-When output order or tie-break rules are required.
+## 언제 사용하는가
+- 출력 순서가 문제 조건에 포함될 때
+- 점수/빈도/날짜 기준으로 오름차순 또는 내림차순이 필요할 때
+- 동점(동률 처리) 상황에서 2차, 3차 정렬 기준이 필요할 때
 
-## Core Idea
-Use `sorted()` with `key=lambda ...` and reverse option.
+## 핵심 아이디어
+- `sorted()`는 **새 리스트**를 반환합니다.
+- `.sort()`는 **원본 리스트를 제자리 정렬**합니다.
+- 오름차순은 기본값, 내림차순은 `reverse=True`를 사용합니다.
+- `key=lambda`에서 튜플을 반환하면 다중 정렬 기준을 한 번에 표현할 수 있습니다.
 
-## Basic Syntax or Pattern
+## 기본 문법 또는 패턴
 ```python
 items = [("banana", 5), ("apple", 5), ("carrot", 3)]
 print(sorted(items, key=lambda x: (-x[1], x[0])))
 ```
 
-## Step-by-step Example
-Primary key desc by count, secondary asc by name for tie-break.
+## 단계별 예시
+1. 상품 목록이 `(name, count)` 형태라고 가정합니다.
+2. 요구사항이 "판매량 내림차순, 이름 오름차순"이면 정렬 기준을 두 개 설정해야 합니다.
+3. `key=lambda x: (-x[1], x[0])`를 사용하면 1순위는 `count` 내림차순, 2순위는 `name` 오름차순이 됩니다.
+4. 이렇게 동률 처리 규칙을 코드에 직접 넣어야 결과가 일관됩니다.
 
-## Common Mistakes
-- Forgetting stable tie-break key
-- Sorting dict directly when items needed
+## 흔한 실수
+- 숫자를 문자열 상태로 정렬해서 `"100" < "20"` 같은 잘못된 결과가 나오는 실수
+- `sorted()`와 `.sort()`의 반환/부작용 차이를 혼동하는 실수
+- 동률 처리 기준을 빼먹어 채점 데이터에서 순서가 뒤집히는 실수
+- 다중 조건에서 `reverse=True`만으로 모든 조건을 처리하려다 의도와 다르게 정렬되는 실수
 
-## Safe Pattern
-Always write required priority order explicitly in key tuple.
+## 안전한 패턴
+- 입력 단계에서 숫자 필드는 반드시 `int`로 변환합니다.
+- 정렬 기준은 "1순위, 2순위"를 튜플 키로 명시합니다.
+- 원본 보존이 필요하면 `sorted()`, 메모리 절약이 필요하면 `.sort()`를 선택합니다.
+- 정렬 후 상위 N개를 쓸 때는 먼저 기준이 정확한지 작은 예제로 검증합니다.
 
-## Time Complexity
-O(N log N).
+## 시간복잡도
+- `sorted()`와 `.sort()`는 일반적으로 `O(N log N)`입니다.
+- key 함수 계산 비용이 크면 실제 실행 시간에 추가 영향을 줍니다.
 
-## Related Practice Problems
+## 관련 문제
 - [0001. Order Settlement](../practice/0001-order-settlement.md)
 - [0002. Popular Products](../practice/0002-popular-products.md)
 
-## Review Checklist
-- Does my key match tie-break rules?
+## 복습 체크리스트
+- 오름차순/내림차순 요구를 정확히 반영했는가?
+- `key=lambda`에 동률 처리 기준을 포함했는가?
+- 문자열/숫자 타입 혼동 없이 정렬했는가?
