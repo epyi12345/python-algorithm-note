@@ -1,32 +1,59 @@
 # DP 입문
 
-## What This Is
-Dynamic Programming solves overlapping subproblems by reusing results.
+## 이 개념은 무엇인가
+DP(동적 계획법, dynamic programming)는 같은 부분 문제를 반복 계산하지 않도록 이전 결과 재사용을 통해 전체 문제를 푸는 기법입니다.
 
-## When to Use It
-When current answer depends on previous computed states.
+## 언제 사용하는가
+- 큰 문제가 작은 부분 문제로 분해될 때
+- 부분 문제 결과가 여러 번 재사용될 때
+- 현재 답이 이전 상태(state)들의 조합으로 표현될 때
 
-## Core Idea
-Define state, transition, base case first.
+## 핵심 아이디어
+- DP 설계의 핵심은 3가지입니다: 상태(state), 점화식, 기저 조건.
+- 상태(state): 무엇을 저장할지 정의
+- 점화식: 이전 상태로 현재 상태를 계산하는 규칙
+- 기저 조건: 계산 시작점
+- 구현 방식은 메모이제이션(memoization, top-down)과 테이블링(tabulation, bottom-up)으로 나뉩니다.
 
-## Basic Syntax or Pattern
-Memoization: top-down cache; Tabulation: bottom-up table.
+## 기본 문법 또는 패턴
+```python
+# Fibonacci tabulation
+n = 10
+dp = [0] * (n + 1)
+dp[0] = 0
+dp[1] = 1
+for i in range(2, n + 1):
+    dp[i] = dp[i - 1] + dp[i - 2]
+```
 
-## Step-by-step Example
-Fibonacci: `dp[i]=dp[i-1]+dp[i-2]` with base `dp[0], dp[1]`.
+## 단계별 예시
+1. 예시 문제: n번째 피보나치 수 구하기.
+2. 상태(state)를 `dp[i] = i번째 피보나치 수`로 정의합니다.
+3. 점화식은 `dp[i] = dp[i-1] + dp[i-2]`입니다.
+4. 기저 조건은 `dp[0]=0`, `dp[1]=1`입니다.
+5. 작은 값부터 테이블링(tabulation)으로 채우면 중복 계산 없이 결과를 얻습니다.
 
-## Common Mistakes
-- Undefined state meaning
-- Missing base case
+## 흔한 실수
+- 상태 정의가 모호해 점화식이 불안정해지는 실수
+- 기저 조건 누락으로 인덱스 오류/초기값 오류가 나는 실수
+- 메모이제이션(memoization) 캐시 키를 잘못 잡아 재사용이 깨지는 실수
+- 그리디(greedy)로 풀리는 문제와 DP가 필요한 문제를 구분하지 못하는 실수
 
-## Safe Pattern
-Write state sentence before coding.
+## 안전한 패턴
+- 코드 전에 "`dp[i]`는 무엇인가"를 한 문장으로 먼저 작성합니다.
+- 점화식이 모든 상태를 커버하는지 작은 입력으로 손계산 검증합니다.
+- 기저 조건을 먼저 고정한 뒤 루프/재귀를 작성합니다.
+- DP와 그리디를 비교할 때, 그리디 반례가 존재하면 DP 가능성을 우선 점검합니다.
 
-## Time Complexity
-Typically O(number_of_states * transition_cost).
+## 시간복잡도
+- 일반적으로 `O(상태 수 × 상태 전이 비용)`입니다.
+- 메모이제이션/테이블링 모두 중복 부분 문제를 줄여 완전 탐색보다 빠릅니다.
 
-## Related Practice Problems
+## 관련 문제
 - [0006. Minimum Shipping Capacity](../practice/0006-minimum-shipping-capacity.md)
 
-## Review Checklist
-- Did I define state/transition/base clearly?
+## 복습 체크리스트
+- 상태(state), 점화식, 기저 조건을 명확히 정의했는가?
+- 이전 결과 재사용이 실제로 중복 계산을 줄이고 있는가?
+- 메모이제이션(memoization)과 테이블링(tabulation) 중 문제에 맞는 방식을 선택했는가?
+- DP와 그리디 중 어떤 접근이 타당한지 근거를 설명할 수 있는가?
