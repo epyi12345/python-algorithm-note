@@ -1,15 +1,20 @@
 # DFS와 재귀(recursion)
 
-## What This Is
-Depth-first traversal with recursion or explicit stack.
+## 이 개념은 무엇인가
+DFS(Depth-First Search)는 한 경로를 가능한 깊게 내려간 뒤, 막히면 되돌아오며(backtracking) 탐색하는 방식입니다. 재귀(recursion)로 구현하면 호출 스택이 스택(stack)처럼 동작합니다.
 
-## When to Use It
-Connected components, path existence, exhaustive traversal.
+## 언제 사용하는가
+- 연결 요소(connected component) 개수를 셀 때
+- 경로 존재 여부를 확인할 때
+- 모든 정점/상태를 깊이 우선으로 순회할 때
+- 브루트포스/백트래킹 성격의 탐색을 구성할 때
 
-## Core Idea
-Recursive call over unvisited neighbors.
+## 핵심 아이디어
+- 현재 정점을 방문 처리하고, 인접 정점 중 미방문 정점으로 재귀 호출합니다.
+- 더 갈 곳이 없으면 함수가 반환되며 이전 호출로 자동 복귀합니다.
+- BFS가 "가까운 순서"라면, DFS는 "깊이 우선 순서"입니다.
 
-## Basic Syntax or Pattern
+## 기본 문법 또는 패턴
 ```python
 def dfs(u):
     visited.add(u)
@@ -18,21 +23,32 @@ def dfs(u):
             dfs(v)
 ```
 
-## Step-by-step Example
-Traverse as deep as possible before backtracking.
+## 단계별 예시
+1. 시작 정점 `u`를 방문 처리합니다.
+2. 인접한 정점 `v`를 순회합니다.
+3. 아직 방문하지 않았다면 `dfs(v)`를 호출해 더 깊이 들어갑니다.
+4. 하위 호출이 끝나면 자동으로 현재 정점으로 돌아와 다음 이웃을 처리합니다.
+5. 전체 정점을 돌며 미방문 정점에서 DFS를 시작하면 연결 요소를 모두 찾을 수 있습니다.
 
-## Common Mistakes
-- Recursion depth overflow
-- Missing visited checks
+## 흔한 실수
+- 방문 처리 없이 재귀를 호출해 무한 재귀가 발생하는 실수
+- 기저 조건(더 방문할 이웃 없음)에 대한 흐름을 이해하지 못해 로직이 꼬이는 실수
+- Python 재귀 제한을 고려하지 않아 `RecursionError`가 나는 실수
+- DFS와 BFS의 목적(깊이 탐색 vs 최단거리)을 혼동하는 실수
 
-## Safe Pattern
-For deep graphs, consider iterative DFS with stack.
+## 안전한 패턴
+- 재귀 진입 직후 방문 처리하는 습관을 유지합니다.
+- 연결 요소 탐색은 `for node in nodes` + `if node not in visited: dfs(node)` 패턴으로 고정합니다.
+- 입력 크기가 크거나 깊이가 깊은 그래프는 반복형 DFS(명시적 스택)를 고려합니다.
+- 재귀 깊이 한계가 문제 조건을 넘을 수 있으면 구현 전략을 먼저 바꿉니다.
 
-## Time Complexity
-O(V+E).
+## 시간복잡도
+- 인접 리스트 기준 DFS는 `O(V + E)`입니다.
 
-## Related Practice Problems
+## 관련 문제
 - [0007. Store Map Shortest Path](../practice/0007-store-map-shortest-path.md)
 
-## Review Checklist
-- Is recursion depth safe for constraints?
+## 복습 체크리스트
+- DFS가 문제 목적(연결성/완전 탐색)에 맞는가?
+- 방문 처리와 재귀 호출 순서를 일관되게 지켰는가?
+- Python 재귀 깊이 제한 위험을 사전에 점검했는가?

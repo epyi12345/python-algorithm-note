@@ -1,36 +1,54 @@
 # BFS
 
-## What This Is
-Breadth-first search by distance layers.
+## 이 개념은 무엇인가
+BFS(Breadth-First Search)는 그래프(graph) 또는 격자(grid)를 "가까운 순서"로 탐색하는 방법입니다. 시작점에서 거리 1, 거리 2, 거리 3처럼 레벨 단위로 확장합니다.
 
-## When to Use It
-Unweighted shortest path on graph/grid.
+## 언제 사용하는가
+- 가중치 없는 그래프에서 최단거리(최소 간선 수)를 구할 때
+- 격자(grid)에서 시작점부터 도착점까지 최소 이동 칸 수를 구할 때
+- "최초 도달 시점"이 정답인 문제를 풀 때
 
-## Core Idea
-Queue + visited + distance increments by layers.
+## 핵심 아이디어
+- BFS는 큐(queue)를 사용합니다.
+- Python에서는 `collections.deque`를 사용해 `append()`/`popleft()`를 효율적으로 처리합니다.
+- 방문 처리는 큐에 넣는 시점(enqueue)에 바로 해야 중복 삽입을 막을 수 있습니다.
+- 가중치 없는 그래프에서는 먼저 꺼낸 경로가 항상 더 짧거나 같은 거리이므로 BFS가 최단거리를 보장합니다.
 
-## Basic Syntax or Pattern
+## 기본 문법 또는 패턴
 ```python
 from collections import deque
 q=deque([(sr,sc,0)])
 visited={(sr,sc)}
 ```
 
-## Step-by-step Example
-Expand four neighbors and record first reach distance.
+## 단계별 예시
+1. 시작점을 큐(queue)에 넣고 방문 처리합니다.
+2. 큐에서 현재 정점을 꺼냅니다.
+3. 인접 정점(또는 4방향 이웃)을 확인합니다.
+4. 아직 방문하지 않았고 이동 가능하면 방문 처리 후 큐에 넣습니다.
+5. 큐에 넣을 때 거리 `dist + 1`을 함께 저장하거나 별도 거리 배열을 갱신합니다.
+6. 그래프 전체 또는 도착점까지 반복하면 최단거리/도달 여부를 얻을 수 있습니다.
 
-## Common Mistakes
-- Missing visited
-- Using DFS for shortest path guarantee
+## 흔한 실수
+- 방문 처리를 dequeue 시점에 해서 같은 정점이 큐에 여러 번 들어가는 실수
+- `list.pop(0)`으로 큐를 구현해 성능이 급격히 나빠지는 실수
+- DFS로 최단거리를 보장할 수 있다고 오해하는 실수
+- 그래프와 격자에서 이웃 생성 방식을 혼동하는 실수
 
-## Safe Pattern
-Mark visited when enqueueing to prevent duplicates.
+## 안전한 패턴
+- 큐는 항상 `deque`를 사용합니다.
+- "enqueue 즉시 방문 처리" 규칙을 고정합니다.
+- 거리 계산 방식(큐에 거리 포함 vs 거리 배열)을 한 방식으로 통일합니다.
+- 격자 BFS에서는 경계 체크와 벽(wall) 체크를 이웃 탐색 직후 바로 수행합니다.
 
-## Time Complexity
-O(V+E) / O(NM) on grid.
+## 시간복잡도
+- 그래프 BFS: `O(V + E)`
+- `N x M` 격자 BFS: `O(NM)`
 
-## Related Practice Problems
+## 관련 문제
 - [0007. Store Map Shortest Path](../practice/0007-store-map-shortest-path.md)
 
-## Review Checklist
-- Do I track distance with BFS layers?
+## 복습 체크리스트
+- 가중치 없는 그래프의 최단거리 문제인지 확인했는가?
+- 방문 처리를 큐에 넣는 순간에 했는가?
+- 거리 카운팅 방식이 일관되고 검증 가능한가?
