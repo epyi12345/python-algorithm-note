@@ -47,7 +47,7 @@
         title: '0003. Range Sales Query',
         type: 'Prefix Sum / Range Query / Implementation',
         difficulty: 'Lv.2 Core',
-        status: 'Pending',
+        status: 'Solved with review',
         rules: [
           'Given N daily sales values and Q range queries.',
           'For each query [L, R], print the inclusive range sum.',
@@ -155,7 +155,7 @@
         title: '0003. Range Sales Query',
         type: '누적합 / 구간 질의 / 구현',
         difficulty: 'Lv.2 Core',
-        status: '대기 중',
+        status: '리뷰 완료',
         rules: [
           'N일 판매 데이터와 Q개의 구간 질의가 주어집니다.',
           '[L, R] 구간의 합을 질의마다 출력합니다.',

@@ -1,32 +1,62 @@
 # 매개변수 탐색(parametric search)
 
-## What This Is
-Binary search on answer value using decision function.
+## 이 개념은 무엇인가
+매개변수 탐색(parametric search)은 "정답 후보 값"에 대해 이분 탐색(binary search)을 수행하는 방식입니다. 보통 직접 답을 구성하지 않고, **가능 여부 검사(결정 함수)** 로 정답을 좁혀 갑니다.
 
-## When to Use It
-When asked for min/max value that satisfies a condition.
+## 언제 사용하는가
+- "조건을 만족하는 최솟값/최댓값"을 구하는 문제
+- 정답 후보 구간은 크지만, 특정 값이 가능한지 빠르게 판단할 수 있는 문제
+- `0006. Minimum Shipping Capacity`처럼 용량/시간/거리의 최소 기준을 찾는 문제
 
-## Core Idea
-Need monotonic feasibility: if C works, larger/smaller side predictable.
+## 핵심 아이디어
+- 핵심은 결정 함수 `can(x)`입니다.
+- `can(x)`의 결과가 단조성(예: False, False, True, True)을 가져야 이분 탐색이 가능합니다.
+- 최솟값을 찾을 때는 "가능한 첫 지점"(lower bound 스타일)을 찾습니다.
+- 최댓값을 찾을 때는 "가능한 마지막 지점"(upper bound 스타일)을 찾습니다.
+- 실제 문제에서는 결정 함수 내부에 그리디 검사가 자주 들어갑니다.
 
-## Basic Syntax or Pattern
-Shipping concept: `can_ship(capacity)` returns days <= D.
+## 기본 문법 또는 패턴
+```python
+# find minimum feasible value
+left, right = lo, hi
+while left < right:
+    mid = (left + right) // 2
+    if can(mid):
+        right = mid
+    else:
+        left = mid + 1
+answer = left
+```
 
-## Step-by-step Example
-Search between `max(weights)` and `sum(weights)`.
+## 단계별 예시
+1. 정답 후보 범위를 `[lo, hi]`로 설정합니다(탐색 범위 설정).
+2. `mid`를 잡고 `can(mid)`로 가능 여부를 검사합니다.
+3. 가능하면 더 작은 값도 가능한지 보기 위해 오른쪽 경계를 줄입니다.
+4. 불가능하면 왼쪽 경계를 올려 더 큰 후보를 탐색합니다.
+5. 경계가 만나는 지점이 "가능한 최솟값"이 됩니다.
 
-## Common Mistakes
-- Non-monotonic decision function
-- Wrong search bounds
+## 흔한 실수
+- 결정 함수가 단조성을 만족하지 않는데 이분 탐색을 적용하는 실수
+- `lo`, `hi`를 잘못 잡아 정답이 탐색 범위 밖으로 나가는 실수
+- 최솟값 탐색인데 경계 갱신을 최댓값 탐색 방식으로 구현하는 실수
+- `can(mid)` 내부 상태를 재사용해 이전 반복의 값이 섞이는 실수
 
-## Safe Pattern
-Separate decision check from binary search loop cleanly.
+## 안전한 패턴
+- 먼저 정답 후보의 하한/상한을 문제식으로 명확히 정합니다.
+- "최솟값 탐색"인지 "최댓값 탐색"인지 먼저 선언하고 시작합니다.
+- 결정 함수는 부수효과 없이 독립적으로 계산되게 유지합니다.
+- 작은 입력으로 `False -> True` 경계가 의도대로 움직이는지 확인합니다.
+- 그리디 검사를 사용할 때는 왜 그리디가 성립하는지(순차 배치/최소 필요량 등) 근거를 점검합니다.
 
-## Time Complexity
-O(log range * check_cost).
+## 시간복잡도
+- 이분 탐색 반복 수는 `O(log(hi - lo + 1))`입니다.
+- 전체 복잡도는 `O(log range * check_cost)`입니다.
 
-## Related Practice Problems
+## 관련 문제
 - [0006. Minimum Shipping Capacity](../practice/0006-minimum-shipping-capacity.md)
 
-## Review Checklist
-- Is decision function monotonic?
+## 복습 체크리스트
+- 결정 함수 `can(x)`가 단조성을 만족하는가?
+- 탐색 범위 `lo`, `hi`가 정답을 반드시 포함하는가?
+- 최솟값/최댓값 탐색에 맞는 경계 갱신을 사용했는가?
+- 그리디 검사 로직이 가능 여부 판정에 일관되게 동작하는가?
