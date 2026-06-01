@@ -122,6 +122,17 @@ This is parametric search: decision check + monotonic feasibility.
 - Correct check function
 - Minimum feasible answer
 
+## Coding Workspace
+
+Open this problem in Practice Workbench to view the statement and Python
+editor side by side.
+
+[Open in Practice Workbench](../../tools/practice-workbench/?problem=0006){ .md-button .md-button--primary }
+
+[Open Python Editor](../tools/python-editor.md){ .md-button .md-button--primary }
+
+[Open OneCompiler in a new tab ↗](https://onecompiler.com/python){ target="_blank" rel="noopener" }
+
 ## Code Template
 ```python
 def solve():

@@ -128,6 +128,16 @@ Output:
 - 대기 일수 계산 정확성
 - O(N) 설명
 
+## 코딩 워크스페이스
+
+워크벤치에서 문제 설명과 Python 에디터를 나란히 보면서 풀이를 작성할 수 있습니다.
+
+[워크벤치에서 풀기](../../tools/practice-workbench/?problem=0005){ .md-button .md-button--primary }
+
+[Python Editor 열기](../tools/python-editor.md){ .md-button .md-button--primary }
+
+[OneCompiler 새 탭에서 열기 ↗](https://onecompiler.com/python){ target="_blank" rel="noopener" }
+
 ## Code Template
 ```python
 def solve():
