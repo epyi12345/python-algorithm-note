@@ -1,0 +1,2704 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Python algorithm problem-solving notes and wrong-answer reviews.">
+      
+      
+      
+        <link rel="canonical" href="https://epyi12345.github.io/python-algorithm-note/ko/learning/time-complexity/">
+      
+      
+        <link rel="prev" href="../python-input/">
+      
+      
+        <link rel="next" href="../implementation-thinking/">
+      
+      
+        
+          <link rel="alternate" href="../../../learning/time-complexity/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="ko">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>시간복잡도 - epyi 알고리즘 노트</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../../" title="epyi 알고리즘 노트" class="md-header__button md-logo" aria-label="epyi 알고리즘 노트" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            epyi 알고리즘 노트
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              시간복잡도
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../learning/time-complexity/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="epyi 알고리즘 노트" class="md-nav__button md-logo" aria-label="epyi 알고리즘 노트" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    epyi 알고리즘 노트
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    홈
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    문제 연습
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    문제 연습
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/0001-order-settlement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0001 Order Settlement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/0002-popular-products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0002 Popular Products
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/0003-range-sales-query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0003 Range Sales Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/0004-target-sales-window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0004 Target Sales Window
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/0005-next-growth-day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0005 Next Growth Day
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/0006-minimum-shipping-capacity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0006 Minimum Shipping Capacity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/0007-store-map-shortest-path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0007 Store Map Shortest Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    오답노트
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    오답노트
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrong-notes/0001-order-settlement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0001. Order Settlement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrong-notes/0002-popular-products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0002. Popular Products
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrong-notes/0003-range-sales-query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0003. Range Sales Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    학습 자료
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    학습 자료
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파이썬 기초
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    파이썬 기초
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파이썬 입력
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    시간복잡도
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    시간복잡도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이 개념은 무엇인가
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        언제 사용하는가
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 아이디어
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시간복잡도 체크
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="시간복잡도 체크">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        제약 조건 읽기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        자주 쓰는 판단 기준
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        예시
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        메모리복잡도 체크
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="메모리복잡도 체크">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        리스트 슬라이싱과 복사도 비용이다
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출력은 스트리밍할 수 있는지 확인하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        코딩 전 실전 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        흔한 메모리 실수
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="흔한 메모리 실수">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queue-listpop0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        큐(queue)에 list.pop(0) 사용
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        반복문 안에서 슬라이스 생성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        모든 질의 결과를 불필요하게 저장
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        같은 리스트를 여러 번 불필요하게 복사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        재귀 깊이 고려 없이 DFS 작성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        너무 큰 2차원 방문 배열 생성
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴별 복잡도 표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        안전한 패턴
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        관련 문제
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        복습 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation-thinking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구현 사고
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    핵심 자료구조
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    핵심 자료구조
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dict-set-counter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dict, set, Counter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../defaultdict/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    defaultdict
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    스택
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../queue-deque/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    큐와 deque
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heap-priority-queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    힙과 우선순위 큐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구간과 윈도우 패턴
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    구간과 윈도우 패턴
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sorting-and-lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    정렬과 lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prefix-sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    누적합
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../two-pointers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    투 포인터
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sliding-window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    슬라이딩 윈도우
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monotonic-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    단조 스택
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    그래프와 격자
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    그래프와 격자
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../binary-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    이분 탐색
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parametric-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    매개변수 탐색
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bfs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BFS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dfs-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DFS와 재귀
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grid-movement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    격자 탐색
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략 패턴
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    전략 패턴
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../greedy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    그리디
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP 입문
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    도구
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    도구
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/python-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파이썬 에디터
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/practice-workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    워크벤치
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이 개념은 무엇인가
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        언제 사용하는가
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 아이디어
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시간복잡도 체크
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="시간복잡도 체크">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        제약 조건 읽기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        자주 쓰는 판단 기준
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        예시
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        메모리복잡도 체크
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="메모리복잡도 체크">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        리스트 슬라이싱과 복사도 비용이다
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출력은 스트리밍할 수 있는지 확인하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        코딩 전 실전 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        흔한 메모리 실수
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="흔한 메모리 실수">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queue-listpop0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        큐(queue)에 list.pop(0) 사용
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        반복문 안에서 슬라이스 생성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        모든 질의 결과를 불필요하게 저장
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        같은 리스트를 여러 번 불필요하게 복사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        재귀 깊이 고려 없이 DFS 작성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        너무 큰 2차원 방문 배열 생성
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴별 복잡도 표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        안전한 패턴
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        관련 문제
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        복습 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">시간복잡도와 메모리복잡도</h1>
+<h2 id="_2">이 개념은 무엇인가</h2>
+<p>복잡도 체크는 코드를 작성하기 전에 <strong>실행 시간</strong>과 <strong>메모리 사용량</strong>을 미리 추정하는 습관입니다. 제약 조건에 비해 너무 느리거나 너무 큰 풀이를 초기에 걸러내는 데 도움이 됩니다.</p>
+<p>시간복잡도(time complexity)는 연산 횟수가 입력 크기에 따라 어떻게 증가하는지 나타냅니다. 메모리복잡도(space complexity)는 알고리즘이 추가로 사용하는 저장 공간이 얼마나 커지는지 나타냅니다.</p>
+<h2 id="_3">언제 사용하는가</h2>
+<p>문제를 읽은 직후, 특히 다음 신호가 보이면 바로 확인합니다.</p>
+<ul>
+<li><code>N</code>, <code>Q</code>, <code>N * M</code> 같은 큰 제약 조건이 있다.</li>
+<li>같은 데이터에 대해 반복 질의가 들어온다.</li>
+<li>큰 입력에 중첩 반복문을 쓰려고 한다.</li>
+<li>큰 배열, 격자(grid), dict, set, 큐(queue), 스택(stack), DP 테이블을 만든다.</li>
+<li>Python 재귀가 깊어질 수 있다.</li>
+</ul>
+<h2 id="_4">핵심 아이디어</h2>
+<p>먼저 가장 큰 입력 크기를 읽고, 최악의 경우 연산 횟수와 가장 큰 자료구조를 추정합니다.</p>
+<p>예를 들어:</p>
+<ul>
+<li><code>N</code>은 보통 1차원 입력 크기입니다.</li>
+<li><code>Q</code>는 보통 질의 수입니다.</li>
+<li><code>N * M</code>은 격자(grid)의 모든 칸 수를 의미하는 경우가 많습니다.</li>
+<li><code>N</code>과 <code>Q</code>가 모두 크면 <code>O(NQ)</code>는 위험합니다.</li>
+</ul>
+<p>예제 입력에서 맞는 풀이도 최악의 경우 입력에서는 시간 초과나 메모리 초과가 날 수 있습니다.</p>
+<h2 id="_5">시간복잡도 체크</h2>
+<h3 id="_6">제약 조건 읽기</h3>
+<p>코딩 전에 중요한 최댓값을 적어 봅니다.</p>
+<pre><code class="language-text">N &lt;= 100000
+Q &lt;= 100000
+</code></pre>
+<p>그다음 풀이의 반복 구조를 추정합니다.</p>
+<pre><code class="language-text">질의 하나당 직접 계산: O(N)
+질의 수: Q
+전체: O(NQ)
+</code></pre>
+<p><code>N = 100000</code>, <code>Q = 100000</code>이면 <code>O(NQ)</code>는 대략 다음 수준입니다.</p>
+<pre><code class="language-text">100000 * 100000 = 10000000000
+</code></pre>
+<p>일반적인 코딩테스트 제한 시간에서는 너무 큽니다.</p>
+<h3 id="_7">자주 쓰는 판단 기준</h3>
+<p>정확한 기준은 언어, 채점 서버, 제한 시간에 따라 달라지지만, 초반 판단에는 다음 기준이 유용합니다.</p>
+<table>
+<thead>
+<tr>
+<th>제약 조건 형태</th>
+<th>보통 가능한 접근</th>
+<th>위험한 접근</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>작은 <code>N</code> 예: <code>N &lt;= 100</code></td>
+<td>중첩 반복문도 가능할 수 있음</td>
+<td>너무 이른 과최적화</td>
+</tr>
+<tr>
+<td><code>N &lt;= 1000</code></td>
+<td><code>O(N^2)</code> 가능 범위</td>
+<td><code>O(N^3)</code>는 위험할 수 있음</td>
+</tr>
+<tr>
+<td><code>N &lt;= 100000</code></td>
+<td><code>O(N)</code> 또는 <code>O(N log N)</code></td>
+<td><code>O(N^2)</code></td>
+</tr>
+<tr>
+<td>질의 <code>Q</code>가 많음</td>
+<td>전처리 + 빠른 질의 처리</td>
+<td>질의마다 처음부터 다시 계산</td>
+</tr>
+<tr>
+<td>격자 <code>N * M</code></td>
+<td>각 칸을 한 번 방문</td>
+<td>전체 격자를 여러 번 반복 스캔</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">예시</h3>
+<table>
+<thead>
+<tr>
+<th>접근</th>
+<th style="text-align: right;">시간복잡도</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>질의마다 직접 구간 합산</td>
+<td style="text-align: right;"><code>O(NQ)</code></td>
+<td>각 질의가 최대 <code>N</code>개 값을 훑을 수 있음</td>
+</tr>
+<tr>
+<td>누적합(prefix sum)</td>
+<td style="text-align: right;"><code>O(N + Q)</code></td>
+<td>한 번 전처리하고 각 질의를 <code>O(1)</code>에 처리</td>
+</tr>
+<tr>
+<td>정렬</td>
+<td style="text-align: right;"><code>O(N log N)</code></td>
+<td>일반적인 비교 정렬 비용</td>
+</tr>
+<tr>
+<td>격자 BFS</td>
+<td style="text-align: right;"><code>O(N * M)</code></td>
+<td>각 격자 칸을 최대 한 번 방문</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_9">메모리복잡도 체크</h2>
+<p>메모리복잡도는 <strong>동시에 존재하는 큰 자료구조가 무엇인지</strong>를 묻는 과정입니다.</p>
+<p>문제에서 요구하지 않는 한 정확한 바이트 수를 단정할 필요는 없습니다. Python 런타임과 실행 환경에 따라 달라질 수 있으므로, 실전에서는 Big-O 기준의 메모리 추정이 더 안전합니다.</p>
+<p>자주 쓰는 추정은 다음과 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th>자료구조</th>
+<th style="text-align: right;">메모리복잡도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>입력 리스트/배열</td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>누적합(prefix sum) 배열</td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>2차원 격자(grid)</td>
+<td style="text-align: right;"><code>O(N * M)</code></td>
+</tr>
+<tr>
+<td>2차원 방문 배열</td>
+<td style="text-align: right;"><code>O(N * M)</code></td>
+</tr>
+<tr>
+<td>dict 또는 set</td>
+<td style="text-align: right;"><code>O(number of unique keys)</code></td>
+</tr>
+<tr>
+<td>큐(queue) 또는 스택(stack)</td>
+<td style="text-align: right;">최악의 경우 <code>O(N)</code> 또는 <code>O(N * M)</code></td>
+</tr>
+<tr>
+<td>DP 테이블</td>
+<td style="text-align: right;">상태 수에 따라 결정</td>
+</tr>
+<tr>
+<td>재귀 호출 스택</td>
+<td style="text-align: right;">재귀 깊이에 따라 결정</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">리스트 슬라이싱과 복사도 비용이다</h3>
+<p>Python에서 리스트 슬라이싱은 새 리스트를 만듭니다.</p>
+<pre><code class="language-python">part = arr[l:r]
+</code></pre>
+<p>이 코드가 반복문 안에 있으면 시간과 메모리 사용량이 함께 증가할 수 있습니다. 구간 합 문제에서는 반복 슬라이싱보다 누적합(prefix sum)을 우선 고려합니다.</p>
+<h3 id="_11">출력은 스트리밍할 수 있는지 확인하기</h3>
+<p>문제가 즉시 출력해도 되는 형태라면 모든 중간 결과를 저장할 필요가 없을 수 있습니다. 속도를 위해 batched output을 쓰는 경우도 있지만, 큰 결과 리스트를 무조건 들고 있는 습관은 피합니다.</p>
+<h2 id="_12">코딩 전 실전 체크리스트</h2>
+<p>구현 전에 다음 질문을 확인합니다.</p>
+<ul>
+<li>가장 큰 입력 크기는 얼마인가?</li>
+<li>중첩 반복문이 몇 겹인가?</li>
+<li>반복 질의가 있는가?</li>
+<li>전처리할 수 있는가?</li>
+<li>어떤 큰 배열, set, dict, 큐(queue), 스택(stack), 방문 배열을 만들 것인가?</li>
+<li>메모리가 <code>N</code>, <code>N * M</code>, 또는 그보다 큰 값에 비례하는가?</li>
+<li>실수로 리스트나 슬라이스를 복사하고 있지 않은가?</li>
+<li>모든 데이터를 저장하지 않고 스트리밍/순차 처리할 수 있는가?</li>
+<li>Python 재귀 깊이가 안전한가?</li>
+</ul>
+<h2 id="_13">흔한 메모리 실수</h2>
+<h3 id="queue-listpop0">큐(queue)에 <code>list.pop(0)</code> 사용</h3>
+<p><code>list.pop(0)</code>은 앞 원소를 제거한 뒤 나머지를 당겨야 해서 큐(queue) 용도로 비효율적입니다. <code>collections.deque</code>와 <code>popleft()</code>를 사용합니다.</p>
+<h3 id="_14">반복문 안에서 슬라이스 생성</h3>
+<pre><code class="language-python">for l, r in queries:
+    total = sum(arr[l:r])
+</code></pre>
+<p>각 질의마다 새 리스트 슬라이스가 생겨 시간과 메모리를 모두 낭비할 수 있습니다. 인덱스 기반 처리나 전처리를 고려합니다.</p>
+<h3 id="_15">모든 질의 결과를 불필요하게 저장</h3>
+<p>바로 출력할 수 있다면 모든 답을 리스트에 저장하지 않아도 됩니다. 다만 출력 성능을 위해 batched output이 필요한 경우에는 저장량을 의식해서 관리합니다.</p>
+<h3 id="_16">같은 리스트를 여러 번 불필요하게 복사</h3>
+<p><code>list(arr)</code>, <code>arr[:]</code>, 반복 변환은 큰 입력을 그대로 복제할 수 있습니다. 정말 필요한 경우가 아니라면 하나의 표현을 유지합니다.</p>
+<h3 id="dfs">재귀 깊이 고려 없이 DFS 작성</h3>
+<p>재귀 DFS는 깊이만큼 호출 스택을 사용합니다. Python에서는 깊은 재귀가 <code>RecursionError</code>를 만들거나 스택 사용량을 키울 수 있습니다. 깊이가 클 수 있으면 반복형 DFS를 고려합니다.</p>
+<h3 id="2">너무 큰 2차원 방문 배열 생성</h3>
+<p><code>N * M</code> 격자의 방문 배열은 <code>O(N * M)</code>입니다. 일반적인 격자 BFS에서는 자연스럽지만, 제약 조건이 매우 큰 희소 공간이라면 좌표 set으로 방문 처리를 하는 방식이 더 적절할 수 있습니다.</p>
+<h2 id="_17">패턴별 복잡도 표</h2>
+<table>
+<thead>
+<tr>
+<th>패턴</th>
+<th style="text-align: right;">시간</th>
+<th style="text-align: right;">메모리</th>
+<th>메모</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단일 반복문</td>
+<td style="text-align: right;"><code>O(N)</code></td>
+<td style="text-align: right;"><code>O(1)</code> 또는 <code>O(N)</code></td>
+<td>결과 저장 여부에 따라 달라짐</td>
+</tr>
+<tr>
+<td>정렬</td>
+<td style="text-align: right;"><code>O(N log N)</code></td>
+<td style="text-align: right;">구현/출력 방식에 따라 다름</td>
+<td><code>sorted()</code>는 새 리스트를 반환하고 <code>.sort()</code>는 제자리 정렬</td>
+</tr>
+<tr>
+<td>누적합(prefix sum)</td>
+<td style="text-align: right;"><code>O(N + Q)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+<td>반복 구간 질의에 적합</td>
+</tr>
+<tr>
+<td>투 포인터(two pointers)</td>
+<td style="text-align: right;"><code>O(N)</code></td>
+<td style="text-align: right;">보통 <code>O(1)</code></td>
+<td>연속 구간 문제에 자주 사용</td>
+</tr>
+<tr>
+<td>단조 스택(monotonic stack)</td>
+<td style="text-align: right;"><code>O(N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+<td>각 인덱스가 최대 한 번 push/pop</td>
+</tr>
+<tr>
+<td>격자 BFS</td>
+<td style="text-align: right;"><code>O(N * M)</code></td>
+<td style="text-align: right;"><code>O(N * M)</code></td>
+<td>큐(queue)와 방문 배열이 격자 크기만큼 커질 수 있음</td>
+</tr>
+<tr>
+<td>이분 탐색</td>
+<td style="text-align: right;"><code>O(log answer * check_cost)</code></td>
+<td style="text-align: right;">검사 함수에 따라 다름</td>
+<td>정렬된 공간 또는 정답 후보 탐색에 사용</td>
+</tr>
+<tr>
+<td>DP</td>
+<td style="text-align: right;">상태 수에 따라 결정</td>
+<td style="text-align: right;">상태 수에 따라 결정</td>
+<td>코딩 전에 상태(state)를 정의해야 함</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_18">안전한 패턴</h2>
+<ol>
+<li><code>N</code>, <code>Q</code>, 격자 크기, 값 범위를 확인합니다.</li>
+<li>반복문과 반복 계산으로 시간복잡도(time complexity)를 추정합니다.</li>
+<li>저장하는 자료구조로 메모리복잡도(space complexity)를 추정합니다.</li>
+<li>명확히 너무 큰 접근은 버립니다.</li>
+<li>제약 조건에 맞는 패턴을 선택합니다.</li>
+</ol>
+<p>예시:</p>
+<pre><code class="language-text">구간 합 질의가 많다 -&gt; 누적합(prefix sum)
+양수 연속 구간을 조절한다 -&gt; 투 포인터(two pointers) / 슬라이딩 윈도우(sliding window)
+다음 큰 값을 찾는다 -&gt; 단조 스택(monotonic stack)
+가중치 없는 격자 최단거리 -&gt; BFS
+가능한 최솟값을 찾는다 -&gt; 이분 탐색(binary search) / 매개변수 탐색(parametric search)
+중복 부분 문제가 반복된다 -&gt; DP
+</code></pre>
+<h2 id="_19">관련 문제</h2>
+<ul>
+<li><a href="../../practice/0003-range-sales-query/">0003. Range Sales Query</a></li>
+<li><a href="../../practice/0004-target-sales-window/">0004. Target Sales Window</a></li>
+<li><a href="../../practice/0005-next-growth-day/">0005. Next Growth Day</a></li>
+<li><a href="../../practice/0006-minimum-shipping-capacity/">0006. Minimum Shipping Capacity</a></li>
+<li><a href="../../practice/0007-store-map-shortest-path/">0007. Store Map Shortest Path</a></li>
+</ul>
+<h2 id="_20">복습 체크리스트</h2>
+<ul>
+<li>가능한 가장 큰 <code>N</code>, <code>Q</code>, <code>N * M</code>을 확인했는가?</li>
+<li>최악의 경우 연산 횟수 추정을 했는가?</li>
+<li>반복문 구조가 실수로 <code>O(N^2)</code> 또는 <code>O(NQ)</code>를 만들지 않는가?</li>
+<li>반복 질의가 있다면 전처리를 고려했는가?</li>
+<li>어떤 큰 배열, dict, set, 큐(queue), 스택(stack), 방문 배열을 저장하는가?</li>
+<li>메모리가 <code>O(N)</code>, <code>O(N * M)</code>, 또는 그 이상인가?</li>
+<li>반복문 안에서 리스트 슬라이싱이나 불필요한 복사를 만들지 않는가?</li>
+<li>모든 결과를 저장하지 않고 스트리밍할 수 있는가?</li>
+<li>Python 재귀 깊이가 안전한가?</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/editor-layout.js"></script>
+      
+        <script src="../../../javascripts/practice-workbench.js"></script>
+      
+    
+  </body>
+</html>
