@@ -5,13 +5,13 @@
 - 해결한 문제 수: 3
 - 리뷰 완료 문제 수: 3
 - 오답노트 수: 3
-- 현재 집중 항목: Prefix Sum / Range Query / Indexing
+- 현재 집중 항목: 누적합(prefix sum) / 구간 질의 / 인덱싱
 
 ## 최근 문제 로그
 
 | 날짜 | 문제 | 유형 | 난이도 | 결과 | 점수 | 주요 이슈 | 리뷰 목표 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-05-14 | 0003. Range Sales Query | Prefix Sum / Range Query | Lv.2 Core | 리뷰 완료 | 98/100 | direct repeated summation caused O(NQ) | 나중에 다시 풀기 |
+| 2026-05-14 | 0003. Range Sales Query | 누적합 / 구간 질의 | Lv.2 Core | 리뷰 완료 | 98/100 | 직접 구간 합산으로 O(NQ) 발생 | 나중에 다시 풀기 |
 | 2026-05-14 | 0002. Popular Products | 해시 / 구현 / 동률 처리 | Lv.1+ Basic | 리뷰와 함께 해결 | 97/100 | 최대값만 출력 + 동률 처리 규칙 | 나중에 다시 풀기 |
 | 2026-05-14 | 0001. Order Settlement | 해시 / 구현 | Lv.1 Basic | 리뷰와 함께 해결 | 85/100 | pass vs continue | 나중에 다시 풀기 |
 
@@ -44,7 +44,7 @@
 
 ## 대기 중 문제 큐
 
-- 0004. Target Sales Window / Lv.2 Core / Pending
-- 0005. Next Growth Day / Lv.2 Core / Pending
-- 0006. Minimum Shipping Capacity / Lv.3 Intermediate / Pending
-- 0007. Store Map Shortest Path / Lv.3 Intermediate / Pending
+- 0004. Target Sales Window / Lv.2 Core / 대기 중
+- 0005. Next Growth Day / Lv.2 Core / 대기 중
+- 0006. Minimum Shipping Capacity / Lv.3 Intermediate / 대기 중
+- 0007. Store Map Shortest Path / Lv.3 Intermediate / 대기 중

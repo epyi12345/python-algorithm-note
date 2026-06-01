@@ -1,15 +1,19 @@
 # 스택(stack)
 
-## What This Is
-LIFO data structure for nested or last-in-first-out tasks.
+## 이 개념은 무엇인가
+스택(stack)은 LIFO(Last In, First Out) 구조입니다. 가장 나중에 들어온 값을 가장 먼저 꺼냅니다.
 
-## When to Use It
-Bracket matching, undo, next-greater helpers.
+## 언제 사용하는가
+- 괄호 짝 검사처럼 "가장 최근 미해결 항목"을 처리할 때
+- 실행 취소(undo), 최근 작업 되돌리기 패턴이 필요할 때
+- 다음 단계로 monotonic stack(단조 스택) 문제를 준비할 때
 
-## Core Idea
-Push with append, pop from end.
+## 핵심 아이디어
+- Python 리스트에서 `append()`로 push, `pop()`으로 pop을 구현합니다.
+- 스택에는 "아직 해결되지 않은 상태"를 저장합니다.
+- 현재 값이 들어왔을 때, 스택 top과 비교해 해결/유지 여부를 판단합니다.
 
-## Basic Syntax or Pattern
+## 기본 문법 또는 패턴
 ```python
 stack=[]
 for ch in s:
@@ -17,21 +21,30 @@ for ch in s:
     elif stack: stack.pop()
 ```
 
-## Step-by-step Example
-Process left to right, resolve latest unresolved item.
+## 단계별 예시
+1. 문자열을 왼쪽부터 순회합니다.
+2. 여는 괄호를 만나면 스택(stack)에 넣습니다.
+3. 닫는 괄호를 만나면 최근 여는 괄호를 `pop()`으로 대응시킵니다.
+4. 순회 후 스택이 비어 있으면 짝이 맞고, 남아 있으면 미해결 괄호가 있다는 뜻입니다.
+5. `0005. Next Growth Day` 같은 문제로 확장할 때는 값 대신 인덱스를 넣어 거리 계산을 합니다.
 
-## Common Mistakes
-- Popping empty stack
-- Using values when indexes needed
+## 흔한 실수
+- 빈 스택에서 `pop()`을 호출하는 실수
+- 값만 저장해서 나중에 위치/거리 계산을 못 하는 실수
+- LIFO가 필요한데 큐(queue)처럼 처리하는 실수
 
-## Safe Pattern
-Store indexes if output requires distance/position.
+## 안전한 패턴
+- `if stack:` 검사 후 `pop()`을 호출합니다.
+- 결과가 인덱스 기반이면 처음부터 인덱스를 스택에 저장합니다.
+- 스택의 의미(미해결 후보)를 주석으로 명확히 유지합니다.
 
-## Time Complexity
-O(N) total for one pass patterns.
+## 시간복잡도
+- 각 원소가 최대 한 번 push, 한 번 pop 되므로 전체 `O(N)`입니다.
 
-## Related Practice Problems
+## 관련 문제
 - [0005. Next Growth Day](../practice/0005-next-growth-day.md)
 
-## Review Checklist
-- Is stack content representing unresolved state?
+## 복습 체크리스트
+- 이 문제가 LIFO 구조를 요구하는지 판단했는가?
+- 스택에 값과 인덱스 중 무엇을 넣어야 하는지 결정했는가?
+- `pop()` 전 빈 스택 검사로 예외를 방지했는가?

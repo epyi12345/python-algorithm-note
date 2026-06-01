@@ -1,5 +1,6 @@
 site_name: Python Algorithm Note
 site_description: Python algorithm problem-solving notes and wrong-answer reviews.
+site_url: https://epyi12345.github.io/python-algorithm-note/
 theme:
   name: material
   language: en

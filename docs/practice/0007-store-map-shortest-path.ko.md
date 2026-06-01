@@ -132,6 +132,16 @@ S에서 BFS를 시작하고, E에 처음 도달하는 순간의 거리가 최단
 - 이동 횟수 계산 정확성
 - 도달 불가 처리 정확성
 
+## 코딩 워크스페이스
+
+워크벤치에서 문제 설명과 Python 에디터를 나란히 보면서 풀이를 작성할 수 있습니다.
+
+[워크벤치에서 풀기](../../tools/practice-workbench/?problem=0007){ .md-button .md-button--primary }
+
+[Python Editor 열기](../tools/python-editor.md){ .md-button .md-button--primary }
+
+[OneCompiler 새 탭에서 열기 ↗](https://onecompiler.com/python){ target="_blank" rel="noopener" }
+
 ## Code Template
 ```python
 def solve():

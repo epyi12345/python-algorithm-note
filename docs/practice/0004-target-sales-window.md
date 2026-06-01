@@ -152,6 +152,17 @@ classic two pointers.
 - Correct no-solution handling
 - O(N) style approach reasoning
 
+## Coding Workspace
+
+Open this problem in Practice Workbench to view the statement and Python
+editor side by side.
+
+[Open in Practice Workbench](../../tools/practice-workbench/?problem=0004){ .md-button .md-button--primary }
+
+[Open Python Editor](../tools/python-editor.md){ .md-button .md-button--primary }
+
+[Open OneCompiler in a new tab ↗](https://onecompiler.com/python){ target="_blank" rel="noopener" }
+
 ## Code Template
 
 ```python

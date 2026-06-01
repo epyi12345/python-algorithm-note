@@ -288,3 +288,50 @@ the strict commit title rules and correct them if they do not match.
 - Korean learning pages should use developer-friendly terminology.
 - New practice problems should link to related learning pages.
 - Do not copy full copyrighted external problem statements.
+
+## Workflow Rules for Future Changes
+
+1. Korean and English page synchronization
+
+- When adding or substantially editing an English documentation page, also create or update the matching Korean `.ko.md` page in the same task when practical.
+- Examples:
+  - `docs/learning/prefix-sum.md` should be paired with `docs/learning/prefix-sum.ko.md`
+  - `docs/practice/0004-target-sales-window.md` should be paired with `docs/practice/0004-target-sales-window.ko.md`
+
+2. Plan first for large changes
+
+- If a task is expected to change many files or touch multiple areas, do not start editing immediately.
+- First provide a plan that splits the work into smaller PRs.
+
+3. Small PR rule
+
+- Keep PRs focused on one logical area.
+- Avoid combining unrelated changes such as learning pages, practice problems, workbench JavaScript, CSS, and deployment configuration in one PR.
+
+4. Diff guard
+
+- Before committing or opening a PR, check the changed file list.
+- If `origin/main` is available, use:
+
+  `git diff --name-only origin/main...HEAD`
+
+- If `origin/main` is not available in the Codex environment, use:
+
+  `git diff --name-only HEAD`
+
+- If unrelated files are present, revert them or stop and report the issue.
+
+5. Old branch rule
+
+- Do not reuse old conflicted branches or stale Codex task branches.
+- Start from the latest main branch or from a clean current repository snapshot.
+
+6. No-op rule
+
+- If there is nothing to change, do not create a commit or PR.
+
+7. Missing origin remote rule
+
+- If the local checkout has no `origin` remote, do not blindly continue with commands that depend on `origin/main`.
+- Use a HEAD-based diff guard only if the current snapshot is clean and recent.
+- Otherwise stop and report the issue.
